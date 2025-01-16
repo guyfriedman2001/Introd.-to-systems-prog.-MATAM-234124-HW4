@@ -7,4 +7,5 @@ class Pack : public Monster{
     public:
     Pack(vector<std::string> monstersString);
     void startEvent(Player* player) override;
+    std::string getName() const override;
 };

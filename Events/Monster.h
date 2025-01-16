@@ -13,7 +13,9 @@ class Monster : public Encounter{
     Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damage);
     virtual void startEvent(Player* player) = 0;
     Monster() = default; //?
-    unsigned int getCombatPower();
-    unsigned int getLoot();
-    unsigned int getDamage();
+    unsigned int getCombatPower() const;
+    unsigned int getLoot()const;
+    unsigned int getDamage()const;
+    virtual std::string getName() const;
+    virtual string getDescription() const;
 };

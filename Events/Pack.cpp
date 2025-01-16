@@ -20,3 +20,8 @@ Pack::Pack(vector<std::string> monstersString): Monster(0,0,0){
 void Pack::startEvent(Player* player){
     Monster::startEvent(player);
 }
+
+std::string Pack::getName() const{
+    int size = monsters.size();
+    return ("Pack of " + std::to_string(size) + " members");
+}

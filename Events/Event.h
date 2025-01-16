@@ -2,6 +2,7 @@
 #pragma once
 #include "EventFactory.h"
 #include "../Players/Player.h"
+#include <iostream>
 
 class Event {
     private:
@@ -12,7 +13,7 @@ public:
      *
      * @return - the description of the event
     */
-    string getDescription() const;
+    virtual string getDescription() const;
     virtual void startEvent(Player* player) = 0;
     Event(EventFactory* event);
     Event() = default;
