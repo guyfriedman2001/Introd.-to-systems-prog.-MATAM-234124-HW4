@@ -1,9 +1,11 @@
 
 #pragma once
-
+#include "EventFactory.h"
 #include "../Players/Player.h"
 
 class Event {
+    private:
+    EventFactory* event;
 public:
     /**
      * Gets the description of the event
@@ -11,4 +13,7 @@ public:
      * @return - the description of the event
     */
     string getDescription() const;
+    virtual void startEvent(Player* player) = 0;
+    Event(EventFactory* event);
+    Event() = default;
 };
