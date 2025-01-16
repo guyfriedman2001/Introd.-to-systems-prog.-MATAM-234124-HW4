@@ -1,0 +1,16 @@
+//
+// Created by Guy Friedman on 16/01/2025.
+//
+
+#ifndef WARRIOR_H
+#define WARRIOR_H
+#include "Strong.h"
+
+
+class Warrior : public Strong {
+
+};
+
+
+
+#endif //WARRIOR_H
