@@ -1,0 +1,8 @@
+#pragma once
+#include "Monster.h"
+
+class Slime : public Monster{
+    public:
+    Slime();
+    void startEvent(Player* player) override;
+};
