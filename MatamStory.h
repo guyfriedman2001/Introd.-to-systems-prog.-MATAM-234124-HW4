@@ -10,6 +10,7 @@
 class MatamStory{
 private:
     unsigned int m_turnIndex;
+    vector<Event*> events;
 
     /**
      * Playes a single turn for a player
@@ -33,6 +34,7 @@ private:
      * @return - true if the game is over, false otherwise
     */
     bool isGameOver() const;
+    vector<std::string>& lineToVector(std::string& line);
 
 public:
     /**
