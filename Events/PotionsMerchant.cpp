@@ -4,7 +4,7 @@
 PotionsMerchant::PotionsMerchant() : coins(5){}
 
 void PotionsMerchant::startEvent(Player* player){
-    if(player->getCharacterType() == "Responsible"){
+    if(player->getCharacter() == "Responsible"){
         try{
             while((player->getHealthPoints() < player->getMaxHealthPoints())) {////TODO getMaxHealthPoints() func in player (protected?)
                 player->setCoins(-5);  //TODO setCoins() func in player (protected?)
@@ -15,7 +15,7 @@ void PotionsMerchant::startEvent(Player* player){
                 return;
             }
     }
-    if(player->getCharacterType() == "RiskTaking"){
+    if(player->getCharacter() == "RiskTaking"){
         if((player->getHealthPoints() < player->getMaxHealthPoints()) && player->getHealthPoints() < 50){
             try{
                 player->setCoins(-5);  //TODO setCoins() func in player (protected?) + throw
@@ -27,3 +27,4 @@ void PotionsMerchant::startEvent(Player* player){
         }
     }
 }
+
