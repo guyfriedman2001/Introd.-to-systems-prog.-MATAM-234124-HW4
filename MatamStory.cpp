@@ -2,11 +2,22 @@
 #include "MatamStory.h"
 
 #include "Utilities.h"
+#include <fstream>
 
 MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) {
 
     /*===== TODO: Open and read events file =====*/
 
+    std::string line;
+    vector<std::string> eventLines;
+    while(std::getline(eventsStream, line)){
+        eventLines.push_back(line);
+    }
+    for(int i = 0; i< eventLines.size(); i++){
+        EventFactory tempEvent = EventFactory(lineToVector(eventLines[i]));
+        this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
+    }
+    
     /*==========================================*/
 
 
@@ -14,8 +25,25 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
 
     /*============================================*/
 
+    //TODO loop push back eventd by creating them with event factory
 
     this->m_turnIndex = 1;
+}
+
+vector<std::string>& MatamStory::lineToVector(std::string& line){
+    std::string word;
+    vector<std::string> eventLineVector;
+    for(int i = 0; i< line.size(); i++){
+        char letter = line[i];
+        if(letter ==' ' || word.size() != 0){
+            eventLineVector.push_back(word);
+            word = "";
+        }
+        else{
+            word += letter;
+        }
+    }
+    return eventLineVector;
 }
 
 void MatamStory::playTurn(Player& player) {
