@@ -3,11 +3,12 @@
 
 Monster::Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damage): CombatPower(CombatPower), Loot(Loot), Damage(Damage){}
 void Monster::startEvent(Player* player){
-    if(CombatPower < player->getCombatPower()){ //TODO getCombatPower() func in player (protected?)
-        player->win(Loot); //TODO win( unsigned int Loot)  func in player (protected?) + levelUp
+    if(CombatPower < player->getCombatPower()){ 
+        player->recieveCoins(Loot);
+        // level up!
     }
     else{
-        player->lose(Damage); //TODO lose(unsigned int Damage)  func in player (protected?)
+        player->takeDamage(Damage);
     }
 }
 void Monster::setCombatPower(unsigned int addCombatPower){
