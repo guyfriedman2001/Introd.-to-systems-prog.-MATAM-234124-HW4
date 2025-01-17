@@ -8,115 +8,109 @@ using std::string;
 class Player {
 private:
     string name;
-    Character* charachter;
+    Character* character;
     Job* job;
 
 public:
 
-    Player() = default;
 
-    //Player()
-
-    virtual ~Player() = default;
-
-
-    bool isFullHealth() {
-        return this->job->isFullHealth();
-    }
-    Character* getCharachter() {
-        return this->charachter;
-    }
-    Job* getJob() {
-        return this->job;
-    }
-    string getName() {}
-
-    unsigned int getCombatPower() const {
-        return this->job->getCombatPower();
-    }
-
-    virtual void payCoins(int ammount) {
-        this->job->payCoins(ammount);
-    }
-
-    virtual void takeDamage(int ammount) {
-        this->job->takeDamage(ammount);
-    }
-
-    virtual void recieveCoins(int ammount) {
-        this->job->recieveCoins(ammount);
-    }
-
-    virtual void heal(int ammount) {
-        this->job->heal(ammount);
-    }
-
-    virtual inline bool isKOd() const {
-        return this->job->isKOd();
-    }
-
-    virtual unsigned int getCombatPower() const {
-        return this->job->getCombatPower();
-    }
-
-    virtual inline bool isFullHealth() const {
-        return this->job->isFullHealth();
-    }
-
-    virtual inline bool canPurchase(int price) const {
-        return this->job->canPurchase(price);
-    }
-
-    /**
- * Gets the description of the player
- *
- * @return - description of the player
-*/
-    string getDescription() const;
-
-    /**
-     * Gets the name of the player
-     *
-     * @return - name of the player
-    */
-    string getName() const;
-
-    /**
-     * Gets the current level of the player
-     *
-     * @return - level of the player
-    */
-    int getLevel() const;
-
-    /**
-     * Gets the of force the player has
-     *
-     * @return - force points of the player
-    */
-    int getForce() const;
-
-    /**
-     * Gets the amount of health points the player currently has
-     *
-     * @return - health points of the player
-    */
-    int getHealthPoints() const;
-
-    /**
-     * Gets the amount of coins the player has
-     *
-     * @return - coins of the player
-    */
-    int getCoins() const;
-
-
-};
 Player::Player(const string& name, Character* character, Job* job){
     this->name = string(name);
     this->setCharacter(character);
         this->setJob(job);
 }
 
+void Player::setCharacter(Character* character){
+    this->character = character;
+    character->setPlayer(this);
+}
+
+void Player::setJob(Job* job){
+    this->job = job;
+    job->setPlayer(this);
+}
+
+    Player::Player() = default;
+
+    virtual Player::~Player(){
+        delete this->character;
+        delete this->job;
+    }
+
+    bool Player::isFullHealth() {
+        return this->job->isFullHealth();
+    }
+
+    Character* Player::getCharachter() {
+        return this->character;
+    }
+
+    Job* Player::getJob() {
+        return this->job;
+    }
+    string getName() {
+
+    }
+
+    unsigned int Player::getCombatPower() const {
+        return this->job->getCombatPower();
+    }
+
+    void Player::payCoins(int ammount) {
+        this->job->payCoins(ammount);
+    }
+
+    void Player::takeDamage(int ammount) {
+        this->job->takeDamage(ammount);
+    }
+
+    void Player::recieveCoins(int ammount) {
+        this->job->recieveCoins(ammount);
+    }
+
+    void Player::heal(int ammount) {
+        this->job->heal(ammount);
+    }
+
+    inline bool Player::isKOd() const {
+        return this->job->isKOd();
+    }
+
+    unsigned int Player::getCombatPower() const {
+        return this->job->getCombatPower();
+    }
+
+    inline bool Player::isFullHealth() const {
+        return this->job->isFullHealth();
+    }
+
+    inline bool Player::canPurchase(int price) const {
+        return this->job->canPurchase(price);
+    }
+
+    string Player::getDescription() const {
+
+    }
+
+    string Player::getName() const {
+
+    }
+
+    int Player::getLevel() const {
+
+    }
+
+    int Player::getForce() const {
+
+    }
+
+    int Player::getHealthPoints() const {
+
+    }
+
+    int Player::getCoins() const {
+
+    }
 
 string Player::getDescription() const;
 
@@ -129,32 +123,6 @@ int Player::getForce() const;
 int Player::getHealthPoints() const;
 
 int Player::getCoins() const;
-
-virtual void Player::payCoins(int ammount);
-
-virtual void Player::takeDamage(int ammount);
-
-virtual void Player::recieveCoins(int ammount);
-
-virtual void Player::heal(int ammount);
-
-virtual inline bool Player::isKOd() const;
-
-virtual unsigned int Player::getCombatPower() const;
-
-virtual inline bool Player::isFullHealth() const;
-
-virtual inline bool Player::canPurchase(int price) const;
-
-void Player::setCharacter(Character* character){
-    this->character = character;
-    character->setPlayer(this);
-}
-
-void Player::setJob(Job* job){
-    this->job = job;
-    job->setPlayer(this);
-}
 
 Job* Player::getJob(){
     return this->job;
@@ -203,3 +171,4 @@ inline bool Player::isFullHealth() const {
 inline bool Player::canPurchase(int price) const {
     return this->job->canPurchase(price);
 }
+};
