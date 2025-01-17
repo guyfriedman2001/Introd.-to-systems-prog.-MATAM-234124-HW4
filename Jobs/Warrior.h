@@ -10,7 +10,9 @@
 class Warrior : public Strong {
 public:
     virtual ~Warrior() = default;
-    Warrior() : Strong() {}
+    Warrior() : Strong() {
+        this->MAX_HEALTH = 150;
+    }
     unsigned int getCombatPower() const override {
         return (this->getForce()*2) + this->getLevel();
     }

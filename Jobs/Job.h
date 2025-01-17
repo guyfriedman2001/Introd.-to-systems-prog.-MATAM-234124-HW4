@@ -21,7 +21,7 @@ protected:
 
 public:
     virtual ~Job() = default;
-    Job() : level(0), force(0), currentHealth(0), MAX_HEALTH(0), coins(0) {}
+    Job() : level(0), force(0), currentHealth(0), MAX_HEALTH(100), coins(10) {}
 
     virtual int getCoins() const {
         return this->coins;
