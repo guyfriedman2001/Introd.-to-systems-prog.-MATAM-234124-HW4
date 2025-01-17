@@ -11,8 +11,12 @@ using std::string;
 
 class CharachterMaker {
 public:
-    Character* makeCharacter(string charachter) {
-
+    Character* makeCharacter(string character) {
+        if (character == "H") {
+        }
+        else if (character == "HH") {
+        }
+        return nullptr;
     }
 };
 

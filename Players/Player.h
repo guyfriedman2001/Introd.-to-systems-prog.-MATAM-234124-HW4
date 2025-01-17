@@ -3,9 +3,17 @@
 
 #include <string>
 
+#include "Character.h"
+#include "Job.h"
+
 using std::string;
 
 class Player {
+private:
+    string name;
+    Character* charachter;
+    Job* job;
+
 public:
     /**
      * Gets the description of the player
@@ -48,4 +56,29 @@ public:
      * @return - coins of the player
     */
     int getCoins() const;
+
+    virtual void payCoins(int ammount);
+
+    virtual void takeDamage(int ammount);
+
+    virtual void recieveCoins(int ammount);
+
+    virtual void heal(int ammount);
+
+    virtual inline bool isKOd() const;
+
+    virtual unsigned int getCombatPower() const;
+
+    virtual inline bool isFullHealth() const;
+
+    virtual inline bool canPurchase(int price) const;
+
+    Job* getJob(){
+        return this->job;
+    }
+
+    Job* getJob() const {
+        return this->job;
+    }
+    
 };

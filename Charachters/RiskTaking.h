@@ -4,10 +4,11 @@
 
 #ifndef RISKTAKING_H
 #define RISKTAKING_H
+#include "Character.h"
 
 
 
-class RiskTaking {
+class RiskTaking : public Character {
 
 };
 
