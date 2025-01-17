@@ -114,5 +114,13 @@ public:
     string getJobName(){
         return this->job->getClassName();
     }
+
+    virtual inline bool isFullHealth() const {
+        return this->job->isFullHealth();
+    }
+
+    virtual inline bool canPurchase(int price) const {
+        return this->job->canPurchase(price);
+    }
     
 };

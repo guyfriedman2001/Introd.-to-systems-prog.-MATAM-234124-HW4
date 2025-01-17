@@ -111,5 +111,13 @@ public:
         return this->player->getJobName();
     }
 
+    inline bool isFullHealth() const {
+        return this->player->isFullHealth();
+    }
+
+    inline bool canPurchase(int price) const {
+        return this->player->canPurchase(price);
+    }
+
 
 };
