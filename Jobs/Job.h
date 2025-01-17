@@ -21,7 +21,7 @@ protected:
 
 public:
     virtual ~Job() = default;
-    Job() : level(0), force(0), currentHealth(100), MAX_HEALTH(100), coins(10) {}
+    Job() : level(1), force(5), currentHealth(100), MAX_HEALTH(100), coins(10) {}
 
     virtual int getCoins() const {
         return this->coins;
@@ -80,11 +80,14 @@ public:
     virtual string getClassName() const {
         return "Job";
     }
-        /**
- * Gets the description of the player
- *
- * @return - description of the player
-*/
+
+    virtual void setPlayer(Player* player){}
+        
+    /**
+     * Gets the description of the player
+     *
+     * @return - description of the player
+    */
     virtual string getDescription() const;
 
 

@@ -4,8 +4,10 @@
 
 #ifndef PLAYERMAKER_H
 #define PLAYERMAKER_H
+
 #include "JobMaker.h"
 #include "CharacterMaker.h"
+#include "Player.h"
 #include <string>
 using std::string;
 
@@ -13,7 +15,9 @@ using std::string;
 class PlayerMaker {
 public:
     static Player* makePlayer(const string& name, const string& character, const string& job) {
-        Player* player = new Player();
+        Job* job = JobMaker::makeJob(job);
+        Character* charachter = CharachterMaker::makeCharacter(character);
+        return new Player(name, character, job);
         //fixme todo add logic to create charachter and job for player
     }
 };

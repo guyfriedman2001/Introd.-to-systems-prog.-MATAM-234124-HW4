@@ -9,5 +9,5 @@ using std::string;
 
 class JobMaker {
 public:
-    Job* makeJob(string type);
+    static Job* makeJob(string type);
 };

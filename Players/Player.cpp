@@ -3,7 +3,7 @@
 //
 
 #include "Player.h"
-
+using std::string;
 
 class Player {
 private:
@@ -111,3 +111,95 @@ public:
 
 
 };
+Player::Player(const string& name, Character* character, Job* job){
+    this->name = string(name);
+    this->setCharacter(character);
+        this->setJob(job);
+}
+
+
+string Player::getDescription() const;
+
+string Player::getName() const;
+
+int Player::getLevel() const;
+
+int Player::getForce() const;
+
+int Player::getHealthPoints() const;
+
+int Player::getCoins() const;
+
+virtual void Player::payCoins(int ammount);
+
+virtual void Player::takeDamage(int ammount);
+
+virtual void Player::recieveCoins(int ammount);
+
+virtual void Player::heal(int ammount);
+
+virtual inline bool Player::isKOd() const;
+
+virtual unsigned int Player::getCombatPower() const;
+
+virtual inline bool Player::isFullHealth() const;
+
+virtual inline bool Player::canPurchase(int price) const;
+
+void Player::setCharacter(Character* character){
+    this->character = character;
+    character->setPlayer(this);
+}
+
+void Player::setJob(Job* job){
+    this->job = job;
+    job->setPlayer(this);
+}
+
+Job* Player::getJob(){
+    return this->job;
+}
+
+Job* Player::getJob() const {
+    return this->job;
+}
+
+int Player::getMaxHealth(){
+    return this->job->getMaxHealth();
+}
+
+void Player::recieveCoins(int ammount){
+    this->job->recieveCoins(ammount);
+}
+
+void Player::payCoins(int ammount){
+    this->job->payCoins(ammount);
+}
+
+int Player::getCoins(){
+    return this->job->getCoins();
+}
+
+void Player::getBuffed(int ammount){
+    this->job->getBuffed(ammount);
+}
+
+void Player::getNerfed(int ammount){
+    this->job->getNerfed(ammount);
+}
+
+void Player::fight(Monster* monster){
+    this->job->fight(monster);
+}
+
+string Player::getJobName(){
+    return this->job->getClassName();
+}
+
+inline bool Player::isFullHealth() const {
+    return this->job->isFullHealth();
+}
+
+inline bool Player::canPurchase(int price) const {
+    return this->job->canPurchase(price);
+}

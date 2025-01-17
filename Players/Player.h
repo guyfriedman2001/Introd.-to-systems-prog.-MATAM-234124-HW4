@@ -11,12 +11,18 @@ using std::string;
 
 class Player {
 private:
-friend class PlayerMaker;
     string name;
-    Character* charachter;
+    Character* character;
     Job* job;
     
 public:
+
+    Player(const string& name, Character* character, Job* job){
+        this->name = string(name);
+        this->setCharacter(character);
+        this->setJob(job);
+    }
+
     /**
      * Gets the description of the player
      *
@@ -74,6 +80,16 @@ public:
     virtual inline bool isFullHealth() const;
 
     virtual inline bool canPurchase(int price) const;
+
+    void setCharacter(Character* character){
+        this->character = character;
+        character->setPlayer(this);
+    }
+
+    void setJob(Job* job){
+        this->job = job;
+        job->setPlayer(this);
+    }
 
     Job* getJob(){
         return this->job;

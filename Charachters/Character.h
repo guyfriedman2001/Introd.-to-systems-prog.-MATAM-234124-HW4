@@ -7,9 +7,17 @@
 class Player;
 
 class Character {
-    unsigned int* health;
     Player* player;
 public:
     virtual void tradeMerchant() = 0;
     virtual ~Character() = default;
+    
+    Character(){}
+
+    Character(Player* player) : player(player) {}
+
+    void setPlayer(Player* player){
+        this->player = player;
+    }
+
 };

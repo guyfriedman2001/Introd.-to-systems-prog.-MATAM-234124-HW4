@@ -19,6 +19,8 @@ public:
 
     MatamPlayer() = delete;
 
+    MatamPlayer(Player* player) : PlayerAdapter(player){}
+
     MatamPlayer(const string& name, const string& character, const string& job)
                  : PlayerAdapter(name, character, job) {}
 
@@ -107,7 +109,7 @@ public:
         this->player->fight(monster);
     }
 
-    string getType(){
+    string getType() const {
         return this->player->getJobName();
     }
 

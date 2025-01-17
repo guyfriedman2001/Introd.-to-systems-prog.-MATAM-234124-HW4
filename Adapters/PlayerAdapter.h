@@ -15,6 +15,10 @@ public:
 
     PlayerAdapter() = delete;
 
+    PlayerAdapter(Player* player){
+        this->player = player;
+    }
+
     PlayerAdapter(const string& name, const string& character, const string& job){
         this->player = PlayerMaker::makePlayer(name, character, job);
     }
