@@ -8,7 +8,12 @@
 
 
 class Warrior : public Strong {
-
+public:
+    virtual ~Warrior() = default;
+    Warrior() : Strong() {}
+    unsigned int getCombatPower() const override {
+        return (this->getForce()*2) + this->getLevel();
+    }
 };
 
 

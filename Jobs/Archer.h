@@ -8,7 +8,11 @@
 
 
 class Archer : public Fast {
-
+public:
+    virtual ~Archer() = default;
+    Archer() : Fast() {
+        this->coins = 20;
+    }
 };
 
 

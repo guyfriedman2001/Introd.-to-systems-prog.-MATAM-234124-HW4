@@ -8,7 +8,9 @@
 
 
 class Fast : public Job {
-
+public:
+    virtual ~Fast() = default;
+    Fast() : Job() {}
 };
 
 

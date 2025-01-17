@@ -8,7 +8,9 @@
 
 
 class Magical : public Job{
-
+public:
+    virtual ~Magical() = default;
+    Magical() : Job() {};
 };
 
 

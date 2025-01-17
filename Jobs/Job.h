@@ -12,7 +12,7 @@
 constexpr int MaxRetries = 5;
 
 class Job {
-private:
+protected:
     unsigned int level;
     unsigned int force;
     unsigned int currentHealth;

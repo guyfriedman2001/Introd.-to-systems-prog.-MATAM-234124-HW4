@@ -8,7 +8,9 @@
 
 
 class Magician : public Magical {
-
+public:
+    virtual ~Magician() = default;
+    Magician() : Magical() {}
 };
 
 
