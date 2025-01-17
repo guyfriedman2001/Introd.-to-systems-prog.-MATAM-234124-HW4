@@ -16,6 +16,6 @@ class Monster : public Encounter{
     unsigned int getCombatPower() const;
     unsigned int getLoot()const;
     unsigned int getDamage()const;
-    virtual std::string getName() const;
+    virtual std::string getName() = 0;
     virtual string getDescription() const;
 };

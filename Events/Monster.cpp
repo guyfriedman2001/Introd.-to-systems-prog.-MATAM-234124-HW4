@@ -30,10 +30,7 @@ unsigned int Monster::getLoot()const {
 unsigned int Monster::getDamage()const {
     return this->Damage;
 }
-std::string Monster::getName()const {
-    return "Monster";
-}
 
 string Monster::getDescription() const{
-    std::cout << this->getName() << " (power " << this->getCombatPower() << ", loot " << this->getLoot() << ", damage "<< this->getDamage() << ")" << std::endl;
+    return(" (power " + std::to_string(this->getCombatPower()) + ", loot " + std::to_string(this->getLoot()) + ", damage "+ std::to_string(this->getDamage()) + ")");
 }
