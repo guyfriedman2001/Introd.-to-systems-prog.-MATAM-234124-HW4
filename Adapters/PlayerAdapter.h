@@ -17,7 +17,6 @@ public:
 
     PlayerAdapter(const string& name, const string& character, const string& job){
         this->player = PlayerMaker::makePlayer(name, character, job);
-
     }
 
 

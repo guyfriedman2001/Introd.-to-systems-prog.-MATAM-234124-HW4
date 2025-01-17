@@ -14,6 +14,7 @@ class PlayerMaker {
 public:
     static Player* makePlayer(const string& name, const string& character, const string& job) {
         Player* player = new Player();
+        //fixme todo add logic to create charachter and job for player
     }
 };
 

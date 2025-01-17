@@ -81,5 +81,29 @@ public:
     Job* getJob() const {
         return this->job;
     }
+
+    int getMaxHealth(){
+        return this->job->getMaxHealth();
+    }
+
+    void recieveCoins(int ammount){
+        this->job->recieveCoins(ammount);
+    }
+
+    void payCoins(int ammount){
+        this->job->payCoins(ammount);
+    }
+
+    int getCoins(){
+        return this->job->getCoins();
+    }
+
+    void getBuffed(int ammount){
+        this->job->getBuffed(ammount);
+    }
+
+    void getNerfed(int ammount){
+        this->job->getNerfed(ammount);
+    }
     
 };

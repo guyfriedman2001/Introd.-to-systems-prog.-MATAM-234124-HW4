@@ -28,38 +28,36 @@ class MatamPlayer : public PlayerAdapter{
 
 public:
 
+    MatamPlayer() = delete;
+
     MatamPlayer(const string& name, const string& character, const string& job)
-     : PlayerAdapter(name, character, job) {}
+                 : PlayerAdapter(name, character, job) {}
+
+    virtual ~MatamPlayer() = default;
 
     int getMaxHealthPoints(){
-        Job* job = this->player->getJob();
-        return job->getMaxHealth();
+        return this->player->getMaxHealth();
     }
 
-    void win(Player& player, int ammount){
-        Job* job = this->player->getJob();
-        job->recieveCoins(ammount);
+    void win(int ammount){
+        this->player->recieveCoins(ammount);
     }
 
-    void lose(Player& player, int ammount){
-        Job* job = this->player->getJob();
-        job->payCoins(ammount);
+    void lose(int ammount){
+        this->player->payCoins(ammount);
     }
 
-    void setCoins(Player& player, int ammount){
-        Job* job = this->player->getJob();
-        job->payCoins(job->getCoins());
-        job->recieveCoins(ammount);
+    void setCoins(int ammount){
+        this->player->payCoins(this->player->getCoins());
+        this->player->recieveCoins(ammount);
     }
 
-    void forceUp(Player& player, int ammount){
-        Job* job = this->player->getJob();
-        job->getBuffed(ammount);
+    void forceUp(int ammount){
+        this->player->getBuffed(ammount);
     }
 
-    void ForceDown(Player& player, int ammount){
-        Job* job = this->player->getJob();
-        job->getNerfed(ammount);
+    void forceDown(int ammount){
+        this->player->getNerfed(ammount);
     }
 
 
