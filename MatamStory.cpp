@@ -25,7 +25,7 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
 
     /*============================================*/
 
-    //TODO loop push back eventd by creating them with event factory
+    
 
     this->m_turnIndex = 1;
 }

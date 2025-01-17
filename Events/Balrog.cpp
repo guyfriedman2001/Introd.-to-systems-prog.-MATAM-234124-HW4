@@ -6,6 +6,9 @@ void Balrog::startEvent(Player* player){
     Monster::startEvent(player);
     Monster::setCombatPower(2);
 }
-std::string Balrog::getName() const{
+std::string Balrog::getName() {
     return "Balrog";
+}
+std::string Balrog::getDescription(){
+    return(getName() + Monster::getDescription());
 }
