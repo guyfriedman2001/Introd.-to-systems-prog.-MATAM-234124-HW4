@@ -16,127 +16,175 @@ private:
     Job* job;
     
 public:
-
-    Player(const string& name, Character* character, Job* job){
-        this->name = string(name);
-        this->setCharacter(character);
-        this->setJob(job);
-    }
+    /**
+     * @brief Constructs a new Player object.
+     * 
+     * @param name The name of the player.
+     * @param character A pointer to the character associated with the player.
+     * @param job A pointer to the job associated with the player.
+     */
+    Player(const string& name, Character* character, Job* job);
 
     /**
-     * Gets the description of the player
-     *
-     * @return - description of the player
-    */
+     * @brief Retrieves the description of the player.
+     * 
+     * @return A string representing the player's description.
+     */
     string getDescription() const;
 
     /**
-     * Gets the name of the player
-     *
-     * @return - name of the player
-    */
+     * @brief Retrieves the name of the player.
+     * 
+     * @return The player's name.
+     */
     string getName() const;
 
     /**
-     * Gets the current level of the player
-     *
-     * @return - level of the player
-    */
+     * @brief Retrieves the current level of the player.
+     * 
+     * @return The player's level.
+     */
     int getLevel() const;
 
     /**
-     * Gets the of force the player has
-     *
-     * @return - force points of the player
-    */
+     * @brief Retrieves the player's force points.
+     * 
+     * @return The player's force points.
+     */
     int getForce() const;
 
     /**
-     * Gets the amount of health points the player currently has
-     *
-     * @return - health points of the player
-    */
+     * @brief Retrieves the player's current health points.
+     * 
+     * @return The player's health points.
+     */
     int getHealthPoints() const;
 
     /**
-     * Gets the amount of coins the player has
-     *
-     * @return - coins of the player
-    */
+     * @brief Retrieves the number of coins the player has.
+     * 
+     * @return The player's coin count.
+     */
     int getCoins() const;
 
+    /**
+     * @brief Deducts a specified amount of coins from the player.
+     * 
+     * @param ammount The number of coins to deduct.
+     */
     virtual void payCoins(int ammount);
 
+    /**
+     * @brief Reduces the player's health by a specified amount of damage.
+     * 
+     * @param ammount The amount of damage to apply.
+     */
     virtual void takeDamage(int ammount);
 
+    /**
+     * @brief Adds a specified amount of coins to the player.
+     * 
+     * @param ammount The number of coins to add.
+     */
     virtual void recieveCoins(int ammount);
 
+    /**
+     * @brief Restores the player's health by a specified amount.
+     * 
+     * @param ammount The number of health points to restore.
+     */
     virtual void heal(int ammount);
 
+    /**
+     * @brief Checks if the player is knocked out.
+     * 
+     * @return True if the player is knocked out, false otherwise.
+     */
     virtual inline bool isKOd() const;
 
+    /**
+     * @brief Retrieves the player's combat power.
+     * 
+     * @return The player's combat power.
+     */
     virtual unsigned int getCombatPower() const;
 
+    /**
+     * @brief Checks if the player is at full health.
+     * 
+     * @return True if the player is at full health, false otherwise.
+     */
     virtual inline bool isFullHealth() const;
 
+    /**
+     * @brief Checks if the player can afford a purchase of a specified price.
+     * 
+     * @param price The price of the item.
+     * @return True if the player can afford it, false otherwise.
+     */
     virtual inline bool canPurchase(int price) const;
 
-    void setCharacter(Character* character){
-        this->character = character;
-        character->setPlayer(this);
-    }
+    /**
+     * @brief Assigns a new character to the player.
+     * 
+     * @param character A pointer to the new character.
+     */
+    void setCharacter(Character* character);
 
-    void setJob(Job* job){
-        this->job = job;
-        job->setPlayer(this);
-    }
+    /**
+     * @brief Assigns a new job to the player.
+     * 
+     * @param job A pointer to the new job.
+     */
+    void setJob(Job* job);
 
-    Job* getJob(){
-        return this->job;
-    }
+    /**
+     * @brief Retrieves the player's current job.
+     * 
+     * @return A pointer to the player's job.
+     */
+    Job* getJob();
 
-    Job* getJob() const {
-        return this->job;
-    }
+    /**
+     * @brief Retrieves the player's current job (const version).
+     * 
+     * @return A pointer to the player's job.
+     */
+    Job* getJob() const;
 
-    int getMaxHealth(){
-        return this->job->getMaxHealth();
-    }
+    /**
+     * @brief Retrieves the player's maximum health points.
+     * 
+     * @return The player's maximum health points.
+     */
+    int getMaxHealth();
 
-    void recieveCoins(int ammount){
-        this->job->recieveCoins(ammount);
-    }
+    /**
+     * @brief Buffs the player's combat power by a specified amount.
+     * 
+     * @param ammount The amount to buff.
+     */
+    void getBuffed(int ammount);
 
-    void payCoins(int ammount){
-        this->job->payCoins(ammount);
-    }
+    /**
+     * @brief Reduces the player's combat power by a specified amount.
+     * 
+     * @param ammount The amount to nerf.
+     */
+    void getNerfed(int ammount);
 
-    int getCoins(){
-        return this->job->getCoins();
-    }
+    /**
+     * @brief Engages the player in a fight with a specified monster.
+     * 
+     * @param monster A pointer to the monster.
+     */
+    void fight(Monster* monster);
 
-    void getBuffed(int ammount){
-        this->job->getBuffed(ammount);
-    }
+    /**
+     * @brief Retrieves the name of the player's job.
+     * 
+     * @return A string representing the name of the job.
+     */
+    string getJobName();
 
-    void getNerfed(int ammount){
-        this->job->getNerfed(ammount);
-    }
-
-    void fight(Monster* monster){
-        this->job->fight(monster);
-    }
-
-    string getJobName(){
-        return this->job->getClassName();
-    }
-
-    virtual inline bool isFullHealth() const {
-        return this->job->isFullHealth();
-    }
-
-    virtual inline bool canPurchase(int price) const {
-        return this->job->canPurchase(price);
-    }
-    
 };
