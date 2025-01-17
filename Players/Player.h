@@ -10,10 +10,11 @@ using std::string;
 
 class Player {
 private:
+friend class PlayerMaker;
     string name;
     Character* charachter;
     Job* job;
-
+    
 public:
     /**
      * Gets the description of the player

@@ -3,8 +3,9 @@
 #include "Players/Player.h"
 #include "Jobs/Job.h"
 #include "Charachters/Character.h"
+#include "Adapters/PlayerAdapter.h"
 
-class PlayerMatamStoryAdapter{
+class MatamPlayer : public PlayerAdapter{
 
 
     /**
@@ -26,35 +27,39 @@ class PlayerMatamStoryAdapter{
      */
 
 public:
-    int getMaxHealthPoints(const Player& player){
-        Job& job = player.getJob();
-        return job.getMaxHealth();
+
+    MatamPlayer(const string& name, const string& character, const string& job)
+     : PlayerAdapter(name, character, job) {}
+
+    int getMaxHealthPoints(){
+        Job* job = this->player->getJob();
+        return job->getMaxHealth();
     }
 
     void win(Player& player, int ammount){
-        Job& job = player.getJob();
-        job.recieveCoins(ammount);
+        Job* job = this->player->getJob();
+        job->recieveCoins(ammount);
     }
 
     void lose(Player& player, int ammount){
-        Job& job = player.getJob();
-        job.payCoins(ammount);
+        Job* job = this->player->getJob();
+        job->payCoins(ammount);
     }
 
     void setCoins(Player& player, int ammount){
-        Job& job = player.getJob();
-        job.payCoins(job.getCoins());
-        job.recieveCoins(ammount);
+        Job* job = this->player->getJob();
+        job->payCoins(job->getCoins());
+        job->recieveCoins(ammount);
     }
 
     void forceUp(Player& player, int ammount){
-        Job& job = player.getJob();
-        job.getBuffed(ammount);
+        Job* job = this->player->getJob();
+        job->getBuffed(ammount);
     }
 
     void ForceDown(Player& player, int ammount){
-        Job& job = player.getJob();
-        job.getNerfed(ammount);
+        Job* job = this->player->getJob();
+        job->getNerfed(ammount);
     }
 
 

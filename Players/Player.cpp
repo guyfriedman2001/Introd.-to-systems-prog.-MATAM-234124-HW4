@@ -12,6 +12,14 @@ private:
     Job* job;
 
 public:
+
+    Player() = default;
+
+    //Player()
+
+    virtual ~Player() = default;
+
+
     bool isFullHealth() {
         return this->job->isFullHealth();
     }
