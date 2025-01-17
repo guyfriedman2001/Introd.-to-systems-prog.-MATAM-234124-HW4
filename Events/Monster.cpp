@@ -5,7 +5,8 @@ Monster::Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damag
 void Monster::startEvent(Player* player){
     if(CombatPower < player->getCombatPower()){ 
         player->recieveCoins(Loot);
-        // level up!
+        player->levelUp(1);
+
     }
     else{
         player->takeDamage(Damage);
