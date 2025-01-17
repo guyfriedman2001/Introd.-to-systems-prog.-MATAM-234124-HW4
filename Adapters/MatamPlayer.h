@@ -5,7 +5,6 @@
 
 class MatamPlayer : public PlayerAdapter{
 
-
     /**
      * Ori - if you want me to add a functionality to player,
      * write the declaration of the function, and inside the fubction write a
@@ -24,6 +23,60 @@ public:
                  : PlayerAdapter(name, character, job) {}
 
     virtual ~MatamPlayer() = default;
+
+    /**
+     * Gets the description of the player
+     *
+     * @return - description of the player
+    */
+    string getDescription() const {
+        return this->player->getDescription();
+    }
+
+    /**
+     * Gets the name of the player
+     *
+     * @return - name of the player
+    */
+    string getName() const {
+        return this->player->getName();
+    }
+
+    /**
+     * Gets the current level of the player
+     *
+     * @return - level of the player
+    */
+    int getLevel() const {
+        return this->player->getLevel();
+    }
+
+    /**
+     * Gets the of force the player has
+     *
+     * @return - force points of the player
+    */
+    int getForce() const {
+        return this->player->getForce();
+    }
+
+    /**
+     * Gets the amount of health points the player currently has
+     *
+     * @return - health points of the player
+    */
+    int getHealthPoints() const {
+        return this->player->getHealthPoints();
+    }
+
+    /**
+     * Gets the amount of coins the player has
+     *
+     * @return - coins of the player
+    */
+    int getCoins() const {
+        return this->player->getCoins();
+    }
 
     int getMaxHealthPoints(){
         return this->player->getMaxHealth();
@@ -48,6 +101,14 @@ public:
 
     void forceDown(int ammount){
         this->player->getNerfed(ammount);
+    }
+
+    void encounter(Monster* monster){
+        this->player->fight(monster);
+    }
+
+    string getType(){
+        return this->player->getJobName();
     }
 
 

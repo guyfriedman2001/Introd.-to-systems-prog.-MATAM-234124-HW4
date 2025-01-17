@@ -5,6 +5,7 @@
 
 #include "Character.h"
 #include "Job.h"
+#include "Events/Monster.h"
 
 using std::string;
 
@@ -104,6 +105,14 @@ public:
 
     void getNerfed(int ammount){
         this->job->getNerfed(ammount);
+    }
+
+    void fight(Monster* monster){
+        this->job->fight(monster);
+    }
+
+    string getJobName(){
+        return this->job->getClassName();
     }
     
 };

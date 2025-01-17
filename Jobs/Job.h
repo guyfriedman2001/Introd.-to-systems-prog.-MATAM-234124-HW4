@@ -125,6 +125,10 @@ public:
         return this->coins;
     }
 
+    virtual void fight(Monster* monster){
+        //fixme todo
+    }
+
 };
 
 
