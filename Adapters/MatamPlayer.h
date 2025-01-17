@@ -16,6 +16,12 @@ class MatamPlayer : public PlayerAdapter{
      */
 
 public:
+    /**
+     * this class is an adapter between MatamStory and Player.
+     * 
+     * all of the relevant documentation exists in the header files of the above mentioned classes,
+     * therfor no documentation is requiered nor will be provided here.
+     */
 
     MatamPlayer() = delete;
 
