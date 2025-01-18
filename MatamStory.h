@@ -5,6 +5,8 @@
 
 #include "Players/Player.h"
 #include "Events/Event.h"
+#include <algorithm>
+#include <vector>
 
 
 class MatamStory{
@@ -36,6 +38,8 @@ private:
     */
     bool isGameOver() const;
     vector<std::string>& lineToVector(std::string& line);
+    void createLeaderBoard();
+    bool compare(Player& player1, Player& player2);
 
 public:
     /**

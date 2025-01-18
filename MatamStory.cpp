@@ -81,10 +81,33 @@ void MatamStory::playRound() {
     printLeaderBoardMessage();
 
     /*===== TODO: Print leaderboard entry for each player using "printLeaderBoardEntry" =====*/
-
+    createLeaderBoard();
     /*=======================================================================================*/
 
     printBarrier();
+}
+
+bool MatamStory::compare(Player& player1, Player& player2){
+    if(player1.getLevel() > player2.getLevel()){
+        return true;
+    }
+    if(player1.getLevel() == player2.getLevel()){
+        if(player1.getCoins() > player2.getCoins()){
+            return true;
+        }
+        if(player1.getCoins() == player2.getCoins()){
+            return player1.getName() > player2.getName();
+        }
+    }
+    return false;
+}
+void MatamStory::createLeaderBoard(){
+    vector<Player> tempPlayers(players.begin(), players.end());
+    sort(tempPlayers.begin(), tempPlayers.end(), compare);
+    for(int i = 0; i < tempPlayers.size(); i++){
+        printLeaderBoardEntry(i+1, players[i]);  
+    }
+
 }
 
 bool MatamStory::isGameOver() const {
@@ -97,7 +120,7 @@ bool MatamStory::isGameOver() const {
             return false;
         }
     }
-    return true; // Replace this line
+    return true;
     /*===================================================*/
 }
 
@@ -119,3 +142,5 @@ void MatamStory::play() {
 
     /*========================================================================*/
 }
+
+
