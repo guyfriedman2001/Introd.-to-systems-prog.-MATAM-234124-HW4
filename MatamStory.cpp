@@ -13,8 +13,12 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     while(std::getline(eventsStream, line)){
         eventLines.push_back(line);
     }
-    for(int i = 0; i< eventLines.size(); i++){
-        EventFactory tempEvent = EventFactory(lineToVector(eventLines[i]));
+    // for(int i = 0; i< eventLines.size(); i++){
+    //     EventFactory tempEvent = EventFactory(lineToVector(eventLines[i]));
+    //     this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
+    // }
+    for(auto iter = eventLines.begin(); iter != eventLines.end(); iter++){
+        EventFactory tempEvent = EventFactory(lineToVector(*iter));
         this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
     }
     
@@ -32,11 +36,23 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     this->winner = nullptr;
 }
 
-vector<std::string>& MatamStory::lineToVector(std::string& line){
+vector<std::string> MatamStory::lineToVector(std::string& line){
     std::string word;
     vector<std::string> eventLineVector;
-    for(int i = 0; i< line.size(); i++){
-        char letter = line[i];
+    // for(int i = 0; i< line.size(); i++){
+    //     char letter = line[i];
+    //     if(letter ==' ' || word.size() != 0){
+    //         eventLineVector.push_back(word);
+    //         word = "";
+    //     }
+    //     else{
+    //         word += letter;
+    //     }
+    // }
+    
+
+    for(auto iter = line.begin(); iter != line.end(); iter++){
+        char letter = *iter;
         if(letter ==' ' || word.size() != 0){
             eventLineVector.push_back(word);
             word = "";
@@ -71,9 +87,14 @@ void MatamStory::playRound() {
     printRoundStart();
 
     /*===== TODO: Play a turn for each player =====*/
-    for(int i = 0; i < players.size(); i++){
-        if(!players[i].isKOd()){
-            playTurn(players[i]);
+    // for(int i = 0; i < players.size(); i++){
+    //     if(!players[i].isKOd()){
+    //         playTurn(players[i]);
+    //     }
+    // }
+    for(auto iter = players.begin(); iter != players.end(); iter++){
+        if(!(*iter).isKOd()){
+            playTurn((*iter));
         }
     }
     /*=============================================*/
@@ -105,25 +126,39 @@ bool MatamStory::compare(Player& player1, Player& player2){
 }
 void MatamStory::createLeaderBoard(){
     vector<Player> tempPlayers(players.begin(), players.end());
+    int index = 1;
     sort(tempPlayers.begin(), tempPlayers.end(), compare);
-    for(int i = 0; i < tempPlayers.size(); i++){
-        printLeaderBoardEntry(i+1, players[i]);  
+    for(auto iter = tempPlayers.begin(); iter != tempPlayers.end(); iter++){
+        printLeaderBoardEntry(index, *iter);
     }
+    // for(int i = 0; i < tempPlayers.size(); i++){
+    //     printLeaderBoardEntry(i+1, players[i]);  
+    // }
     this->winner = &tempPlayers[0];
 
 }
 
 bool MatamStory::isGameOver() {
     /*===== TODO: Implement the game over condition =====*/
-    for(int i = 0; i < players.size(); i++){
-        if(players[i].getLevel() == 10){
+    for(auto iter = players.begin(); iter != players.end(); iter++){
+        if((*iter).getLevel() == 10){
             this->iswinner = true;
             return true;
         }
-        if(!players[i].isKOd()){
+        if(!(*iter).isKOd()){
             return false;
         }
     }
+
+    // for(int i = 0; i < players.size(); i++){
+    //     if(players[i].getLevel() == 10){
+    //         this->iswinner = true;
+    //         return true;
+    //     }
+    //     if(!players[i].isKOd()){
+    //         return false;
+    //     }
+    // }
     return true;
     /*===================================================*/
 }
@@ -131,9 +166,13 @@ bool MatamStory::isGameOver() {
 void MatamStory::play() {
     printStartMessage();
     /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" V =====*/
-    for(int i = 0; i < players.size(); i++){
-        printStartPlayerEntry((i+1), players[i]);
+    int index = 1;
+    for(auto iter = players.begin(); iter != players.end(); iter++){
+         printStartPlayerEntry(index, *iter);
     }
+    // for(int i = 0; i < players.size(); i++){
+    //     printStartPlayerEntry((i+1), players[i]);
+    // }
     /*=========================================================================================*/
     printBarrier();
 
