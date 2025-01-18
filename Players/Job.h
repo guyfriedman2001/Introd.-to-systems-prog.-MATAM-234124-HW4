@@ -4,7 +4,7 @@
 
 #define MAX(a,b) (a>b)?a:b
 #define MIN(a,b) (a<b)?a:b
-
+#define MAXLEVEL (10)
 
 #ifndef JOB_H
 #define JOB_H
@@ -130,6 +130,11 @@ public:
 
     virtual void fight(Monster* monster){
         //fixme todo
+    }
+
+    virtual void levelUp(){
+        ++(this->level);
+        this->level = MIN(this->level, MAXLEVEL);
     }
 
 };
