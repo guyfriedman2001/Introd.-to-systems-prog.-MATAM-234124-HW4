@@ -29,7 +29,7 @@ Pack::Pack(vector<std::string> monstersString): Monster(0,0,0){
 
     // if(monsters.size() != packSize) error! ?
 }
-void Pack::startEvent(Player& player){
+string Pack::startEvent(Player& player){
     Monster::startEvent(player);
     setNewCombatPower();
 }

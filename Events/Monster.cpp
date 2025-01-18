@@ -2,14 +2,16 @@
 #include "Monster.h"
 
 Monster::Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damage): CombatPower(CombatPower), Loot(Loot), Damage(Damage){}
-void Monster::startEvent(Player& player){
+std::string Monster::startEvent(Player& player){
     if(CombatPower < player.getCombatPower()){ 
         player.recieveCoins(Loot);
         player.levelUp(1);
+        return getEncounterWonMessage(player, Loot);
 
     }
     else{
         player.takeDamage(Damage);
+        return getEncounterLostMessage(player, Damage);
     }
 }
 void Monster::setCombatPower(unsigned int addCombatPower){
