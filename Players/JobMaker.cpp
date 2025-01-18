@@ -9,7 +9,7 @@ using std::string;
 
 class JobMaker {
   public:
-    static Job* makeJob(string type) {
+    static Job* JobMaker::makeJob(string type) {
         bool debugBool = true;
 
         if (type == "Magician") {
