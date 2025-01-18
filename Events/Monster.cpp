@@ -5,7 +5,7 @@ Monster::Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damag
 std::string Monster::startEvent(Player& player){
     if(CombatPower < player.getCombatPower()){ 
         player.recieveCoins(Loot);
-        player.levelUp(1);
+        player.levelUp();
         return getEncounterWonMessage(player, Loot);
 
     }
