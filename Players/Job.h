@@ -4,7 +4,11 @@
 
 #define MAX(a,b) (a>b)?a:b
 #define MIN(a,b) (a<b)?a:b
+
 #define MAXLEVEL (10)
+
+using std::string;
+
 
 #ifndef JOB_H
 #define JOB_H

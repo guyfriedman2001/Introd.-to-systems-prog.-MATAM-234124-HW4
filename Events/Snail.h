@@ -5,6 +5,6 @@ class Snail : public Monster{
     public:
     Snail();
     string startEvent(Player& player) override;
-    std::string getName() const override;
-    std::string getDescription() const override;
+    string getName() const override;
+    string getDescription() const override;
 };

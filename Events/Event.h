@@ -2,9 +2,9 @@
 #pragma once
 #include "EventFactory.h"
 #include "../Players/Player.h"
-#include <iostream>
 #include "../Utilities.h"
-
+using std::string;
+class EventFactory;
 class Event {
     private:
     EventFactory* event;
@@ -17,5 +17,5 @@ public:
     virtual string getDescription() const = 0;
     virtual string startEvent(Player& player) = 0;
     Event(EventFactory* event);
-    Event() = default;
+    virtual ~Event();
 };

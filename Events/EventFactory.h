@@ -8,7 +8,7 @@
 #include "PotionsMerchant.h"
 #include <vector>
 using std::vector;
-
+class Event;
 class EventFactory{
     private:
     vector<std::string> eventLineVector;
