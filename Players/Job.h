@@ -6,7 +6,7 @@
 #define MIN(a,b) (a<b)?a:b
 
 #define MAXLEVEL (10)
-
+#include "../Events/AllEvents.h"
 using std::string;
 
 
@@ -27,11 +27,7 @@ public:
     virtual ~Job() = default;
     Job() : level(1), force(5), currentHealth(100), MAX_HEALTH(100), coins(10) {}
 
-    virtual int getCoins() const {
-        return this->coins;
-    }
-
-    virtual void payCoins(int ammount) {
+    virtual void payCoins(unsigned int ammount) {
         if (this->coins < ammount){
             throw new std::runtime_error("cannot have negative coins");
         }
@@ -42,29 +38,29 @@ public:
         return this->MAX_HEALTH;
     }
 
-    virtual void takeDamage(int ammount) {
+    virtual void takeDamage(unsigned int ammount) {
         this->currentHealth -= ammount;
         this->currentHealth = MAX(0,this->currentHealth);
     }
 
-    virtual void recieveCoins(int ammount) {
+    virtual void recieveCoins(unsigned int ammount) {
         this->coins += ammount;
     }
 
-    virtual void heal(int ammount) {
+    virtual void heal(unsigned int ammount) {
         this->currentHealth += ammount;
         this->currentHealth = MIN(this->currentHealth,this->MAX_HEALTH);
     }
 
-    virtual inline bool isKOd(){
+    virtual inline bool isKOd() const{
         return this->currentHealth <= 0;
     }
 
-    virtual void getBuffed(int ammount){
+    virtual void getBuffed(unsigned int ammount){
         this->force += ammount;
     }
 
-    virtual void getNerfed(int ammount){
+    virtual void getNerfed(unsigned int ammount){
         this->force -= ammount;
         this->force = MAX(0,this->force);
     }
@@ -77,7 +73,7 @@ public:
         return currentHealth == MAX_HEALTH;
     }
 
-    virtual inline bool canPurchase(int price) const {
+    virtual inline bool canPurchase(unsigned int price) const {
         return this->coins >= price;
     }
 

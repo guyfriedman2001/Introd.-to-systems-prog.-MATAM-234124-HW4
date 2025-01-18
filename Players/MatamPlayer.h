@@ -1,7 +1,7 @@
 #pragma once;
 
 #include "Players/Player.h"
-#include "Adapters/PlayerAdapter.h"
+#include "PlayerAdapter.h"
 
 class MatamPlayer : public PlayerAdapter{
 
