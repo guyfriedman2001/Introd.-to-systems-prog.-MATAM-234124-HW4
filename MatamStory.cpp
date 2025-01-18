@@ -69,7 +69,11 @@ void MatamStory::playRound() {
     printRoundStart();
 
     /*===== TODO: Play a turn for each player =====*/
-
+    for(int i = 0; i < players.size(); i++){
+        if(!players[i].isKOd()){
+            playTurn(players[i]);
+        }
+    }
     /*=============================================*/
 
     printRoundEnd();
@@ -85,13 +89,21 @@ void MatamStory::playRound() {
 
 bool MatamStory::isGameOver() const {
     /*===== TODO: Implement the game over condition =====*/
-    return false; // Replace this line
+    for(int i = 0; i < players.size(); i++){
+        if(players[i].getLevel() == 10){
+            return true;
+        }
+        if(!players[i].isKOd()){
+            return false;
+        }
+    }
+    return true; // Replace this line
     /*===================================================*/
 }
 
 void MatamStory::play() {
     printStartMessage();
-    /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" =====*/
+    /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" V =====*/
     for(int i = 0; i < players.size(); i++){
         printStartPlayerEntry((i+1), players[i]);
     }
