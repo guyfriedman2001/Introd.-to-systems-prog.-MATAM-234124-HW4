@@ -1,13 +1,13 @@
 #pragma once
 #include "Pack.h"
 #include "EventFactory.h"
-Pack::Pack(vector<std::string> monstersString): Monster(0,0,0){
-    int packSize = std::stoi(monstersString[0]);
+Pack::Pack(vector<string>* monstersString): Monster(0,0,0){
+    int packSize = std::stoi((*monstersString)[1]);
     if(packSize < 2){
         //throw error!
     }
-    monstersString.erase(monstersString.begin());
-    for(int i = monstersString.size(), int j = 0 ; i > 0; i--, j++){
+    monstersString->erase(monstersString->begin());
+    for(int i = monstersString->size(), int j = 0 ; i > 0; i--, j++){
         //  EventFactory newEvent = EventFactory(monstersString);
         // if(monstersString[j] == "Pack"){
         //     packs.push_back(dynamic_cast<Pack*>(newEvent.create()));
@@ -24,7 +24,7 @@ Pack::Pack(vector<std::string> monstersString): Monster(0,0,0){
         Monster::setCombatPower(monsters[j]->getCombatPower());
         Monster::setLoot(monsters[j]->getLoot());
         Monster::setDamage(monsters[j]->getDamage());
-        monstersString.erase(monstersString.begin());
+        monstersString->erase(monstersString->begin());
     }
 
     // if(monsters.size() != packSize) error! ?
@@ -48,11 +48,11 @@ void Pack::setNewCombatPower(){
 }
 
 
-std::string Pack::getName() const{
+string Pack::getName() const{
     return("Pack");
 }
 
-std::string Pack::getDescription() const{
+string Pack::getDescription() const{
     return(getName() + " of " + std::to_string(monsters.size()) + " members"+ Monster::getDescription());
 }
 

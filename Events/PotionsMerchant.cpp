@@ -1,5 +1,6 @@
 #pragma once
 #include "PotionsMerchant.h"
+#include "../Utilities.h"
 
 PotionsMerchant::PotionsMerchant() : coins(5){}
 

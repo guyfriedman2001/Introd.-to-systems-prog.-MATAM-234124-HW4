@@ -1,5 +1,7 @@
 #pragma once
 #include "SolarEclipse.h"
+#include "../Utilities.h"
+#include "../Players/Player.h"
 
 SolarEclipse::SolarEclipse() : effect(1){}
 

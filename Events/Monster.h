@@ -17,6 +17,6 @@ class Monster : public Encounter{
     unsigned int getLoot()const;
     unsigned int getDamage()const;
     virtual string getName() const = 0;
-    virtual string getDescription() const;
+    virtual string getDescription() const override;
     virtual ~Monster();
 };
