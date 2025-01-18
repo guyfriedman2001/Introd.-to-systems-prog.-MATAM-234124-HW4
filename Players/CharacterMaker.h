@@ -16,7 +16,7 @@ public:
             return new RiskTaking();
         }
         else if (character == "Responsible") {
-            return new Responsible()
+            return new Responsible();
         }
         return nullptr;
     }

@@ -11,7 +11,7 @@ using std::string;
 
 
 class RiskTaking : public Character {
-
+    public:
     RiskTaking() = default;
 
     RiskTaking(Player* player) : Character(player) {}
