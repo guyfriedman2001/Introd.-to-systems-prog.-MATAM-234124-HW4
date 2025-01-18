@@ -112,11 +112,17 @@ void Player::setJob(Job* job){
 
     }
 
-string Player::getDescription() const;
+string Player::getDescription() const {
+    return "//FIXME Player::getDescription";
+}
 
-string Player::getName() const;
+string Player::getName() const {
+    return this->name;
+}
 
-int Player::getLevel() const;
+int Player::getLevel() const {
+    return this->job->getLevel();
+}
 
 int Player::getForce() const;
 
