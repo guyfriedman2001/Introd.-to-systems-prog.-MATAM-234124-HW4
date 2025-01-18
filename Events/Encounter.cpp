@@ -1,4 +1,2 @@
 #include "Encounter.h"
-Encounter::~Encounter(){
-    Event::~Event();
-}
+#include "Event.h"
