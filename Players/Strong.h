@@ -6,10 +6,20 @@
 #define STRONG_H
 #include "Job.h"
 
-
+/**
+ * @brief Represents the Strong job class type, inheriting from the Job base class.
+ */
 class Strong : public Job{
 public:
+
+    /**
+     * @brief Destructor for the Strong job class.
+     */
     virtual ~Strong() = default;
+
+    /**
+     * @brief Default constructor for the Strong job class.
+     */
     Strong() : Job() {}
 };
 
