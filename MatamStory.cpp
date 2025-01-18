@@ -17,10 +17,15 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     //     EventFactory tempEvent = EventFactory(lineToVector(eventLines[i]));
     //     this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
     // }
-    for(auto iter = eventLines.begin(); iter != eventLines.end(); iter++){
-        EventFactory tempEvent = EventFactory(lineToVector(*iter));
+    for(auto eventLine : eventLines){
+        EventFactory tempEvent = EventFactory(lineToVector(eventLine));
         this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
     }
+
+    // for(auto iter = eventLines.begin(); iter != eventLines.end(); iter++){
+    //     EventFactory tempEvent = EventFactory(lineToVector(*iter));
+    //     this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
+    // }
     
     /*==========================================*/
 
@@ -36,9 +41,9 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     this->winner = nullptr;
 }
 
-vector<std::string> MatamStory::lineToVector(std::string& line){
+vector<std::string>* MatamStory::lineToVector(std::string& line){
     std::string word;
-    vector<std::string> eventLineVector;
+    vector<std::string>* eventLineVector = new vector<std::string>;
     // for(int i = 0; i< line.size(); i++){
     //     char letter = line[i];
     //     if(letter ==' ' || word.size() != 0){
@@ -50,11 +55,10 @@ vector<std::string> MatamStory::lineToVector(std::string& line){
     //     }
     // }
     
-
-    for(auto iter = line.begin(); iter != line.end(); iter++){
-        char letter = *iter;
-        if(letter ==' ' || word.size() != 0){
-            eventLineVector.push_back(word);
+    for(int i = 0 ; line[i] != '\0'; i++){
+        char letter = line[i];
+        if(letter ==' ' || word.length() != 0){
+            eventLineVector->push_back(word);
             word = "";
         }
         else{
@@ -92,11 +96,18 @@ void MatamStory::playRound() {
     //         playTurn(players[i]);
     //     }
     // }
-    for(auto iter = players.begin(); iter != players.end(); iter++){
-        if(!(*iter).isKOd()){
-            playTurn((*iter));
+
+    for(auto player : players){
+        if(!player.isKOd()){
+            playTurn(player);
         }
     }
+
+    // for(auto iter = players.begin(); iter != players.end(); iter++){
+    //     if(!(*iter).isKOd()){
+    //         playTurn((*iter));
+    //     }
+    // }
     /*=============================================*/
 
     printRoundEnd();
@@ -110,27 +121,32 @@ void MatamStory::playRound() {
     printBarrier();
 }
 
-bool MatamStory::compare(Player& player1, Player& player2){
-    if(player1.getLevel() > player2.getLevel()){
-        return true;
-    }
-    if(player1.getLevel() == player2.getLevel()){
-        if(player1.getCoins() > player2.getCoins()){
-            return true;
-        }
-        if(player1.getCoins() == player2.getCoins()){
-            return player1.getName() > player2.getName();
-        }
-    }
+bool MatamStory::compare(Player player1, Player player2){
+    // if(player1.getLevel() > player2.getLevel()){
+    //     return true;
+    // }
+    // if(player1.getLevel() == player2.getLevel()){
+    //     if(player1.getCoins() > player2.getCoins()){
+    //         return true;
+    //     }
+    //     if(player1.getCoins() == player2.getCoins()){
+    //         return player1.getName() > player2.getName();
+    //     }
+    // }
     return false;
 }
 void MatamStory::createLeaderBoard(){
     vector<Player> tempPlayers(players.begin(), players.end());
     int index = 1;
     sort(tempPlayers.begin(), tempPlayers.end(), compare);
-    for(auto iter = tempPlayers.begin(); iter != tempPlayers.end(); iter++){
-        printLeaderBoardEntry(index, *iter);
+    
+    for(auto player : tempPlayers){
+        printLeaderBoardEntry(index, player);
     }
+
+    // for(auto iter = tempPlayers.begin(); iter != tempPlayers.end(); iter++){
+    //     printLeaderBoardEntry(index, *iter);
+    // }
     // for(int i = 0; i < tempPlayers.size(); i++){
     //     printLeaderBoardEntry(i+1, players[i]);  
     // }
@@ -140,15 +156,24 @@ void MatamStory::createLeaderBoard(){
 
 bool MatamStory::isGameOver() {
     /*===== TODO: Implement the game over condition =====*/
-    for(auto iter = players.begin(); iter != players.end(); iter++){
-        if((*iter).getLevel() == 10){
+    for(auto player : players){
+        if(player.getLevel() == 10){
             this->iswinner = true;
             return true;
         }
-        if(!(*iter).isKOd()){
+        if(!player.isKOd()){
             return false;
         }
     }
+    // for(auto iter = players.begin(); iter != players.end(); iter++){
+    //     if(iter->getLevel() == 10){
+    //         this->iswinner = true;
+    //         return true;
+    //     }
+    //     if(!iter->isKOd()){
+    //         return false;
+    //     }
+    // }
 
     // for(int i = 0; i < players.size(); i++){
     //     if(players[i].getLevel() == 10){
@@ -167,9 +192,14 @@ void MatamStory::play() {
     printStartMessage();
     /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" V =====*/
     int index = 1;
-    for(auto iter = players.begin(); iter != players.end(); iter++){
-         printStartPlayerEntry(index, *iter);
+    for(auto player : players){
+        printStartPlayerEntry(index, player);
     }
+
+    // for(auto iter = players.begin(); iter != players.end(); iter++){
+    //      printStartPlayerEntry(index, *iter);
+    // }
+
     // for(int i = 0; i < players.size(); i++){
     //     printStartPlayerEntry((i+1), players[i]);
     // }

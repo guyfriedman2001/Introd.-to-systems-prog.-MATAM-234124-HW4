@@ -40,9 +40,9 @@ private:
      * @return - true if the game is over, false otherwise
     */
     bool isGameOver();
-    vector<std::string> lineToVector(std::string& line);
+    vector<std::string>* lineToVector(std::string& line);
     void createLeaderBoard();
-    static bool compare(Player& player1, Player& player2);
+    static bool compare(Player player1, Player player2);
 
 public:
     /**
