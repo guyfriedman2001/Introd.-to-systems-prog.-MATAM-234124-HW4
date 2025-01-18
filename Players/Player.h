@@ -178,7 +178,7 @@ public:
      * 
      * @param monster A pointer to the monster.
      */
-    void fight(Monster* monster);
+    virtual void fight(Monster* monster);
 
     /**
      * @brief Retrieves the name of the player's job.
@@ -186,5 +186,12 @@ public:
      * @return A string representing the name of the job.
      */
     string getJobName();
+
+    /**
+     * @brief Retrieves the name of the player's job.
+     * 
+     * @return A string representing the name of the job.
+     */
+    string getCharacterName();
 
 };

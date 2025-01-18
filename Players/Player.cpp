@@ -171,4 +171,9 @@ inline bool Player::isFullHealth() const {
 inline bool Player::canPurchase(int price) const {
     return this->job->canPurchase(price);
 }
+
+virtual string Player::getCharacterName(){
+    return this->character->getClassName();
+}
+
 };
