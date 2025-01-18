@@ -29,7 +29,7 @@ Pack::Pack(vector<std::string> monstersString): Monster(0,0,0){
 
     // if(monsters.size() != packSize) error! ?
 }
-void Pack::startEvent(Player* player){
+void Pack::startEvent(Player& player){
     Monster::startEvent(player);
     setNewCombatPower();
 }
@@ -48,10 +48,10 @@ void Pack::setNewCombatPower(){
 }
 
 
-std::string Pack::getName(){
+std::string Pack::getName() const{
     return("Pack");
 }
 
-std::string Pack::getDescription(){
+std::string Pack::getDescription() const{
     return(getName() + " of " + std::to_string(monsters.size()) + " members"+ Monster::getDescription());
 }

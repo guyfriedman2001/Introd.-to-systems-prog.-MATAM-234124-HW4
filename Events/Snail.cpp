@@ -2,13 +2,13 @@
 #include "Snail.h"
 
 Snail::Snail(): Monster(5,2,10){}
-void Snail::startEvent(Player* player){
+void Snail::startEvent(Player& player){
     Monster::startEvent(player);
 }
-std::string Snail::getName(){
+std::string Snail::getName() const{
     return "Snail";
 }
 
-std::string Snail::getDescription(){
+std::string Snail::getDescription()const{
     return(getName() + Monster::getDescription());
 }

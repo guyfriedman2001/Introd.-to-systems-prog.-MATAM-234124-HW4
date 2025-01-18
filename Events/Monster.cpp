@@ -2,14 +2,14 @@
 #include "Monster.h"
 
 Monster::Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damage): CombatPower(CombatPower), Loot(Loot), Damage(Damage){}
-void Monster::startEvent(Player* player){
-    if(CombatPower < player->getCombatPower()){ 
-        player->recieveCoins(Loot);
-        player->levelUp(1);
+void Monster::startEvent(Player& player){
+    if(CombatPower < player.getCombatPower()){ 
+        player.recieveCoins(Loot);
+        player.levelUp(1);
 
     }
     else{
-        player->takeDamage(Damage);
+        player.takeDamage(Damage);
     }
 }
 void Monster::setCombatPower(unsigned int addCombatPower){

@@ -3,12 +3,12 @@
 
 SolarEclipse::SolarEclipse() : effect(1){}
 
-void SolarEclipse::startEvent(Player* player){
-    if(player->getJob()->getClassName() == "Magical"){
-        player->getBuffed(effect);
+void SolarEclipse::startEvent(Player& player){
+    if(player.getJob()->getClassName() == "Magical"){
+        player.getBuffed(effect);
     }
     else{
-        player->getNerfed(effect);
+        player.getNerfed(effect);
     }
 }
 
