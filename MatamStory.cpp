@@ -50,11 +50,16 @@ void MatamStory::playTurn(Player& player) {
 
     /**
      * Steps to implement (there may be more, depending on your design):
-     * 1. Get the next event from the events list
-     * 2. Print the turn details with "printTurnDetails"
-     * 3. Play the event
-     * 4. Print the turn outcome with "printTurnOutcome"
+     * 1. Get the next event from the events list V
+     * 2. Print the turn details with "printTurnDetails" V
+     * 3. Play the event V
+     * 4. Print the turn outcome with "printTurnOutcome" V
     */
+   Event* currentEvent = events[0];
+   events.erase(events.begin());
+   events.push_back(currentEvent);
+   printTurnDetails(m_turnIndex, player,*currentEvent);
+   printTurnOutcome(currentEvent->startEvent(player));
 
     m_turnIndex++;
 }
@@ -87,7 +92,9 @@ bool MatamStory::isGameOver() const {
 void MatamStory::play() {
     printStartMessage();
     /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" =====*/
-
+    for(int i = 0; i < players.size(); i++){
+        printStartPlayerEntry((i+1), players[i]);
+    }
     /*=========================================================================================*/
     printBarrier();
 

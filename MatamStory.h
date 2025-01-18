@@ -11,6 +11,7 @@ class MatamStory{
 private:
     unsigned int m_turnIndex;
     vector<Event*> events;
+    vector<Player> players;
 
     /**
      * Playes a single turn for a player
