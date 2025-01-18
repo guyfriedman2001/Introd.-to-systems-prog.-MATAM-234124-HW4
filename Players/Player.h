@@ -5,7 +5,7 @@
 
 #include "Character.h"
 #include "Job.h"
-#include "Events/Monster.h"
+#include "../Events/Monster.h"
 
 using std::string;
 
