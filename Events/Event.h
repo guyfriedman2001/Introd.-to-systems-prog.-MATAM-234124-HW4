@@ -1,10 +1,14 @@
 
 #pragma once
-#include "EventFactory.h"
+#ifndef EVENT_H
+#define EVENT_H
 #include "../Players/Player.h"
 #include "../Utilities.h"
+#include "EventFactory.h"
 using std::string;
-class EventFactory;
+using std::vector;
+//class EventFactory;
+
 class Event {
     private:
     EventFactory* event;
@@ -20,3 +24,4 @@ public:
     Event() = default;
     virtual ~Event();
 };
+#endif //EVENT_H
