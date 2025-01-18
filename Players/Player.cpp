@@ -41,7 +41,7 @@ void Player::setJob(Job* job){
         return this->job->isFullHealth();
     }
 
-    Character* Player::getCharachter() {
+    Character* Player::getCharacter() {
         return this->character;
     }
 
