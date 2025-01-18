@@ -4,10 +4,14 @@
 SolarEclipse::SolarEclipse() : effect(1){}
 
 void SolarEclipse::startEvent(Player* player){
-    if(player->getJobType() == "Magical"){
-        player->forceUp(effect);  //TODO forceUp() func in player (protected?)
+    if(player->getJob()->getClassName() == "Magical"){
+        player->getBuffed(effect);
     }
     else{
-        player->forceDown(effect);  //TODO forceDown() func in player (protected?)
+        player->getNerfed(effect);
     }
+}
+
+std::string SolarEclipse::getDescription() const{
+    return "SolarEclipse";
 }

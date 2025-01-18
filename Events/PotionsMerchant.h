@@ -8,4 +8,5 @@ class PotionsMerchant :public SpecialEvent{
     public:
     void startEvent(Player* player) override;
     PotionsMerchant();
+    std::string getDescription() const override;
 };
