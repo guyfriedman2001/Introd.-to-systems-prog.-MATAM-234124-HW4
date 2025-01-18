@@ -28,6 +28,8 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     
 
     this->m_turnIndex = 1;
+    this->iswinner = false;
+    this->winner = nullptr;
 }
 
 vector<std::string>& MatamStory::lineToVector(std::string& line){
@@ -107,13 +109,15 @@ void MatamStory::createLeaderBoard(){
     for(int i = 0; i < tempPlayers.size(); i++){
         printLeaderBoardEntry(i+1, players[i]);  
     }
+    this->winner = &tempPlayers[0];
 
 }
 
-bool MatamStory::isGameOver() const {
+bool MatamStory::isGameOver() {
     /*===== TODO: Implement the game over condition =====*/
     for(int i = 0; i < players.size(); i++){
         if(players[i].getLevel() == 10){
+            this->iswinner = true;
             return true;
         }
         if(!players[i].isKOd()){
@@ -139,7 +143,11 @@ void MatamStory::play() {
 
     printGameOver();
     /*===== TODO: Print either a "winner" message or "no winner" message =====*/
-
+    if(iswinner){
+        printWinner(*winner);
+        return;
+    }
+    printNoWinners();
     /*========================================================================*/
 }
 
