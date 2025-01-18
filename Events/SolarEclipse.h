@@ -5,6 +5,7 @@ class SolarEclipse :public SpecialEvent{
     private:
     unsigned int effect;
     public:
-    void startEvent(Player* player) override;
+    string startEvent(Player& player) override;
+    std::string getDescription() const override;
     SolarEclipse();
 };

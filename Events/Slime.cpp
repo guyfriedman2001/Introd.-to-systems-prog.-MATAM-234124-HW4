@@ -2,12 +2,12 @@
 #include "Slime.h"
 
 Slime::Slime(): Monster(15,5,25){}
-void Slime::startEvent(Player* player){
+string Slime::startEvent(Player& player){
     Monster::startEvent(player);
 }
-std::string Slime::getName(){
+std::string Slime::getName()const {
     return "Slime";
 }
-std::string Slime::getDescription(){
+std::string Slime::getDescription() const{
     return(getName() + Monster::getDescription());
 }

@@ -3,38 +3,46 @@
 
 PotionsMerchant::PotionsMerchant() : coins(5){}
 
-void PotionsMerchant::startEvent(Player* player){
-    if((player->getHealthPoints() == player->getMaxHealthPoints())){
-        return;
-    }
-    if(player->getCharacter() == "Responsible"){
-        try{
-            while((player->getHealthPoints() < player->getMaxHealthPoints())) {////TODO getMaxHealthPoints() func in player (protected?)
-                makeDeal(player);
-            }
-        }
-        catch(std::runtime_error e){
-                return;
-        }
-    }
-    if(player->getCharacter() == "RiskTaking"){
-        if(player->getHealthPoints() < 50){
+string PotionsMerchant::startEvent(Player& player){
+    int potions = 0;
+    if(!(player.isFullHealth())){
+        if(player.getCharacter() == "Responsible"){
             try{
-                makeDeal(player);
+                while(!(player.isFullHealth())) {////TODO getMaxHealthPoints() func in player (protected?)
+                    makeDeal(player);
+                    potions++;
+                }
             }
             catch(std::runtime_error e){
-                return;
+                    return getPotionsPurchaseMessage(player, potions);
+            }
+        }
+        if(player.getCharacter() == "RiskTaking"){
+            if(player.getHealthPoints() < 50){
+                try{
+                    makeDeal(player);
+                    potions++;
+                }
+                catch(std::runtime_error e){
+                    return getPotionsPurchaseMessage(player, potions);
+                }
             }
         }
     }
+    return getPotionsPurchaseMessage(player, potions);
 }
 
-void PotionsMerchant::makeDeal(Player* player){
+void PotionsMerchant::makeDeal(Player& player){
     try{
-        player->payCoins(5); 
-        player->heal(10);
+        player.payCoins(5); 
+        player.heal(10);
     }
     catch(std::runtime_error e){
         throw(e);
     }
+}
+
+
+std::string PotionsMerchant::getDescription() const{
+    return "PotionsMerchant";
 }

@@ -28,6 +28,8 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     
 
     this->m_turnIndex = 1;
+    this->iswinner = false;
+    this->winner = nullptr;
 }
 
 vector<std::string>& MatamStory::lineToVector(std::string& line){
@@ -50,11 +52,16 @@ void MatamStory::playTurn(Player& player) {
 
     /**
      * Steps to implement (there may be more, depending on your design):
-     * 1. Get the next event from the events list
-     * 2. Print the turn details with "printTurnDetails"
-     * 3. Play the event
-     * 4. Print the turn outcome with "printTurnOutcome"
+     * 1. Get the next event from the events list V
+     * 2. Print the turn details with "printTurnDetails" V
+     * 3. Play the event V
+     * 4. Print the turn outcome with "printTurnOutcome" V
     */
+   Event* currentEvent = events[0];
+   events.erase(events.begin());
+   events.push_back(currentEvent);
+   printTurnDetails(m_turnIndex, player,*currentEvent);
+   printTurnOutcome(currentEvent->startEvent(player));
 
     m_turnIndex++;
 }
@@ -64,7 +71,11 @@ void MatamStory::playRound() {
     printRoundStart();
 
     /*===== TODO: Play a turn for each player =====*/
-
+    for(int i = 0; i < players.size(); i++){
+        if(!players[i].isKOd()){
+            playTurn(players[i]);
+        }
+    }
     /*=============================================*/
 
     printRoundEnd();
@@ -72,22 +83,57 @@ void MatamStory::playRound() {
     printLeaderBoardMessage();
 
     /*===== TODO: Print leaderboard entry for each player using "printLeaderBoardEntry" =====*/
-
+    createLeaderBoard();
     /*=======================================================================================*/
 
     printBarrier();
 }
 
-bool MatamStory::isGameOver() const {
+bool MatamStory::compare(Player& player1, Player& player2){
+    if(player1.getLevel() > player2.getLevel()){
+        return true;
+    }
+    if(player1.getLevel() == player2.getLevel()){
+        if(player1.getCoins() > player2.getCoins()){
+            return true;
+        }
+        if(player1.getCoins() == player2.getCoins()){
+            return player1.getName() > player2.getName();
+        }
+    }
+    return false;
+}
+void MatamStory::createLeaderBoard(){
+    vector<Player> tempPlayers(players.begin(), players.end());
+    sort(tempPlayers.begin(), tempPlayers.end(), compare);
+    for(int i = 0; i < tempPlayers.size(); i++){
+        printLeaderBoardEntry(i+1, players[i]);  
+    }
+    this->winner = &tempPlayers[0];
+
+}
+
+bool MatamStory::isGameOver() {
     /*===== TODO: Implement the game over condition =====*/
-    return false; // Replace this line
+    for(int i = 0; i < players.size(); i++){
+        if(players[i].getLevel() == 10){
+            this->iswinner = true;
+            return true;
+        }
+        if(!players[i].isKOd()){
+            return false;
+        }
+    }
+    return true;
     /*===================================================*/
 }
 
 void MatamStory::play() {
     printStartMessage();
-    /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" =====*/
-
+    /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" V =====*/
+    for(int i = 0; i < players.size(); i++){
+        printStartPlayerEntry((i+1), players[i]);
+    }
     /*=========================================================================================*/
     printBarrier();
 
@@ -97,6 +143,12 @@ void MatamStory::play() {
 
     printGameOver();
     /*===== TODO: Print either a "winner" message or "no winner" message =====*/
-
+    if(iswinner){
+        printWinner(*winner);
+        return;
+    }
+    printNoWinners();
     /*========================================================================*/
 }
+
+

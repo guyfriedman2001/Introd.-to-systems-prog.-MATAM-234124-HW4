@@ -2,14 +2,14 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#ifndef CHARACHTERMAKER_H
-#define CHARACHTERMAKER_H
+#ifndef CHARACTERMAKER_H
+#define CHARACTERMAKER_H
 #include "Character.h"
 #include <string>
 using std::string;
 
 
-class CharachterMaker {
+class CharacterMaker {
 public:
     static Character* makeCharacter(string character) {
         if (character == "H") {
@@ -22,4 +22,4 @@ public:
 
 
 
-#endif //CHARACHTERMAKER_H
+#endif //CHARACTERMAKER_H

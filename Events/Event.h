@@ -3,6 +3,7 @@
 #include "EventFactory.h"
 #include "../Players/Player.h"
 #include <iostream>
+#include "../Utilities.h"
 
 class Event {
     private:
@@ -13,8 +14,8 @@ public:
      *
      * @return - the description of the event
     */
-    virtual string getDescription() const;
-    virtual void startEvent(Player* player) = 0;
+    virtual string getDescription() const = 0;
+    virtual string startEvent(Player& player) = 0;
     Event(EventFactory* event);
     Event() = default;
 };

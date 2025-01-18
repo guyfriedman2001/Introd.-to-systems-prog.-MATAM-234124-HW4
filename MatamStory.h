@@ -5,12 +5,17 @@
 
 #include "Players/Player.h"
 #include "Events/Event.h"
+#include <algorithm>
+#include <vector>
 
 
 class MatamStory{
 private:
     unsigned int m_turnIndex;
     vector<Event*> events;
+    vector<Player> players;
+    bool iswinner;
+    Player* winner;
 
     /**
      * Playes a single turn for a player
@@ -33,8 +38,10 @@ private:
      *
      * @return - true if the game is over, false otherwise
     */
-    bool isGameOver() const;
+    bool isGameOver();
     vector<std::string>& lineToVector(std::string& line);
+    void createLeaderBoard();
+    bool compare(Player& player1, Player& player2);
 
 public:
     /**
