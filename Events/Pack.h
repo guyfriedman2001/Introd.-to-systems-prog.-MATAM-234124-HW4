@@ -11,4 +11,5 @@ class Pack : public Monster{
     string getName() const override;
     string getDescription()const override;
     void setNewCombatPower();
+    ~Pack();
 };

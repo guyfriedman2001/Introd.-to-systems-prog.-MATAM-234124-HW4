@@ -18,4 +18,5 @@ class Monster : public Encounter{
     unsigned int getDamage()const;
     virtual string getName() const = 0;
     virtual string getDescription() const;
+    virtual ~Monster();
 };

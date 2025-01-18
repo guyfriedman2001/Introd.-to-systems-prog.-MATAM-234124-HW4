@@ -37,3 +37,6 @@ unsigned int Monster::getDamage()const {
 string Monster::getDescription() const{
     return(" (power " + std::to_string(this->getCombatPower()) + ", loot " + std::to_string(this->getLoot()) + ", damage "+ std::to_string(this->getDamage()) + ")");
 }
+Monster::~Monster(){
+    Encounter::~Encounter();
+}

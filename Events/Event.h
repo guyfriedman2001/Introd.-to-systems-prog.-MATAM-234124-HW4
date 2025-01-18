@@ -17,5 +17,6 @@ public:
     virtual string getDescription() const = 0;
     virtual string startEvent(Player& player) = 0;
     Event(EventFactory* event);
+    Event() = default;
     virtual ~Event();
 };

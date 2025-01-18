@@ -55,3 +55,8 @@ std::string Pack::getName() const{
 std::string Pack::getDescription() const{
     return(getName() + " of " + std::to_string(monsters.size()) + " members"+ Monster::getDescription());
 }
+
+Pack::~Pack(){
+    monsters.clear();
+    Monster::~Monster();
+}
