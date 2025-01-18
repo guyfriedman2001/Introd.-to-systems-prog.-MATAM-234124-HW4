@@ -176,4 +176,9 @@ virtual string Player::getCharacterName(){
     return this->character->getClassName();
 }
 
+virtual void Player::levelUp(){
+    this->job->levelUp();
+}
+
+
 };

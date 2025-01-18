@@ -193,5 +193,7 @@ public:
      * @return A string representing the name of the job.
      */
     string getCharacterName();
+    
+    virtual void levelUp();
 
 };

@@ -4,7 +4,7 @@
 
 #ifndef CHARACTERMAKER_H
 #define CHARACTERMAKER_H
-#include "Character.h"
+#include "AllCharacters.h"
 #include <string>
 using std::string;
 
@@ -12,9 +12,11 @@ using std::string;
 class CharacterMaker {
 public:
     static Character* makeCharacter(string character) {
-        if (character == "H") {
+        if (character == "RiskTaking") {
+            return new RiskTaking();
         }
-        else if (character == "HH") {
+        else if (character == "Responsible") {
+            return new Responsible()
         }
         return nullptr;
     }
