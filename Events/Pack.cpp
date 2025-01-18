@@ -1,6 +1,6 @@
 #pragma once
 #include "Pack.h"
-
+#include "EventFactory.h"
 Pack::Pack(vector<std::string> monstersString): Monster(0,0,0){
     int packSize = std::stoi(monstersString[0]);
     if(packSize < 2){
