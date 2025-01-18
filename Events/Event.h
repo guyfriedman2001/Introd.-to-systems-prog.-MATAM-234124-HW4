@@ -4,6 +4,7 @@
 #include "../Players/Player.h"
 #include <iostream>
 #include "../Utilities.h"
+using std::string;
 
 class Event {
     private:
