@@ -7,6 +7,7 @@
 
 #define MAXLEVEL (10)
 #include "../Events/AllEvents.h"
+class Player;
 using std::string;
 
 
@@ -14,6 +15,7 @@ using std::string;
 #define JOB_H
 
 constexpr int MaxRetries = 5;
+
 
 class Job {
 protected:

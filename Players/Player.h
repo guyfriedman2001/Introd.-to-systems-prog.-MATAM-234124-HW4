@@ -72,49 +72,49 @@ public:
      * 
      * @param ammount The number of coins to deduct.
      */
-    virtual void payCoins(int ammount);
+    void payCoins(int ammount);
 
     /**
      * @brief Reduces the player's health by a specified amount of damage.
      * 
      * @param ammount The amount of damage to apply.
      */
-    virtual void takeDamage(int ammount);
+    void takeDamage(int ammount);
 
     /**
      * @brief Adds a specified amount of coins to the player.
      * 
      * @param ammount The number of coins to add.
      */
-    virtual void recieveCoins(int ammount);
+    void recieveCoins(int ammount);
 
     /**
      * @brief Restores the player's health by a specified amount.
      * 
      * @param ammount The number of health points to restore.
      */
-    virtual void heal(int ammount);
+    void heal(int ammount);
 
     /**
      * @brief Checks if the player is knocked out.
      * 
      * @return True if the player is knocked out, false otherwise.
      */
-    virtual inline bool isKOd() const;
+    bool isKOd() const;
 
     /**
      * @brief Retrieves the player's combat power.
      * 
      * @return The player's combat power.
      */
-    virtual unsigned int getCombatPower() const;
+    unsigned int getCombatPower() const;
 
     /**
      * @brief Checks if the player is at full health.
      * 
      * @return True if the player is at full health, false otherwise.
      */
-    virtual inline bool isFullHealth() const;
+    bool isFullHealth() const;
 
     /**
      * @brief Checks if the player can afford a purchase of a specified price.
@@ -122,7 +122,7 @@ public:
      * @param price The price of the item.
      * @return True if the player can afford it, false otherwise.
      */
-    virtual inline bool canPurchase(int price) const;
+    bool canPurchase(int price) const;
 
     /**
      * @brief Assigns a new character to the player.
@@ -178,7 +178,7 @@ public:
      * 
      * @param monster A pointer to the monster.
      */
-    virtual void fight(Monster* monster);
+    void fight(Monster* monster);
 
     /**
      * @brief Retrieves the name of the player's job.
@@ -194,6 +194,6 @@ public:
      */
     string getCharacterName();
     
-    virtual void levelUp();
+    void levelUp();
 
 };

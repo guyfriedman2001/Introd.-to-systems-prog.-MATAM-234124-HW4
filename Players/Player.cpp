@@ -32,7 +32,7 @@ void Player::setJob(Job* job){
 
     Player::Player() = default;
 
-    virtual Player::~Player(){
+    Player::~Player(){
         delete this->character;
         delete this->job;
     }
@@ -72,7 +72,7 @@ void Player::setJob(Job* job){
         this->job->heal(ammount);
     }
 
-    inline bool Player::isKOd() const {
+    bool Player::isKOd() const {
         return this->job->isKOd();
     }
 
@@ -80,11 +80,11 @@ void Player::setJob(Job* job){
         return this->job->getCombatPower();
     }
 
-    inline bool Player::isFullHealth() const {
+    bool Player::isFullHealth() const {
         return this->job->isFullHealth();
     }
 
-    inline bool Player::canPurchase(int price) const {
+    bool Player::canPurchase(int price) const {
         unsigned int newPrice = (unsigned int) price;
         return this->job->canPurchase(newPrice);
     }
@@ -153,19 +153,19 @@ string Player::getJobName(){
     return this->job->getClassName();
 }
 
-virtual inline bool Player::isFullHealth() const {
+bool Player::isFullHealth() const {
     return this->job->isFullHealth();
 }
 
-virtual inline bool Player::canPurchase(int price) const {
+bool Player::canPurchase(int price) const {
     return this->job->canPurchase(price);
 }
 
-virtual string Player::getCharacterName(){
+string Player::getCharacterName(){
     return this->character->getClassName();
 }
 
-virtual void Player::levelUp(){
+void Player::levelUp(){
     this->job->levelUp();
 }
 
