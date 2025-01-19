@@ -85,7 +85,8 @@ void Player::setJob(Job* job){
     }
 
     inline bool Player::canPurchase(int price) const {
-        return this->job->canPurchase(price);
+        unsigned int newPrice = (unsigned int) price;
+        return this->job->canPurchase(newPrice);
     }
 
 string Player::getDescription() const {
@@ -152,11 +153,11 @@ string Player::getJobName(){
     return this->job->getClassName();
 }
 
-inline bool Player::isFullHealth() const {
+virtual inline bool Player::isFullHealth() const {
     return this->job->isFullHealth();
 }
 
-inline bool Player::canPurchase(int price) const {
+virtual inline bool Player::canPurchase(int price) const {
     return this->job->canPurchase(price);
 }
 
