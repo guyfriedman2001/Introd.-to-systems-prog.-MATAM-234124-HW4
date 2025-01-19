@@ -9,7 +9,7 @@ class Pack : public Monster{
     vector<Monster*> monsters;
     //vector<Pack*> packs;
     public:
-    Pack(vector<string>* monstersString);
+    Pack(vector<string> monstersString);
     string startEvent(Player& player) override;
     string getName() const override;
     string getDescription()const override;

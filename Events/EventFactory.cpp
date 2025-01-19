@@ -10,10 +10,9 @@
 // #include "Encounter.h"
 // #include "SpecialEvent.h"
 
-EventFactory::EventFactory(vector<std::string>* eventLineVector): eventLineVector(eventLineVector){}
+EventFactory::EventFactory(vector<std::string> eventLineVector): eventLineVector(eventLineVector){}
 Event* EventFactory::create(){
-    std::string name = (*eventLineVector)[0];
-    std::cout<< name << std::endl;
+    std::string name = eventLineVector[0];
     if(!name.compare("SolarEclipse")){
 
         return new SolarEclipse();
@@ -31,7 +30,7 @@ Event* EventFactory::create(){
         return new Balrog();
     }
     if(!name.compare("Pack")){
-        (*eventLineVector).erase((*eventLineVector).begin());
+        eventLineVector.erase(eventLineVector.begin());
         return new Pack(eventLineVector);
     }
     throw std::runtime_error("invalid event!");
