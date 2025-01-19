@@ -14,7 +14,7 @@ private:
 public:
 
 
-Player::Player(const string& name, Character* character, Job* job){
+Player(const string& name, Character* character, Job* job){
     this->name = string(name);
     this->setCharacter(character);
         this->setJob(job);
@@ -88,30 +88,6 @@ void Player::setJob(Job* job){
         return this->job->canPurchase(price);
     }
 
-    string Player::getDescription() const {
-
-    }
-
-    string Player::getName() const {
-
-    }
-
-    int Player::getLevel() const {
-
-    }
-
-    int Player::getForce() const {
-
-    }
-
-    int Player::getHealthPoints() const {
-
-    }
-
-    int Player::getCoins() const {
-
-    }
-
 string Player::getDescription() const {
     return "//FIXME Player::getDescription";
 }
@@ -124,11 +100,17 @@ int Player::getLevel() const {
     return this->job->getLevel();
 }
 
-int Player::getForce() const;
+int Player::getForce() const {
+    return this->job->getForce();
+}
 
-int Player::getHealthPoints() const;
+int Player::getHealthPoints() const {
+    return this->job->getHealthPoints();
+}
 
-int Player::getCoins() const;
+int Player::getCoins() const {
+    return this->job->getCoins();
+}
 
 Job* Player::getJob(){
     return this->job;
