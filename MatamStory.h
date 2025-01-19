@@ -5,7 +5,6 @@
 
 #include "Players/Player.h"
 #include "Events/Event.h"
-#include "Events/AllEvents.h"
 #include <algorithm>
 #include <vector>
 
