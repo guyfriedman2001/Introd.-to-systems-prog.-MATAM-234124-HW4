@@ -3,3 +3,12 @@
 //
 
 #include "CharacterMaker.h"
+    Character* CharacterMaker::makeCharacter(string character) {
+        if (character == "RiskTaking") {
+            return new RiskTaking();
+        }
+        else if (character == "Responsible") {
+            return new Responsible();
+        }
+        return nullptr;
+    }

@@ -90,7 +90,9 @@ public:
      *
      * @return - description of the player
     */
-    virtual string getDescription() const;
+    virtual string getDescription() const {
+        return "//TODO JOB DESCRIPTION";
+    }
 
 
 
