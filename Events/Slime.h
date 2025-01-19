@@ -1,6 +1,9 @@
-#pragma once
-#include "Monster.h"
+//#pragma once
 
+//class Monster;
+#include "Monster.h"
+#ifndef SLIME_H
+#define SLIME_H
 class Slime : public Monster{
     public:
     Slime();
@@ -8,3 +11,4 @@ class Slime : public Monster{
     std::string getName() const override;
     std::string getDescription() const override;
 };
+#endif //SLIME_H

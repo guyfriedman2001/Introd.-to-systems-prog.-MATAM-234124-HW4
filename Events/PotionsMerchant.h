@@ -1,6 +1,9 @@
-#pragma once
-#include "SpecialEvent.h"
+//#pragma once
 
+//class SpecialEvent;
+#include "SpecialEvent.h"
+#ifndef POTIONSMERCHANT_H
+#define POTIONSMERCHANT_H
 class PotionsMerchant : public SpecialEvent{
     private:
     unsigned int coins;
@@ -10,3 +13,4 @@ class PotionsMerchant : public SpecialEvent{
     PotionsMerchant();
     std::string getDescription() const override;
 };
+#endif //POTIONSMERCHANT_H

@@ -1,5 +1,11 @@
-#pragma once
+//#pragma once
+//#include "../Players/Player.h"
+#include <string>
+#include <vector>
+//class Encounter;
 #include "Encounter.h"
+#ifndef MONSTER_H
+#define MONSTER_H
 class Monster : public Encounter{
     private:
     unsigned int CombatPower;
@@ -20,3 +26,4 @@ class Monster : public Encounter{
     virtual string getDescription() const override;
     virtual ~Monster();
 };
+#endif //MONSTER_H

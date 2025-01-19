@@ -1,13 +1,14 @@
 #pragma once
 #include "EventFactory.h"
-#include "string.h"
 #include "Event.h"
-#include "Snail.h"
-#include "Slime.h"
-#include "Balrog.h"
-#include "Pack.h"
-#include "SolarEclipse.h"
-#include "PotionsMerchant.h"
+// #include "Snail.h"
+// #include "Slime.h"
+// #include "Balrog.h"
+// #include "Pack.h"
+// #include "SolarEclipse.h"
+// #include "PotionsMerchant.h"
+// #include "Encounter.h"
+// #include "SpecialEvent.h"
 
 EventFactory::EventFactory(vector<std::string>* eventLineVector): eventLineVector(eventLineVector){}
 Event* EventFactory::create(){

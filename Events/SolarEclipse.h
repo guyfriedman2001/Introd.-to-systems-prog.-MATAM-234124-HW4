@@ -1,6 +1,8 @@
-#pragma once
+//#pragma once
+//class SpecialEvent;
 #include "SpecialEvent.h"
-
+#ifndef SOLARECLIPSE_H
+#define SOLARECLIPSE_H
 class SolarEclipse :public SpecialEvent{
     private:
     unsigned int effect;
@@ -9,3 +11,4 @@ class SolarEclipse :public SpecialEvent{
     string getDescription() const override;
     SolarEclipse();
 };
+#endif //#include SOLARECLIPSE_H

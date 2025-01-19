@@ -1,11 +1,19 @@
 #pragma once
+#include "Snail.h"
+#include "Slime.h"
+#include "Balrog.h"
+#include "Pack.h"
+#include "SolarEclipse.h"
+#include "PotionsMerchant.h"
+//#include "Encounter.h"
+//#include "SpecialEvent.h"
 #include <iostream>
 #include <vector>
+
+class Event;
 #ifndef EVENTFACTORY_H
 #define EVENTFACTORY_H
-
 using std::vector;
-class Event;
 class EventFactory{
     private:
     vector<std::string>* eventLineVector;

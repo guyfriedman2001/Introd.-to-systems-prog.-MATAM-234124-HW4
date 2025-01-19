@@ -1,7 +1,9 @@
 
 #include "SolarEclipse.h"
 #include "../Utilities.h"
-#include "../Players/Player.h"
+//#include "../Players/Player.h"
+//#include "SpecialEvent.h"
+
 
 SolarEclipse::SolarEclipse() : effect(1){}
 

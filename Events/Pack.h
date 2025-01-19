@@ -1,6 +1,9 @@
-#pragma once
-#include "Monster.h"
+//#pragma once
 
+//class Monster;
+#include "Monster.h"
+#ifndef PACK_H
+#define PACK_H
 class Pack : public Monster{
     private:
     vector<Monster*> monsters;
@@ -13,3 +16,4 @@ class Pack : public Monster{
     void setNewCombatPower();
     ~Pack();
 };
+#endif //PACK_H

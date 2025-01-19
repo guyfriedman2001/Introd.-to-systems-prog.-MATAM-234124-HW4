@@ -2,14 +2,13 @@
 //#pragma once
 
 #include "../Players/Player.h"
-//#include "EventFactory.h"
 #include <string>
 #include <vector>
+#include "EventFactory.h"
 //#include "AllEvents.h"
 
 using std::string;
 using std::vector;
-//class EventFactory;
 #ifndef EVENT_H
 #define EVENT_H
 //class Player;

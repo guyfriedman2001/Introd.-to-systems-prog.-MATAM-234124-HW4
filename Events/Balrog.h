@@ -1,6 +1,8 @@
-#pragma once
+//#pragma once
+//class Monster;
 #include "Monster.h"
-
+#ifndef BALROG_H
+#define BALROG_H
 class Balrog : public Monster{
     public:
     Balrog();
@@ -8,3 +10,4 @@ class Balrog : public Monster{
     std::string getName() const override;
     std::string getDescription() const override;
 };
+#endif //BALROG_H
