@@ -7,7 +7,7 @@
 using std::string;
 
 class Player;
-
+ 
 class Character {
 protected:
     Player* player;
