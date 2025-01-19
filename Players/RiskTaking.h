@@ -4,22 +4,22 @@
 
 
 #include "Character.h"
-#include "Player.h"
+//#include "Player.h"
 using std::string;
 
-
+#ifndef RISKTAKING_H
+#define RISKTAKING_H
 /**
  * @brief Represents the RiskTaking character class, inheriting from the Character base class.
  */
 class RiskTaking : public Character {
-#ifndef RISKTAKING_H
-#define RISKTAKING_H
+
     public:
 
     /**
      * @brief Default constructor for the RiskTaking class.
      */
-    RiskTaking();
+    RiskTaking() = default;
 
     /**
      * @brief Constructs a RiskTaking character associated with a specific player.
@@ -31,7 +31,7 @@ class RiskTaking : public Character {
     /**
      * @brief Destructor for the RiskTaking class.
      */
-    virtual ~RiskTaking();
+    virtual ~RiskTaking() = default;
 
     /**
      * @brief Retrieves the class name of the character.

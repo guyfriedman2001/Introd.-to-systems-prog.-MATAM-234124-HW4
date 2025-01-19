@@ -1,22 +1,22 @@
 
 //#include "Character.h"
 #include "Character.h"
-#include "Player.h"
+//#include "Player.h"
 using std::string;
-
+#ifndef RESPONSIBLE_H
+#define RESPONSIBLE_H
 
 /**
  * @brief Represents the Responsible character class, inheriting from the Character base class.
  */
 class Responsible : public Character {
-#ifndef RESPONSIBLE_H
-#define RESPONSIBLE_H
+
 public:
 
     /**
      * @brief Default constructor for the Responsible class.
      */
-    Responsible();
+    Responsible() = default;
 
 
     /**
@@ -30,7 +30,7 @@ public:
     /**
      * @brief Destructor for the Responsible class.
      */
-    virtual ~Responsible();
+    virtual ~Responsible() = default;
 
     /**
      * @brief Retrieves the class name of the character.

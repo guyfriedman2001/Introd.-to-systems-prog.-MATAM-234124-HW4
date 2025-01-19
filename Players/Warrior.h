@@ -1,10 +1,10 @@
 //
 // Created by Guy Friedman on 16/01/2025.
 //
-
+#include "Strong.h"
 #ifndef WARRIOR_H
 #define WARRIOR_H
-#include "Strong.h"
+
 
 /**
  * @brief Represents the Warrior job class, inheriting from the Strong base class.

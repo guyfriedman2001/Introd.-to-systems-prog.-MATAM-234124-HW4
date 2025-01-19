@@ -2,10 +2,10 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
+
+#include "Magical.h"
 #ifndef MAGICIAN_H
 #define MAGICIAN_H
-#include "Magical.h"
-
 /**
  * @brief Represents a Magician job, a subclass of Magical.
  */

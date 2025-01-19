@@ -1,4 +1,4 @@
-#pragma once
-#include "Character.h"
+//#pragma once
+//#include "Character.h"
 #include "Responsible.h"
 #include "RiskTaking.h"

@@ -2,13 +2,14 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#pragma once
+//#pragma once
 #include<string>
 using std::string;
 class Player;
 
 //#include "Player.h"
-
+#ifndef CHARACTER_H
+#define CHARACTER_H
 class Character {
 protected:
     Player* player;
@@ -25,3 +26,4 @@ public:
     void setPlayer(Player* player);
 
 };
+#endif //CHARACTER_H

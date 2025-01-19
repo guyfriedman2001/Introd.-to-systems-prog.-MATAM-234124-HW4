@@ -6,24 +6,25 @@
 #include <cassert>
 #include <string>
 using std::string;
+#include "JobMaker.h"
 
-// class JobMaker {
-//   public:
-//     static Job* JobMaker::makeJob(string type) {
-//         bool debugBool = true;
+    Job* JobMaker::makeJob(string type) {
+        //bool debugBool = false;
 
-//         if (type == "Magician") {
-//             return new Magician();
-//         } else if (type == "Warrior") {
-//             return new Warrior();
-//         } else if (type == "Archer") {
-//             return new Archer();
-//         }
+        if (type == "Magician") {
+            return new Magician();
+        } else if (type == "Warrior") {
+            return new Warrior();
+        } else if (type == "Archer") {
+            return new Archer();
+        }
+        // else{
+        //     //debugBool= true;
+        // }
 
-//         //if there is no match to any job type
-//         assert(!debugBool);
-//         return nullptr;
+        //if there is no match to any job type
+        //assert(!debugBool);
+        return nullptr;
 
 
-//     }
-// };
+    }

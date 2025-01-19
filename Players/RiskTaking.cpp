@@ -10,20 +10,13 @@ using std::string;
 
 
 
-class RiskTaking : public Character {
-    public:
-
-    RiskTaking::RiskTaking() = default;
-
     RiskTaking::RiskTaking(Player* player) : Character(player) {}
 
-    virtual RiskTaking::~RiskTaking() = default;
-
-    virtual string RiskTaking::getClassName() override {
+    string RiskTaking::getClassName() {
         return "RiskTaking";
     }
 
-    virtual void RiskTaking::tradeMerchant(int price, int healingPower) override {
+    void RiskTaking::tradeMerchant(int price, int healingPower) {
         Player* player = this->player;
         if (player->canPurchase(price)&&(!player->isFullHealth())){
             player->payCoins(price);
@@ -31,7 +24,5 @@ class RiskTaking : public Character {
         }
     }
 
-
-};
 
 

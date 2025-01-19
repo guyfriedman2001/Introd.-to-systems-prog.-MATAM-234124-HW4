@@ -5,7 +5,7 @@
 #ifndef ALLPLAYERS_H
 #define ALLPLAYERS_H
 
-#include "Player.h"
+//#include "Player.h"
 #include "Strong.h"
 #include "Fast.h"
 #include "Magical.h"

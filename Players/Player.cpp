@@ -16,10 +16,15 @@ void Player::setCharacter(Character* character){
     character->setPlayer(this);
 }
 
-void Player::setJob(Job* job){
+void Player::setJob(Job *job)
+{
     this->job = job;
-    job->setPlayer(this);
 }
+
+// void Player::setJob(Job* job){
+//     this->job = job;
+//     job->setPlayer(this);
+// }
 
     Player::~Player(){
         delete this->character;

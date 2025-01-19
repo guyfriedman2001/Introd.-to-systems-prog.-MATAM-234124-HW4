@@ -6,11 +6,10 @@
 #define MIN(a,b) (a<b)?a:b
 
 #define MAXLEVEL (10)
-#include "../Events/AllEvents.h"
-class Player;
+//#include "../Events/AllEvents.h"
+
+#include <iostream>
 using std::string;
-
-
 #ifndef JOB_H
 #define JOB_H
 
@@ -83,14 +82,15 @@ public:
         return "Job";
     }
 
-    virtual void setPlayer(Player* player){}
         
     /**
      * Gets the description of the player
      *
      * @return - description of the player
     */
-    virtual string getDescription() const;
+    virtual string getDescription() const{
+        return "fix job des";
+    }
 
 
 
@@ -128,10 +128,6 @@ public:
     */
     virtual int getCoins() const {
         return this->coins;
-    }
-
-    virtual void fight(Monster* monster){
-        //fixme todo
     }
 
     virtual void levelUp(){

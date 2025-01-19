@@ -2,13 +2,17 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#ifndef PLAYERMAKER_H
-#define PLAYERMAKER_H
 
-#include "Player.h"
+
+//#include "Player.h"
+#include "CharacterMaker.h"
+#include "JobMaker.h"
 #include <string>
 using std::string;
-
+class Player;
+//#include "Player.h"
+#ifndef PLAYERMAKER_H
+#define PLAYERMAKER_H
 /**
  * @brief A utility class for creating Player objects.
  */
@@ -23,11 +27,7 @@ public:
      * @param job The name of the job to associate with the player.
      * @return A pointer to the newly created Player object.
      */
-    static Player* makePlayer(const string& name, const string& character, const string& job) {
-        Job* newjob = JobMaker::makeJob(job);
-        Character* newcharacter = CharacterMaker::makeCharacter(character);
-        return new Player(name, newcharacter, newjob);
-    }
+    static Player* makePlayer(const string& name, const string& character, const string& job);
 };
 
 

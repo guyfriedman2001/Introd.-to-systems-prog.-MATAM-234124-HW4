@@ -1,10 +1,10 @@
 //
 // Created by Guy Friedman on 16/01/2025.
 //
-
+#include "Job.h"
 #ifndef STRONG_H
 #define STRONG_H
-#include "Job.h"
+
 
 /**
  * @brief Represents the Strong job class type, inheriting from the Job base class.

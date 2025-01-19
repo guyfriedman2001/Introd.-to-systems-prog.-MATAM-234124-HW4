@@ -1,18 +1,21 @@
 
-#pragma once
+//#pragma once
 
 #include <string>
 using std::string;
-#include "AllCharacters.h"
-#include "AllJobs.h"
-#include "../Events/Monster.h"
-#include "JobMaker.h"
-#include "CharacterMaker.h"
+// #include "AllCharacters.h"
+// #include "AllJobs.h"
+// #include "../Events/Monster.h"
+// #include "JobMaker.h"
+// #include "CharacterMaker.h"
+#include "Job.h"
+#include "Character.h"
 #include "PlayerMaker.h"
 
 
 
-
+#ifndef PLAYER_H
+#define PLAYER_H
 class Player {
 private:
     string name;
@@ -178,12 +181,12 @@ public:
      */
     void getNerfed(int ammount);
 
-    /**
-     * @brief Engages the player in a fight with a specified monster.
-     * 
-     * @param monster A pointer to the monster.
-     */
-    void fight(Monster* monster);
+    // /**
+    //  * @brief Engages the player in a fight with a specified monster.
+    //  * 
+    //  * @param monster A pointer to the monster.
+    //  */
+    // void fight(Monster* monster);
 
     /**
      * @brief Retrieves the name of the player's job.
@@ -206,3 +209,4 @@ public:
     ~Player();
 
 };
+#endif //PLAYER_H
