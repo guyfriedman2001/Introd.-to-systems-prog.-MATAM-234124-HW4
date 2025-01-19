@@ -21,6 +21,7 @@ public:
      * @brief Default constructor for the Strong job class.
      */
     Strong() : Job() {}
+    string getJobType() override;
 };
 
 

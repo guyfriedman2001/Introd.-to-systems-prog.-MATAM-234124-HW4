@@ -76,10 +76,6 @@ Job* Player::getJob() const {
         return this->job->isFullHealth();
     }
 
-    // bool Player::canPurchase(int price) const {
-    //     unsigned int newPrice = (unsigned int) price;
-    //     return this->job->canPurchase(newPrice);
-    // }
 
     bool Player::canPurchase(int price) const {
     return this->job->canPurchase(price);
@@ -87,7 +83,8 @@ Job* Player::getJob() const {
 
     std::string Player::getDescription() const
     {
-        return "//FIXME Player::getDescription";
+        std::string descriptionStart = (this->getName() + ", " + this->job->getDescription() + " with " + this->character->getDescription());
+        return (descriptionStart + " character (level " + std::to_string(this->getLevel()) + ", force " +std::to_string(this->getForce()) +")" );
     }
 
 
@@ -136,4 +133,8 @@ string Player::getCharacterName(){
 
 void Player::levelUp(){
     this->job->levelUp();
+}
+
+string Player::getJobType(){
+    return this->job->getJobType();
 }

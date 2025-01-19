@@ -40,8 +40,13 @@ public:
     }
 
     virtual void takeDamage(unsigned int ammount) {
-        this->currentHealth -= ammount;
-        this->currentHealth = MAX(0,this->currentHealth);
+        if(this->currentHealth >  ammount){
+            this->currentHealth -= ammount;
+        }
+        else{
+            this->currentHealth = 0;
+        }
+        //this->currentHealth = MAX(0,this->currentHealth);
     }
 
     virtual void recieveCoins(unsigned int ammount) {
@@ -62,8 +67,14 @@ public:
     }
 
     virtual void getNerfed(unsigned int ammount){
-        this->force -= ammount;
-        this->force = MAX(0,this->force);
+        if(this->force >  ammount){
+            this->force -= ammount;
+        }
+        else{
+            this->force = 0;
+        }
+        // this->force -= ammount;
+        // this->force = MAX(0,this->force);
     }
 
     virtual unsigned int getCombatPower() const {
@@ -135,6 +146,7 @@ public:
         this->level = MIN(this->level, MAXLEVEL);
     }
 
+    virtual string getJobType() = 0;
 };
 
 

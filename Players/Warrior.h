@@ -34,6 +34,7 @@ public:
     unsigned int getCombatPower() const override {
         return (this->getForce()*2) + this->getLevel();
     }
+    virtual string getDescription() const override;
 
 };
 

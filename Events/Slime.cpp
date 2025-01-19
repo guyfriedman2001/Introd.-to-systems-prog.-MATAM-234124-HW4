@@ -4,7 +4,7 @@
 // #include "../Players/Player.h"
 // #include <string>
 // #include <vector>
-Slime::Slime(): Monster(15,5,25){}
+Slime::Slime(): Monster(12,5,25){}
 string Slime::startEvent(Player& player){
     return Monster::startEvent(player);
 }

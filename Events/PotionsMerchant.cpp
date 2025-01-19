@@ -8,7 +8,7 @@ PotionsMerchant::PotionsMerchant() : coins(5){}
 string PotionsMerchant::startEvent(Player& player){
     int potions = 0;
     if(!(player.isFullHealth())){
-        if(player.getCharacterName() == "Responsible"){
+        if(!player.getCharacterName().compare("Responsible")){
             try{
                 while(!(player.isFullHealth())) {////TODO getMaxHealthPoints() func in player (protected?)
                     makeDeal(player);
@@ -19,7 +19,7 @@ string PotionsMerchant::startEvent(Player& player){
                     return getPotionsPurchaseMessage(player, potions);
             }
         }
-        if(player.getCharacterName() == "RiskTaking"){
+        if(!player.getCharacterName().compare("RiskTaking")){
             if(player.getHealthPoints() < 50){
                 try{
                     makeDeal(player);

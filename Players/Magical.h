@@ -23,6 +23,7 @@ public:
      * @brief Default constructor for the Magical class.
      */
     Magical() : Job() {};
+    string getJobType() override;
 };
 
 

@@ -17,3 +17,6 @@
     void  Character::setPlayer(Player* player){
         this->player = player;
     }
+string Character::getDescription() const{
+    return "Character::getDescription()";
+}

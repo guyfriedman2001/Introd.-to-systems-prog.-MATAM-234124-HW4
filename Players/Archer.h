@@ -11,6 +11,7 @@ public:
     Archer() : Fast() {
         this->coins = 20;
     }
+    virtual string getDescription() const override;
 };
 
 

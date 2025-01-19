@@ -7,6 +7,9 @@ std::string Monster::startEvent(Player& player){
     if(CombatPower < player.getCombatPower()){ 
         player.recieveCoins(Loot);
         player.levelUp();
+        if(!(player.getJobType().compare("Strong"))){
+            player.takeDamage(10);
+        }
         return getEncounterWonMessage(player, Loot);
 
     }

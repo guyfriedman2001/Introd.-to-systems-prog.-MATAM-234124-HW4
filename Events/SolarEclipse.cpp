@@ -9,7 +9,7 @@ SolarEclipse::SolarEclipse() : effect(1){}
 
 string SolarEclipse::startEvent(Player& player){
     int tempEffect = effect;
-    if(player.getJob()->getClassName() == "Magical"){
+    if(!player.getJobType().compare("Magical")){
         player.getBuffed(effect);
     }
     else{

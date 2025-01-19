@@ -24,5 +24,9 @@ using std::string;
         }
     }
 
+    string RiskTaking::getDescription() const{
+    return "RiskTaking";
+}
+
 
 

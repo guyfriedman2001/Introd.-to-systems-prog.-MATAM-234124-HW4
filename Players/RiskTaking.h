@@ -47,7 +47,7 @@ class RiskTaking : public Character {
      * @param healingPower The amount of health restored per healing action.
      */
     virtual void tradeMerchant(int price, int healingPower) override;
-
+    virtual string getDescription() const override;
 
 };
 

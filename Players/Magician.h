@@ -21,6 +21,8 @@ public:
      * @brief Default constructor for the Magician class.
      */
     Magician() : Magical() {}
+    virtual string getDescription() const override;
+
 };
 
 

@@ -18,7 +18,7 @@ public:
     virtual ~Character() = default;
 
     virtual string getClassName();
-    
+    virtual string getDescription() const;
     Character();
 
     Character(Player* player);

@@ -17,3 +17,6 @@ using std::string;
             player->heal(healingPower);
         }
     }
+    string Responsible::getDescription() const{
+    return "Responsible";
+}

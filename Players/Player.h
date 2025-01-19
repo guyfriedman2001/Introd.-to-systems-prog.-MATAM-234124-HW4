@@ -11,7 +11,6 @@ using std::string;
 #include "Job.h"
 #include "Character.h"
 #include "PlayerMaker.h"
-#include "Job.h"
 
 
 
@@ -208,6 +207,7 @@ public:
     void levelUp();
 
     ~Player();
+    string getJobType();
 
 };
 #endif //PLAYER_H
