@@ -3,7 +3,7 @@
 #include "Event.h"
 #ifndef ENCOUNTER_H
 #define ENCOUNTER_H
-class Encounter :public Event{
+class Encounter : public Event{
     public:
     virtual std::string startEvent(Player& player) = 0;
     virtual std::string getDescription() const = 0;

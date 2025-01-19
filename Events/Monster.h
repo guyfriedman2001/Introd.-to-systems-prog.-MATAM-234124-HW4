@@ -11,7 +11,7 @@ class Monster : public Encounter{
     void setDamage(unsigned int addDamage);
     public:
     Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damage);
-    virtual string startEvent(Player& player) = 0;
+    virtual string startEvent(Player& player) override = 0;
     Monster() = default; //?
     unsigned int getCombatPower() const;
     unsigned int getLoot()const;

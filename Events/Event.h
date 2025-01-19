@@ -1,5 +1,5 @@
 
-#pragma once
+//#pragma once
 
 #include "../Players/Player.h"
 //#include "EventFactory.h"
@@ -9,7 +9,7 @@
 
 using std::string;
 using std::vector;
-class EventFactory;
+//class EventFactory;
 #ifndef EVENT_H
 #define EVENT_H
 //class Player;
