@@ -4,8 +4,8 @@
 
 Balrog::Balrog(): Monster(15, 100, 9001){}
 string Balrog::startEvent(Player& player){
-    Monster::startEvent(player);
     Monster::setCombatPower(2);
+    return Monster::startEvent(player);
 }
 std::string Balrog::getName() const{
     return "Balrog";

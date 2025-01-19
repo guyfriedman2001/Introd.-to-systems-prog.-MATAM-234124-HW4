@@ -5,10 +5,15 @@
 #include "Pack.h"
 #include "SolarEclipse.h"
 #include "PotionsMerchant.h"
+#include "../Players/Player.h"
+#include <string>
+#include "../Utilities.h"
 //#include "Encounter.h"
 //#include "SpecialEvent.h"
 #include <iostream>
 #include <vector>
+using std::string;
+using std::vector;
 
 class Event;
 #ifndef EVENTFACTORY_H

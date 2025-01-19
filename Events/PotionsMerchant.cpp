@@ -1,6 +1,6 @@
 //#pragma once
 #include "PotionsMerchant.h"
-#include "../Utilities.h"
+//#include "../Utilities.h"
 //#include "SpecialEvent.h"
 
 PotionsMerchant::PotionsMerchant() : coins(5){}
@@ -15,7 +15,7 @@ string PotionsMerchant::startEvent(Player& player){
                     potions++;
                 }
             }
-            catch(std::runtime_error e){
+            catch(std::runtime_error* e){
                     return getPotionsPurchaseMessage(player, potions);
             }
         }
@@ -25,7 +25,7 @@ string PotionsMerchant::startEvent(Player& player){
                     makeDeal(player);
                     potions++;
                 }
-                catch(std::runtime_error e){
+                catch(std::runtime_error* e){
                     return getPotionsPurchaseMessage(player, potions);
                 }
             }
@@ -39,7 +39,7 @@ void PotionsMerchant::makeDeal(Player& player){
         player.payCoins(5); 
         player.heal(10);
     }
-    catch(std::runtime_error e){
+    catch(std::runtime_error* e){
         throw(e);
     }
 }

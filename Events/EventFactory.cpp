@@ -1,4 +1,4 @@
-#pragma once
+
 #include "EventFactory.h"
 #include "Event.h"
 // #include "Snail.h"
