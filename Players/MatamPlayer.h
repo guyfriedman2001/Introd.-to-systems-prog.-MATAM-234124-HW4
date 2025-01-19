@@ -1,6 +1,6 @@
-#pragma once;
+#pragma once
 
-#include "Players/Player.h"
+#include "Player.h"
 #include "PlayerAdapter.h"
 
 class MatamPlayer : public PlayerAdapter{
