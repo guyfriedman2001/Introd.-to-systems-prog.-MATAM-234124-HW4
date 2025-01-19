@@ -6,8 +6,8 @@
 #include<string>
 using std::string;
 
-class Player;
- 
+#include "Player.h"
+
 class Character {
 protected:
     Player* player;
