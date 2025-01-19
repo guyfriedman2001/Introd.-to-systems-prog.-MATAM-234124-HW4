@@ -2,10 +2,10 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#ifndef ALLPLAYERS_H
-#define ALLPLAYERS_H
+#ifndef ALLJOBS_H
+#define ALLJOBS_H
 
-#include "Player.h"
+#include "Job.h"
 #include "Strong.h"
 #include "Fast.h"
 #include "Magical.h"
@@ -14,4 +14,4 @@
 #include "Archer.h"
 
 
-#endif //ALLPLAYERS_H
+#endif //ALLJOBS_H

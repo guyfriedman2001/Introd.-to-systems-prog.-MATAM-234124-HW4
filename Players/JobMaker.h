@@ -2,6 +2,7 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 #pragma once
+#include "Job.h"
 #include "AllJobs.h"
 #include <cassert>
 #include <string>

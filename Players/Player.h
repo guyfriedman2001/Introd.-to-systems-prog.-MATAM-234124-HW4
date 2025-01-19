@@ -9,6 +9,7 @@ using std::string;
 #include "JobMaker.h"
 #include "CharacterMaker.h"
 #include "PlayerMaker.h"
+#include "Job.h"
 
 
 
