@@ -1,5 +1,4 @@
-#ifndef RESPONSIBLE_H
-#define RESPONSIBLE_H
+
 //#include "Character.h"
 #include "Character.h"
 #include "Player.h"
@@ -10,6 +9,8 @@ using std::string;
  * @brief Represents the Responsible character class, inheriting from the Character base class.
  */
 class Responsible : public Character {
+#ifndef RESPONSIBLE_H
+#define RESPONSIBLE_H
 public:
 
     /**

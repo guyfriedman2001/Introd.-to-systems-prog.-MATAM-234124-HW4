@@ -2,8 +2,7 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#ifndef RISKTAKING_H
-#define RISKTAKING_H
+
 #include "Character.h"
 #include "Player.h"
 using std::string;
@@ -13,6 +12,8 @@ using std::string;
  * @brief Represents the RiskTaking character class, inheriting from the Character base class.
  */
 class RiskTaking : public Character {
+#ifndef RISKTAKING_H
+#define RISKTAKING_H
     public:
 
     /**
