@@ -4,6 +4,7 @@
 #include "Utilities.h"
 #include <fstream>
 
+
 MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) {
 
     /*===== TODO: Open and read events file =====*/
@@ -11,16 +12,22 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     std::string line;
     vector<std::string> eventLines;
     while(std::getline(eventsStream, line)){
-        eventLines.push_back(line);
+        EventFactory tempEvent = EventFactory(lineToVector(line));
+        this->events.push_back(tempEvent.create()); 
+        //eventLines.push_back(line);
+    }
+
+    for(auto event :events){
+        std::cout << event->getDescription() << std::endl;
     }
     // for(int i = 0; i< eventLines.size(); i++){
     //     EventFactory tempEvent = EventFactory(lineToVector(eventLines[i]));
     //     this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
     // }
-    for(auto eventLine : eventLines){
-        EventFactory tempEvent = EventFactory(lineToVector(eventLine));
-        this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
-    }
+    // for(auto eventLine : eventLines){
+    //     EventFactory tempEvent = EventFactory(lineToVector(eventLine));
+    //     this->events.push_back(tempEvent.create()); //maybe do tamplate? for both event & player
+    // }
 
     // for(auto iter = eventLines.begin(); iter != eventLines.end(); iter++){
     //     EventFactory tempEvent = EventFactory(lineToVector(*iter));
@@ -33,6 +40,15 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     /*===== TODO: Open and Read players file =====*/
 
     /*============================================*/
+    // while(std::getline(playersStream, line)){
+    //     // vector<std::string>* linee = lineToVector(line);
+    //     // Player* pl = PlayerMaker::makePlayer((*linee)[0], (*linee)[1], (*linee)[2]);
+    //     // this->players.push_back(*pl); 
+    //     Player pl = Player(line);
+    //     this->players.push_back(pl);
+    // }
+    
+
 
     
 
@@ -57,7 +73,7 @@ vector<std::string>* MatamStory::lineToVector(std::string& line){
     
     for(int i = 0 ; line[i] != '\0'; i++){
         char letter = line[i];
-        if(letter ==' ' || word.length() != 0){
+        if((letter ==' ') || (word.length() != 0)){
             eventLineVector->push_back(word);
             word = "";
         }
