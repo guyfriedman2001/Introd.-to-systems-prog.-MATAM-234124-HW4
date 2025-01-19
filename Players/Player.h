@@ -3,9 +3,13 @@
 
 #include <string>
 using std::string;
-#include "Character.h"
-#include "Job.h"
+#include "AllCharacters.h"
+#include "AllJobs.h"
 #include "../Events/Monster.h"
+#include "JobMaker.h"
+#include "CharacterMaker.h"
+#include "PlayerMaker.h"
+
 
 
 

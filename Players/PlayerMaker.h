@@ -5,8 +5,6 @@
 #ifndef PLAYERMAKER_H
 #define PLAYERMAKER_H
 
-#include "JobMaker.h"
-#include "CharacterMaker.h"
 #include "Player.h"
 #include <string>
 using std::string;
