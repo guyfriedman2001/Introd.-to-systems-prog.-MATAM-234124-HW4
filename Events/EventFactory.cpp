@@ -12,23 +12,50 @@
 
 EventFactory::EventFactory(vector<std::string>* eventLineVector): eventLineVector(eventLineVector){}
 Event* EventFactory::create(){
-    if((*eventLineVector)[0] == "SolarEclipse"){
+    std::string name = (*eventLineVector)[0];
+    std::cout<< name << std::endl;
+    if(!name.compare("SolarEclipse")){
+
         return new SolarEclipse();
     }
-    if((*eventLineVector)[0] == "PotionsMerchant"){
+    if(!name.compare("PotionsMerchant")){
         return new PotionsMerchant();
     }
-    if((*eventLineVector)[0] == "Snail"){
+    if(!name.compare("Snail")){
         return new Snail();
     }
-    if((*eventLineVector)[0] == "Slime"){
+    if(!name.compare("Slime")){
         return new Slime();
     }
-    if((*eventLineVector)[0] == "Balrog"){
+    if(!name.compare("Balrog")){
         return new Balrog();
     }
-    if((*eventLineVector)[0] == "Pack"){
+    if(!name.compare("Pack")){
+        (*eventLineVector).erase((*eventLineVector).begin());
         return new Pack(eventLineVector);
     }
     throw std::runtime_error("invalid event!");
 }
+
+// if((*eventLineVector)[0] == "SolarEclipse"){
+
+//         return new SolarEclipse();
+//     }
+//     if((*eventLineVector)[0] == "PotionsMerchant"){
+//         return new PotionsMerchant();
+//     }
+//     if((*eventLineVector)[0] == "Snail"){
+//         std::cout<<"here snail" <<std::endl;
+//         return new Snail();
+//     }
+//     if((*eventLineVector)[0] == "Slime"){
+//         return new Slime();
+//     }
+//     if((*eventLineVector)[0] == "Balrog"){
+//         return new Balrog();
+//     }
+//     if((*eventLineVector)[0] == "Pack"){
+//         (*eventLineVector).erase((*eventLineVector).begin());
+//         return new Pack(eventLineVector);
+//     }
+//     throw std::runtime_error("invalid event!");

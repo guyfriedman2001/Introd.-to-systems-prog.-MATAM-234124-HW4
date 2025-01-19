@@ -3,7 +3,7 @@
 #include "EventFactory.h"
 //#include "Monster.h"
 Pack::Pack(vector<string>* monstersString): Monster(0,0,0){
-    int packSize = std::stoi((*monstersString)[1]);
+    int packSize = std::stoi((*monstersString)[0]);
     if(packSize < 2){
         //throw error!
     }
