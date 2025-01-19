@@ -1,6 +1,7 @@
 #pragma once
-#include "Character.h"
+//#include "Character.h"
 #include "Player.h"
+#include "Character.h"
 using std::string;
 
 
@@ -13,7 +14,7 @@ public:
     /**
      * @brief Default constructor for the Responsible class.
      */
-    Responsible() = default;
+    Responsible();
 
 
     /**
@@ -21,22 +22,20 @@ public:
      * 
      * @param player The player associated with this character.
      */
-    Responsible(Player* player) : Character(player) {}
+    Responsible(Player* player);
 
 
     /**
      * @brief Destructor for the Responsible class.
      */
-    virtual ~Responsible() = default;
+    virtual ~Responsible();
 
     /**
      * @brief Retrieves the class name of the character.
      * 
      * @return The string "Responsible", representing the class name.
      */
-    virtual string getClassName() override {
-        return "Responsible";
-    }
+    virtual string getClassName() override;
 
     /**
      * @brief Handles trading with a merchant by paying for healing until the player's health is full or coins are insufficient.
@@ -44,11 +43,5 @@ public:
      * @param price The cost of each healing action.
      * @param healingPower The amount of health restored per healing action.
      */
-    virtual void tradeMerchant(int price, int healingPower) override {
-        Player* player = this->player;
-        while (player->canPurchase(price)&&(!player->isFullHealth())){
-            player->payCoins(price);
-            player->heal(healingPower);
-        }
-    }
+    virtual void tradeMerchant(int price, int healingPower) override;
 };
