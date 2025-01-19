@@ -21,9 +21,9 @@ class Event;
 using std::vector;
 class EventFactory{
     private:
-    vector<std::string>* eventLineVector;
+    vector<std::string> eventLineVector;
     public:
-    EventFactory(vector<std::string>* eventLineVector);
+    EventFactory(vector<std::string> eventLineVector);
     Event* create();
 };
 

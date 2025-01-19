@@ -2,13 +2,13 @@
 #include "Pack.h"
 #include "EventFactory.h"
 //#include "Monster.h"
-Pack::Pack(vector<string>* monstersString): Monster(0,0,0){
-    int packSize = std::stoi((*monstersString)[0]);
+Pack::Pack(vector<string> monstersString): Monster(0,0,0){
+    int packSize = std::stoi(monstersString[0]);
     if(packSize < 2){
         //throw error!
     }
-    monstersString->erase(monstersString->begin());
-    for(auto iter = monstersString->begin(); iter != monstersString->end(); iter++){
+    monstersString.erase(monstersString.begin());
+    for(auto iter = monstersString.begin(); iter != monstersString.end(); iter++){
         EventFactory newEvent = EventFactory(monstersString);
         monsters.push_back(dynamic_cast<Monster*>(newEvent.create()));
         // Monster::setCombatPower(monsters[j]->getCombatPower());
