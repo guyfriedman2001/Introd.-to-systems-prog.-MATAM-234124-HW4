@@ -3,21 +3,12 @@
 //
 
 #include "Player.h"
-using std::string;
-
-class Player {
-private:
-    string name;
-    Character* character;
-    Job* job;
-
-public:
 
 
-Player(const string& name, Character* character, Job* job){
+Player::Player(const string& name, Character* character, Job* job){
     this->name = string(name);
     this->setCharacter(character);
-        this->setJob(job);
+    this->setJob(job);
 }
 
 void Player::setCharacter(Character* character){
@@ -30,15 +21,9 @@ void Player::setJob(Job* job){
     job->setPlayer(this);
 }
 
-    Player::Player() = default;
-
     Player::~Player(){
         delete this->character;
         delete this->job;
-    }
-
-    bool Player::isFullHealth() {
-        return this->job->isFullHealth();
     }
 
     Character* Player::getCharacter() {
@@ -48,7 +33,13 @@ void Player::setJob(Job* job){
     Job* Player::getJob() {
         return this->job;
     }
-    string getName() {
+
+Job* Player::getJob() const {
+    return this->job;
+}
+
+    string Player::getName() const{
+        return this->name;
 
     }
 
@@ -76,26 +67,24 @@ void Player::setJob(Job* job){
         return this->job->isKOd();
     }
 
-    unsigned int Player::getCombatPower() const {
-        return this->job->getCombatPower();
-    }
-
     bool Player::isFullHealth() const {
         return this->job->isFullHealth();
     }
 
+    // bool Player::canPurchase(int price) const {
+    //     unsigned int newPrice = (unsigned int) price;
+    //     return this->job->canPurchase(newPrice);
+    // }
+
     bool Player::canPurchase(int price) const {
-        unsigned int newPrice = (unsigned int) price;
-        return this->job->canPurchase(newPrice);
+    return this->job->canPurchase(price);
+}
+
+    std::string Player::getDescription() const
+    {
+        return "//FIXME Player::getDescription";
     }
 
-string Player::getDescription() const {
-    return "//FIXME Player::getDescription";
-}
-
-string Player::getName() const {
-    return this->name;
-}
 
 int Player::getLevel() const {
     return this->job->getLevel();
@@ -109,31 +98,13 @@ int Player::getHealthPoints() const {
     return this->job->getHealthPoints();
 }
 
-int Player::getCoins() const {
-    return this->job->getCoins();
-}
-
-Job* Player::getJob(){
-    return this->job;
-}
-
-Job* Player::getJob() const {
-    return this->job;
-}
 
 int Player::getMaxHealth(){
     return this->job->getMaxHealth();
 }
 
-void Player::recieveCoins(int ammount){
-    this->job->recieveCoins(ammount);
-}
 
-void Player::payCoins(int ammount){
-    this->job->payCoins(ammount);
-}
-
-int Player::getCoins(){
+int Player::getCoins() const{
     return this->job->getCoins();
 }
 
@@ -145,21 +116,14 @@ void Player::getNerfed(int ammount){
     this->job->getNerfed(ammount);
 }
 
-void Player::fight(Monster* monster){
-    this->job->fight(monster);
-}
+// void Player::fight(Monster* monster){
+//     this->job->fight(monster);
+// }
 
 string Player::getJobName(){
     return this->job->getClassName();
 }
 
-bool Player::isFullHealth() const {
-    return this->job->isFullHealth();
-}
-
-bool Player::canPurchase(int price) const {
-    return this->job->canPurchase(price);
-}
 
 string Player::getCharacterName(){
     return this->character->getClassName();
@@ -168,6 +132,3 @@ string Player::getCharacterName(){
 void Player::levelUp(){
     this->job->levelUp();
 }
-
-
-};

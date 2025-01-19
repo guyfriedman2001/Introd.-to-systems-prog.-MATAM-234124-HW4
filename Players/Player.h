@@ -2,12 +2,12 @@
 #pragma once
 
 #include <string>
-
+using std::string;
 #include "Character.h"
 #include "Job.h"
 #include "../Events/Monster.h"
 
-using std::string;
+
 
 class Player {
 private:
@@ -16,6 +16,7 @@ private:
     Job* job;
     
 public:
+
     /**
      * @brief Constructs a new Player object.
      * 
@@ -193,7 +194,11 @@ public:
      * @return A string representing the name of the job.
      */
     string getCharacterName();
+
+    Character* getCharacter();
     
     void levelUp();
+
+    ~Player();
 
 };
