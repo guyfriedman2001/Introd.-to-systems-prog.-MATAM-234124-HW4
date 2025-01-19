@@ -1,7 +1,8 @@
-#pragma once
+#ifndef RESPONSIBLE_H
+#define RESPONSIBLE_H
 //#include "Character.h"
-#include "Player.h"
 #include "Character.h"
+#include "Player.h"
 using std::string;
 
 
@@ -45,3 +46,5 @@ public:
      */
     virtual void tradeMerchant(int price, int healingPower) override;
 };
+
+#endif //RESPONSIBLE_H
