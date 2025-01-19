@@ -23,11 +23,7 @@ public:
      * @param job The name of the job to associate with the player.
      * @return A pointer to the newly created Player object.
      */
-    static Player* makePlayer(const string& name, const string& character, const string& job) {
-        Job* newjob = JobMaker::makeJob(job);
-        Character* newcharacter = CharacterMaker::makeCharacter(character);
-        return new Player(name, newcharacter, newjob);
-    }
+    static Player* makePlayer(const string& name, const string& character, const string& job);
 };
 
 
