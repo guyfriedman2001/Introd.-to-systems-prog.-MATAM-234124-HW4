@@ -2,5 +2,18 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#pragma once
+//#pragma once
+#include "Character.h"
+#include "Player.h"
 
+    string Character::getClassName(){
+        return "Character";
+    }
+    
+     Character::Character(){}
+
+     Character::Character(Player* player) : player(player) {}
+
+    void  Character::setPlayer(Player* player){
+        this->player = player;
+    }

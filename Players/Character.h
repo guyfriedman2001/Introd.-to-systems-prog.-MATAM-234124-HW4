@@ -6,7 +6,8 @@
 #include<string>
 using std::string;
 
-#include "Player.h"
+//#include "Player.h"
+class Player;
 
 class Character {
 protected:
@@ -15,16 +16,12 @@ public:
     virtual void tradeMerchant(int price, int healingPower) = 0;
     virtual ~Character() = default;
 
-    virtual string getClassName(){
-        return "Character";
-    }
+    virtual string getClassName();
     
-    Character(){}
+    Character();
 
-    Character(Player* player) : player(player) {}
+    Character(Player* player);
 
-    void setPlayer(Player* player){
-        this->player = player;
-    }
+    void setPlayer(Player* player);
 
 };
