@@ -100,7 +100,7 @@ public:
      * 
      * @return True if the player is knocked out, false otherwise.
      */
-    virtual inline bool isKOd() const;
+    virtual bool isKOd() const;
 
     /**
      * @brief Retrieves the player's combat power.
@@ -114,7 +114,7 @@ public:
      * 
      * @return True if the player is at full health, false otherwise.
      */
-    virtual inline bool isFullHealth() const;
+    virtual bool isFullHealth() const;
 
     /**
      * @brief Checks if the player can afford a purchase of a specified price.
@@ -122,7 +122,7 @@ public:
      * @param price The price of the item.
      * @return True if the player can afford it, false otherwise.
      */
-    virtual inline bool canPurchase(int price) const;
+    virtual bool canPurchase(int price) const;
 
     /**
      * @brief Assigns a new character to the player.
