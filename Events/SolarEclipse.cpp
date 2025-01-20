@@ -13,8 +13,14 @@ string SolarEclipse::startEvent(Player& player){
         player.getBuffed(effect);
     }
     else{
+        int tempPlayerForce =  player.getForce();
         player.getNerfed(effect);
-        tempEffect *= -1;
+        if(player.getForce() != tempPlayerForce){
+            tempEffect *= -1;
+        }
+        else{
+            tempEffect = 0;
+        }
     }
     return getSolarEclipseMessage(player, tempEffect);
 }

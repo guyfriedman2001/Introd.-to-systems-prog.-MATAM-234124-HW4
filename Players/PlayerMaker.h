@@ -8,7 +8,9 @@
 #include "CharacterMaker.h"
 #include "JobMaker.h"
 #include <string>
+#include <vector>
 using std::string;
+using std::vector;
 class Player;
 //#include "Player.h"
 #ifndef PLAYERMAKER_H
@@ -28,6 +30,7 @@ public:
      * @return A pointer to the newly created Player object.
      */
     static Player* makePlayer(const string& name, const string& character, const string& job);
+    static Player* makePlayer(vector<std::string> characterVector);
 };
 
 

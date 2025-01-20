@@ -33,7 +33,7 @@ Event* EventFactory::create(){
         eventLineVector.erase(eventLineVector.begin());
         return new Pack(eventLineVector);
     }
-    throw std::runtime_error("invalid event!");
+    throw std::runtime_error("Invalid Events File");
 }
 
 // if((*eventLineVector)[0] == "SolarEclipse"){

@@ -9,12 +9,21 @@
 MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) {
 
     /*===== TODO: Open and read events file =====*/
-
+    bool emptyCheck = true;
     std::string line;
     vector<std::string> eventLines;
-    while(std::getline(eventsStream, line)){
-        EventFactory tempEvent = EventFactory(lineToVector(line));
-        this->events.push_back(tempEvent.create()); 
+    try{
+        while(std::getline(eventsStream, line)){
+            emptyCheck = false;
+            EventFactory tempEvent = EventFactory(lineToVector(line));
+            this->events.push_back(tempEvent.create()); 
+        }
+    }
+    catch(std::runtime_error& e){
+        throw e;
+    }
+    if(emptyCheck){
+        throw std::runtime_error("Invalid Events File");
     }
 
     // for(auto event :events){
@@ -27,10 +36,20 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     /*===== TODO: Open and Read players file =====*/
 
     /*============================================*/
-    
-    while(std::getline(playersStream, line)){
-        vector<std::string> linee = lineToVector(line);
-        this->players.push_back(PlayerMaker::makePlayer(linee[0], linee[2], linee[1])); 
+    emptyCheck = true;
+    try{
+        while(std::getline(playersStream, line)){
+            emptyCheck = false;
+            this->players.push_back(PlayerMaker::makePlayer(lineToVector(line))); 
+
+            //this->players.push_back(PlayerMaker::makePlayer(linee[0], linee[2], linee[1])); 
+        }
+    }
+    catch(std::runtime_error& e){
+        throw e;
+    }
+    if(emptyCheck){
+        throw std::runtime_error("Invalid Players File");
     }
 
     // for(auto player :players){
