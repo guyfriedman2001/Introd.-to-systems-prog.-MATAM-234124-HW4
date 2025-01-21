@@ -12,7 +12,7 @@
 using std::string;
 #include "Job.h"
 
-constexpr int MaxRetries = 5;
+
 
 
 
