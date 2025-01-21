@@ -4,6 +4,7 @@
 #include "Monster.h"
 #include <vector>
 #include <memory>
+
 #ifndef PACK_H
 #define PACK_H
 class Pack : public Monster{
@@ -11,7 +12,7 @@ class Pack : public Monster{
     std::vector<std::shared_ptr<Monster>> monsters;
     //vector<Pack*> packs;
     public:
-    Pack(vector<string> monstersString);
+    Pack(vector<string>& monstersString, int& packSize);
     string startEvent(Player& player) override;
     string getName() const override;
     string getDescription()const override;

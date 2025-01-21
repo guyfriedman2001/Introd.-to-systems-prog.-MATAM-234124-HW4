@@ -2,15 +2,42 @@
 #include "Pack.h"
 #include "EventFactory.h"
 //#include "Monster.h"
-Pack::Pack(vector<string> monstersString): Monster(0,0,0){
-    int packSize = std::stoi(monstersString[0]);
-    if(packSize < 2){
-        //throw error!
+Pack::Pack(vector<string>& monstersString ,int& packSize): Monster(0,0,0){
+    //std::cout << packSize << "1inpack ctor" << std::endl;
+    std::vector<std::shared_ptr<Event>> tempMonsters;
+//std::cout << packSize << "inpack ctoggggggr" << std::endl;
+    EventFactory::create(monstersString, &tempMonsters);
+    //std::cout << packSize << "inpack ctohhhhr" << std::endl;
+    for(auto monster = tempMonsters.begin() ; monster < (tempMonsters.begin() + packSize) ; monster++){
+        auto monsterptr = std::dynamic_pointer_cast<Monster>(*monster);
+        if(monsterptr){
+        this->monsters.push_back(monsterptr);
+        //std::cout << monsterptr->getName() << "1inpack ctor" << std::endl;
+        }
+        else{
+            throw std::runtime_error("Invalid Events File");
+        } 
     }
-    monstersString.erase(monstersString.begin());
-    for(auto monster : monstersString){
-        this->monsters.push_back(std::shared_ptr<Monster>(dynamic_cast<Monster*>(EventFactory::eventFactory(monstersString))));
-    }
+
+    // for(int i = 0; i < packSize ; i++){
+    //     for(const auto& monster : tempMonsters){
+    //         auto monsterptr = std::dynamic_pointer_cast<Monster>(monster);
+    //         if(monsterptr){
+    //             this->monsters.push_back(monsterptr);
+    //         }
+    //         else{
+    //             throw std::runtime_error("pack Invalid Events File");
+    //         }
+    //         //this->monsters.push_back(std::dynamic_pointer_cast<Monster>(monster));
+            
+    //     }
+    // }
+    
+    packSize = monsters.size();
+    //std::cout << packSize << "inpack ctor2" << std::endl;
+    // for(auto monster : monstersString){
+    //     EventFactory::create(monstersString, monsters);
+    // }
     // for(auto iter = monstersString.begin(); iter != monstersString.end(); iter++){
     //     this->monsters.push_back(std::shared_ptr<Monster>(dynamic_cast<Monster*>(EventFactory::eventFactory(monstersString))));
     //     //EventFactory newEvent = EventFactory(monstersString);
@@ -20,11 +47,19 @@ Pack::Pack(vector<string> monstersString): Monster(0,0,0){
     //     // Monster::setDamage(monsters[j]->getDamage());
     //     //monstersString->erase(monstersString->begin());
     // }
-    for(auto monster : monsters){
-        setCombatPower(monster->getCombatPower());
-        setLoot(monster->getLoot());
-        setDamage(monster->getDamage());
+    int totalCombatPower = 0;
+    int totalLoot = 0;
+    int totalDamage = 0;
+
+    for(const auto& monster : monsters){
+        totalCombatPower += monster->getCombatPower();
+        totalLoot += monster->getLoot();
+        totalDamage += monster->getDamage();
     }
+    setCombatPower(totalCombatPower);
+    setLoot(totalLoot);
+    setDamage(totalDamage);
+
     // for(auto iter = monsters.begin(); iter != monsters.end(); iter++){
     //     Monster::setCombatPower((*iter)->getCombatPower());
     //     Monster::setLoot((*iter)->getLoot());
@@ -62,16 +97,19 @@ string Pack::startEvent(Player& player){
     
 
 void Pack::setNewCombatPower(){
+    int totalCombatPower = 0;
     for(auto monster : monsters){
-        if(monster->getName() == "Balrog"){
-            setCombatPower(2); 
+        if(monster->getName() == "Balrog"){ 
+            monster->setCombatPower(monster->getCombatPower() + 2); 
         }
-        if(monster->getName() == "Pack"){
+        else if(monster->getName() == "Pack"){
             //int pastCombatPower =  monster->getCombatPower();
             monster->setNewCombatPower();
             //Monster::setCombatPower(monster->getCombatPower() - pastCombatPower);
         }
+        totalCombatPower += monster->getCombatPower();
     }
+    setCombatPower(totalCombatPower); 
     // for(auto iter = monsters.begin(); iter != monsters.end(); iter++){
     //     if((*iter)->getName() == "Balrog"){
     //         Monster::setCombatPower(2); 
@@ -94,6 +132,6 @@ string Pack::getDescription() const{
 }
 
 Pack::~Pack(){
-    monsters.clear();
-    Monster::~Monster();
+    //monsters.clear();
+    //Monster::~Monster();
 }

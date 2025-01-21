@@ -20,13 +20,15 @@ class Event;
 #ifndef EVENTFACTORY_H
 #define EVENTFACTORY_H
 using std::vector;
+
 class EventFactory{
     private:
     //vector<std::string> eventLineVector;
     public:
     //EventFactory(vector<std::string> eventLineVector);
-    static Event* eventFactory(vector<std::string> eventLineVector);
-    //create();
+    //static Event* eventFactory(vector<std::string> eventLineVector);
+    static void create(vector<std::string>& eventLineVector, vector<std::shared_ptr<Event>>* events);
+
 };
 
 #endif //EVENTFACTORY_H
