@@ -6,7 +6,7 @@
 #define POTIONSMERCHANT_H
 class PotionsMerchant : public SpecialEvent{
     private:
-    unsigned int coins;
+    int coins;
     void makeDeal(Player& player);
     public:
     string startEvent(Player& player) override;

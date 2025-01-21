@@ -5,7 +5,7 @@
 #define SOLARECLIPSE_H
 class SolarEclipse :public SpecialEvent{
     private:
-    unsigned int effect;
+    int effect;
     public:
     string startEvent(Player& player) override;
     string getDescription() const override;

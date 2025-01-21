@@ -10,9 +10,41 @@
 // #include "Encounter.h"
 // #include "SpecialEvent.h"
 
-EventFactory::EventFactory(vector<std::string> eventLineVector): eventLineVector(eventLineVector){}
-Event* EventFactory::create(){
+// EventFactory::EventFactory(vector<std::string> eventLineVector): eventLineVector(eventLineVector){}
+// Event* EventFactory::create(){
+//     std::string name = eventLineVector[0];
+//     if(!name.compare("SolarEclipse")){
+
+//         return new SolarEclipse();
+//     }
+//     if(!name.compare("PotionsMerchant")){
+//         return new PotionsMerchant();
+//     }
+//     if(!name.compare("Snail")){
+//         return new Snail();
+//     }
+//     if(!name.compare("Slime")){
+//         return new Slime();
+//     }
+//     if(!name.compare("Balrog")){
+//         return new Balrog();
+//     }
+//     if(!name.compare("Pack")){
+//         eventLineVector.erase(eventLineVector.begin());
+//         return new Pack(eventLineVector);
+//     }
+//     throw std::runtime_error("Invalid Events File");
+// }
+
+Event* EventFactory::eventFactory(vector<std::string> eventLineVector){
     std::string name = eventLineVector[0];
+    if(!name.compare("Pack")){
+        eventLineVector.erase(eventLineVector.begin());
+        return new Pack(eventLineVector);
+    }
+    if( eventLineVector.size() != 1){
+        throw std::runtime_error("Invalid Events File");
+    }
     if(!name.compare("SolarEclipse")){
 
         return new SolarEclipse();
@@ -29,11 +61,8 @@ Event* EventFactory::create(){
     if(!name.compare("Balrog")){
         return new Balrog();
     }
-    if(!name.compare("Pack")){
-        eventLineVector.erase(eventLineVector.begin());
-        return new Pack(eventLineVector);
-    }
     throw std::runtime_error("Invalid Events File");
+
 }
 
 // if((*eventLineVector)[0] == "SolarEclipse"){

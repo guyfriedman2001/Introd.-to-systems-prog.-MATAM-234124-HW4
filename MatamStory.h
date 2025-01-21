@@ -7,15 +7,17 @@
 #include "Events/Event.h"
 #include <algorithm>
 #include <vector>
+#include <memory>
+using std::shared_ptr;
 
 
 class MatamStory{
 private:
     unsigned int m_turnIndex;
-    vector<Event*> events;
-    vector<Player*> players;
+    vector<shared_ptr<Event>> events;
+    vector<shared_ptr<Player>> players;
     bool iswinner;
-    Player* winner;
+    shared_ptr<Player> winner;
 
     /**
      * Playes a single turn for a player
@@ -41,7 +43,7 @@ private:
     bool isGameOver();
     vector<std::string> lineToVector(std::string line);
     void createLeaderBoard();
-    static bool compare(Player* player1, Player* player2);
+    static bool compare(shared_ptr<Player> player1, shared_ptr<Player> player2);
 
 public:
     /**
@@ -61,4 +63,5 @@ public:
      * @return - void
     */
     void play();
+    ~MatamStory();
 };

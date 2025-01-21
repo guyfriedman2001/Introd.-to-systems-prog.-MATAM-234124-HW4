@@ -12,11 +12,11 @@
     
      Character::Character(){}
 
-     Character::Character(Player* player) : player(player) {}
+     //Character::Character(Player* player) : player(std::make_unique<Player>(player)) {}
 
-    void  Character::setPlayer(Player* player){
-        this->player = player;
-    }
+    // void  Character::setPlayer(Player* player){
+    //     this->player = std::make_unique<Player>(player);
+    // }
 string Character::getDescription() const{
     return "Character::getDescription()";
 }

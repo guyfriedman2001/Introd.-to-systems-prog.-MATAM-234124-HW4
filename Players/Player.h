@@ -115,7 +115,7 @@ public:
      * 
      * @return The player's combat power.
      */
-    unsigned int getCombatPower() const;
+    int getCombatPower() const;
 
     /**
      * @brief Checks if the player is at full health.

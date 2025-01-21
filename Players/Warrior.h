@@ -31,7 +31,7 @@ public:
      * 
      * @return The combat power, calculated as 2 times the force plus the level of the Warrior.
      */
-    unsigned int getCombatPower() const override {
+    int getCombatPower() const override {
         return ((this->getForce()*2) + this->getLevel());
     }
     virtual string getDescription() const override;

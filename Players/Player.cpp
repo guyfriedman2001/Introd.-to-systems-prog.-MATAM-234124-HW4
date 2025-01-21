@@ -13,7 +13,7 @@ Player::Player(const string& name, Character* character, Job* job){
 
 void Player::setCharacter(Character* character){
     this->character = character;
-    character->setPlayer(this);
+    //character->setPlayer(this);
 }
 
 void Player::setJob(Job *job)
@@ -48,7 +48,7 @@ Job* Player::getJob() const {
 
     }
 
-    unsigned int Player::getCombatPower() const {
+    int Player::getCombatPower() const {
         return this->job->getCombatPower();
     }
 

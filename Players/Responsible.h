@@ -24,7 +24,7 @@ public:
      * 
      * @param player The player associated with this character.
      */
-    Responsible(Player* player);
+    //Responsible(Player* player);
 
 
     /**
@@ -45,7 +45,7 @@ public:
      * @param price The cost of each healing action.
      * @param healingPower The amount of health restored per healing action.
      */
-    virtual void tradeMerchant(int price, int healingPower) override;
+    //virtual void tradeMerchant(int price, int healingPower) override;
     virtual string getDescription() const override;
 };
 

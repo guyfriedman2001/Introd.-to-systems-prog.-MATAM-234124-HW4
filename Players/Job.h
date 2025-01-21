@@ -18,19 +18,19 @@ constexpr int MaxRetries = 5;
 
 class Job {
 protected:
-    unsigned int level;
-    unsigned int force;
-    unsigned int currentHealth;
-    unsigned int MAX_HEALTH;
-    unsigned int coins;
+    int level;
+    int force;
+    int currentHealth;
+    int MAX_HEALTH;
+    int coins;
 
 public:
     virtual ~Job() = default;
     Job() : level(1), force(5), currentHealth(100), MAX_HEALTH(100), coins(10) {}
 
-    virtual void payCoins(unsigned int ammount) {
+    virtual void payCoins(int ammount) {
         if (this->coins < ammount){
-            throw new std::runtime_error("cannot have negative coins");
+            throw std::runtime_error("cannot have negative coins");
         }
         this->coins -= ammount;
     }
@@ -39,7 +39,7 @@ public:
         return this->MAX_HEALTH;
     }
 
-    virtual void takeDamage(unsigned int ammount) {
+    virtual void takeDamage(int ammount) {
         if(this->currentHealth >  ammount){
             this->currentHealth -= ammount;
         }
@@ -49,24 +49,24 @@ public:
         //this->currentHealth = MAX(0,this->currentHealth);
     }
 
-    virtual void recieveCoins(unsigned int ammount) {
+    virtual void recieveCoins(int ammount) {
         this->coins += ammount;
     }
 
-    virtual void heal(unsigned int ammount) {
+    virtual void heal(int ammount) {
         this->currentHealth += ammount;
         this->currentHealth = MIN(this->currentHealth,this->MAX_HEALTH);
     }
 
-    virtual inline bool isKOd() const{
+    bool isKOd() const{
         return this->currentHealth <= 0;
     }
 
-    virtual void getBuffed(unsigned int ammount){
+    virtual void getBuffed(int ammount){
         this->force += ammount;
     }
 
-    virtual void getNerfed(unsigned int ammount){
+    virtual void getNerfed(int ammount){
         if(this->force >  ammount){
             this->force -= ammount;
         }
@@ -77,7 +77,7 @@ public:
         // this->force = MAX(0,this->force);
     }
 
-    virtual unsigned int getCombatPower() const {
+    virtual int getCombatPower() const {
         return this->getLevel() + this->getForce();
     }
 
@@ -85,7 +85,7 @@ public:
         return currentHealth == MAX_HEALTH;
     }
 
-    virtual inline bool canPurchase(unsigned int price) const {
+    virtual inline bool canPurchase(int price) const {
         return this->coins >= price;
     }
 
@@ -110,7 +110,7 @@ public:
      *
      * @return - level of the player
     */
-    virtual int getLevel() const {
+    int getLevel() const {
         return this->level;
     }
 

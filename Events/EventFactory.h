@@ -8,6 +8,7 @@
 #include "../Players/Player.h"
 #include <string>
 #include "../Utilities.h"
+#include <memory>
 //#include "Encounter.h"
 //#include "SpecialEvent.h"
 #include <iostream>
@@ -21,10 +22,11 @@ class Event;
 using std::vector;
 class EventFactory{
     private:
-    vector<std::string> eventLineVector;
+    //vector<std::string> eventLineVector;
     public:
-    EventFactory(vector<std::string> eventLineVector);
-    Event* create();
+    //EventFactory(vector<std::string> eventLineVector);
+    static Event* eventFactory(vector<std::string> eventLineVector);
+    //create();
 };
 
 #endif //EVENTFACTORY_H

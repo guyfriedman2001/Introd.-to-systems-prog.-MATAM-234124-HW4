@@ -9,20 +9,25 @@
 MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) {
 
     /*===== TODO: Open and read events file =====*/
+
+    vector<std::string> eventLineVector;
     bool emptyCheck = true;
-    std::string line;
-    vector<std::string> eventLines;
     try{
-        while(std::getline(eventsStream, line)){
+            std::string word;
+            while (eventsStream >> word) { 
+            eventLineVector.push_back(word);
             emptyCheck = false;
-            EventFactory tempEvent = EventFactory(lineToVector(line));
-            this->events.push_back(tempEvent.create()); 
+            }
+            //EventFactory tempEvent = EventFactory(lineToVector(line));
+            //this->events.push_back(tempEvent.create()); 
+
+            //not finished!!!!!!!!!!!!!!
+            this->events.push_back(std::shared_ptr<Event>(EventFactory::eventFactory(lineToVector(line)))); 
         }
-    }
     catch(std::runtime_error& e){
         throw e;
     }
-    if(emptyCheck){
+    if(emptyCheck || this->events.size() < 2){
         throw std::runtime_error("Invalid Events File");
     }
 
@@ -40,7 +45,8 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     try{
         while(std::getline(playersStream, line)){
             emptyCheck = false;
-            this->players.push_back(PlayerMaker::makePlayer(lineToVector(line))); 
+            this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(lineToVector(line)))); 
+            //this->players.push_back(PlayerMaker::makePlayer(lineToVector(line))); 
 
             //this->players.push_back(PlayerMaker::makePlayer(linee[0], linee[2], linee[1])); 
         }
@@ -48,7 +54,7 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     catch(std::runtime_error& e){
         throw e;
     }
-    if(emptyCheck){
+    if(emptyCheck || (this->players.size() > 6) || (this->players.size() < 2) ){
         throw std::runtime_error("Invalid Players File");
     }
 
@@ -100,11 +106,12 @@ void MatamStory::playTurn(Player& player) {
      * 3. Play the event V
      * 4. Print the turn outcome with "printTurnOutcome" V
     */
-   Event* currentEvent = events[0];
+   printTurnDetails(m_turnIndex, player, *events[0]);
+   printTurnOutcome(events[0]->startEvent(player));
+   events.push_back(std::move(events[0]));
    events.erase(events.begin());
-   events.push_back(currentEvent);
-   printTurnDetails(m_turnIndex, player,*currentEvent);
-   printTurnOutcome(currentEvent->startEvent(player));
+   
+   
 
     m_turnIndex++;
 }
@@ -134,7 +141,7 @@ void MatamStory::playRound() {
     printBarrier();
 }
 
-bool MatamStory::compare(Player* player1, Player* player2){
+bool MatamStory::compare(shared_ptr<Player> player1,shared_ptr<Player> player2){
     if(player1->getLevel() > player2->getLevel()){
         return true;
     }
@@ -143,13 +150,13 @@ bool MatamStory::compare(Player* player1, Player* player2){
             return true;
         }
         if(player1->getCoins() == player2->getCoins()){
-            return player1->getName() > player2->getName();
+            return player1->getName() < player2->getName();
         }
     }
     return false;
 }
 void MatamStory::createLeaderBoard(){
-    vector<Player*> tempPlayers(players.begin(), players.end());
+    vector<shared_ptr<Player>> tempPlayers(players.begin(), players.end());
     int index = 1;
     sort(tempPlayers.begin(), tempPlayers.end(), compare);
     
@@ -163,16 +170,19 @@ void MatamStory::createLeaderBoard(){
 
 bool MatamStory::isGameOver() {
     /*===== TODO: Implement the game over condition =====*/
+    bool allKOd = true;
     for(auto player : players){
         if(player->getLevel() == 10){
             this->iswinner = true;
-            return true;
         }
-        if(!player->isKOd()){
-            return false;
+        if(!(player->isKOd())){
+            allKOd = false;
         }
     }
-    return true;
+    if(this->iswinner || allKOd){
+        return true;
+    }
+    return false;
     /*===================================================*/
 }
 
@@ -200,5 +210,7 @@ void MatamStory::play() {
     printNoWinners();
     /*========================================================================*/
 }
+
+MatamStory::~MatamStory(){}
 
 

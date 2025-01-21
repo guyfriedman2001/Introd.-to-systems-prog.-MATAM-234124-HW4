@@ -4,6 +4,7 @@
 
 //#pragma once
 #include<string>
+#include <memory>
 using std::string;
 class Player;
 
@@ -12,18 +13,18 @@ class Player;
 #define CHARACTER_H
 class Character {
 protected:
-    Player* player;
+    //std::unique_ptr<Player> player;
 public:
-    virtual void tradeMerchant(int price, int healingPower) = 0;
+    //virtual void tradeMerchant(int price, int healingPower) = 0;
     virtual ~Character() = default;
 
     virtual string getClassName();
     virtual string getDescription() const;
     Character();
 
-    Character(Player* player);
+    //Character(Player* player);
 
-    void setPlayer(Player* player);
+    //void setPlayer(Player* player);
 
 };
 #endif //CHARACTER_H

@@ -8,19 +8,28 @@ Pack::Pack(vector<string> monstersString): Monster(0,0,0){
         //throw error!
     }
     monstersString.erase(monstersString.begin());
-    for(auto iter = monstersString.begin(); iter != monstersString.end(); iter++){
-        EventFactory newEvent = EventFactory(monstersString);
-        monsters.push_back(dynamic_cast<Monster*>(newEvent.create()));
-        // Monster::setCombatPower(monsters[j]->getCombatPower());
-        // Monster::setLoot(monsters[j]->getLoot());
-        // Monster::setDamage(monsters[j]->getDamage());
-        //monstersString->erase(monstersString->begin());
+    for(auto monster : monstersString){
+        this->monsters.push_back(std::shared_ptr<Monster>(dynamic_cast<Monster*>(EventFactory::eventFactory(monstersString))));
     }
-    for(auto iter = monsters.begin(); iter != monsters.end(); iter++){
-        Monster::setCombatPower((*iter)->getCombatPower());
-        Monster::setLoot((*iter)->getLoot());
-        Monster::setDamage((*iter)->getDamage());
+    // for(auto iter = monstersString.begin(); iter != monstersString.end(); iter++){
+    //     this->monsters.push_back(std::shared_ptr<Monster>(dynamic_cast<Monster*>(EventFactory::eventFactory(monstersString))));
+    //     //EventFactory newEvent = EventFactory(monstersString);
+    //     // monsters.push_back(dynamic_cast<Monster*>(newEvent.create()));
+    //     // Monster::setCombatPower(monsters[j]->getCombatPower());
+    //     // Monster::setLoot(monsters[j]->getLoot());
+    //     // Monster::setDamage(monsters[j]->getDamage());
+    //     //monstersString->erase(monstersString->begin());
+    // }
+    for(auto monster : monsters){
+        setCombatPower(monster->getCombatPower());
+        setLoot(monster->getLoot());
+        setDamage(monster->getDamage());
     }
+    // for(auto iter = monsters.begin(); iter != monsters.end(); iter++){
+    //     Monster::setCombatPower((*iter)->getCombatPower());
+    //     Monster::setLoot((*iter)->getLoot());
+    //     Monster::setDamage((*iter)->getDamage());
+    // }
 
     // for(int i = monstersString->size(), int j = 0 ; i > 0; i--, j++){
     //     //  EventFactory newEvent = EventFactory(monstersString);
@@ -46,22 +55,33 @@ Pack::Pack(vector<string> monstersString): Monster(0,0,0){
 }
 
 string Pack::startEvent(Player& player){
+    string event = Monster::startEvent(player);
     setNewCombatPower();
-    return Monster::startEvent(player);
+    return event;
 }    
     
 
 void Pack::setNewCombatPower(){
-    for(auto iter = monsters.begin(); iter != monsters.end(); iter++){
-        if((*iter)->getName() == "Balrog"){
-            Monster::setCombatPower(2); 
+    for(auto monster : monsters){
+        if(monster->getName() == "Balrog"){
+            setCombatPower(2); 
         }
-        if((*iter)->getName() == "Pack"){
-            int pastCombatPower =  (*iter)->getCombatPower();
-            dynamic_cast<Pack*>(*iter)->setNewCombatPower();
-            Monster::setCombatPower((*iter)->getCombatPower() - pastCombatPower);
+        if(monster->getName() == "Pack"){
+            //int pastCombatPower =  monster->getCombatPower();
+            monster->setNewCombatPower();
+            //Monster::setCombatPower(monster->getCombatPower() - pastCombatPower);
         }
     }
+    // for(auto iter = monsters.begin(); iter != monsters.end(); iter++){
+    //     if((*iter)->getName() == "Balrog"){
+    //         Monster::setCombatPower(2); 
+    //     }
+    //     if((*iter)->getName() == "Pack"){
+    //         int pastCombatPower =  (*iter)->getCombatPower();
+    //         (*iter)->setNewCombatPower();
+    //         Monster::setCombatPower((*iter)->getCombatPower() - pastCombatPower);
+    //     }
+    // }
 }
 
 

@@ -8,22 +8,24 @@
 #define MONSTER_H
 class Monster : public Encounter{
     private:
-    unsigned int CombatPower;
-    unsigned int Loot;
-    unsigned int Damage;
+    int CombatPower;
+    int Loot;
+    int Damage;
     protected:
-    void setCombatPower(unsigned int addCombatPower);
-    void setLoot(unsigned int addLoot);
-    void setDamage(unsigned int addDamage);
+    void setCombatPower(int addCombatPower);
+    void setLoot(int addLoot);
+    void setDamage(int addDamage);
     public:
-    Monster(unsigned int CombatPower, unsigned int Loot, unsigned int Damage);
+    Monster(int CombatPower, int Loot, int Damage);
     virtual string startEvent(Player& player) override = 0;
     Monster() = default; //?
-    unsigned int getCombatPower() const;
-    unsigned int getLoot()const;
-    unsigned int getDamage()const;
+    int getCombatPower() const;
+    int getLoot()const;
+    int getDamage()const;
     virtual string getName() const = 0;
     virtual string getDescription() const override;
     virtual ~Monster();
+
+    virtual void setNewCombatPower();
 };
 #endif //MONSTER_H
