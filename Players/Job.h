@@ -2,10 +2,6 @@
 // Created by Guy Friedman on 16/01/2025.
 //
 
-#define MAX(a,b) (a>b)?a:b
-#define MIN(a,b) (a<b)?a:b
-
-#define MAXLEVEL (10)
 //#include "../Events/AllEvents.h"
 
 #include <iostream>
@@ -13,7 +9,6 @@ using std::string;
 #ifndef JOB_H
 #define JOB_H
 
-constexpr int MaxRetries = 5;
 
 /**
  * @brief Represents a base Job class for players.
