@@ -15,7 +15,12 @@ using std::string;
 
 constexpr int MaxRetries = 5;
 
-
+/**
+ * @brief Represents a base Job class for players.
+ * 
+ * This class provides the fundamental attributes and functionalities
+ * for various job types.
+ */
 class Job {
 protected:
     int level;
@@ -25,83 +30,112 @@ protected:
     int coins;
 
 public:
-    virtual ~Job() = default;
-    Job() : level(1), force(5), currentHealth(100), MAX_HEALTH(100), coins(10) {}
 
-    virtual void payCoins(int ammount) {
-        if (this->coins < ammount){
-            throw std::runtime_error("cannot have negative coins");
-        }
-        this->coins -= ammount;
-    }
+    /**
+     * @brief Virtual destructor for the Job class.
+     */
+    virtual ~Job();
+
+    /**
+     * @brief Default constructor for the Job class.
+     * Initializes attributes to their default values.
+     */
+    Job();
+
+    /**
+     * @brief Deducts coins from the job's balance.
+     * 
+     * @param ammount The amount of coins to deduct.
+     * @throws std::runtime_error if the resulting coins are negative.
+     */
+    virtual void payCoins(int ammount);
     
-    virtual int getMaxHealth(){
-        return this->MAX_HEALTH;
-    }
+    /**
+     * @brief Gets the maximum health of the job.
+     * 
+     * @return The maximum health.
+     */
+    virtual int getMaxHealth();
 
-    virtual void takeDamage(int ammount) {
-        if(this->currentHealth >  ammount){
-            this->currentHealth -= ammount;
-        }
-        else{
-            this->currentHealth = 0;
-        }
-        //this->currentHealth = MAX(0,this->currentHealth);
-    }
+    /**
+     * @brief Reduces the current health of the job by a specified amount.
+     * 
+     * @param ammount The amount of damage to take.
+     */
+    virtual void takeDamage(int ammount);
 
-    virtual void recieveCoins(int ammount) {
-        this->coins += ammount;
-    }
+    /**
+     * @brief Adds coins to the job's balance.
+     * 
+     * @param ammount The amount of coins to add.
+     */
+    virtual void recieveCoins(int ammount);
 
-    virtual void heal(int ammount) {
-        this->currentHealth += ammount;
-        this->currentHealth = MIN(this->currentHealth,this->MAX_HEALTH);
-    }
+    /**
+     * @brief Heals the job by a specified amount.
+     * 
+     * @param ammount The amount of health to restore.
+     */
+    virtual void heal(int ammount);
 
-    bool isKOd() const{
-        return this->currentHealth <= 0;
-    }
+    /**
+     * @brief Checks if the job is knocked out (KO'd).
+     * 
+     * @return true if KO'd, false otherwise.
+     */
+    bool isKOd() const;
 
-    virtual void getBuffed(int ammount){
-        this->force += ammount;
-    }
+    /**
+     * @brief Increases the job's force by a specified amount.
+     * 
+     * @param ammount The amount to increase the force by.
+     */
+    virtual void getBuffed(int ammount);
 
-    virtual void getNerfed(int ammount){
-        if(this->force >  ammount){
-            this->force -= ammount;
-        }
-        else{
-            this->force = 0;
-        }
-        // this->force -= ammount;
-        // this->force = MAX(0,this->force);
-    }
+    /**
+     * @brief Decreases the job's force by a specified amount.
+     * Ensures force does not drop below 0.
+     * 
+     * @param ammount The amount to decrease the force by.
+     */
+    virtual void getNerfed(int ammount);
 
-    virtual int getCombatPower() const {
-        return this->getLevel() + this->getForce();
-    }
+    /**
+     * @brief Calculates the combat power of the job.
+     * 
+     * @return The combat power.
+     */
+    virtual int getCombatPower() const;
 
-    virtual inline bool isFullHealth() const {
-        return currentHealth == MAX_HEALTH;
-    }
+    /**
+     * @brief Checks if the job is at full health.
+     * 
+     * @return true if health is at its maximum, false otherwise.
+     */
+    virtual inline bool isFullHealth() const;
 
-    virtual inline bool canPurchase(int price) const {
-        return this->coins >= price;
-    }
+    /**
+     * @brief Checks if the job can afford a specified purchase.
+     * 
+     * @param price The price to check.
+     * @return true if the job can afford to pay the price, false otherwise.
+     */
+    virtual inline bool canPurchase(int price) const;
 
-    virtual string getClassName() const {
-        return "Job";
-    }
+    /**
+     * @brief Gets the class name of the job.
+     * 
+     * @return The name of the job's class.
+     */
+    virtual string getClassName() const;
 
         
     /**
-     * Gets the description of the player
-     *
-     * @return - description of the player
-    */
-    virtual string getDescription() const{
-        return "fix job des";
-    }
+     * @brief Gets a description of the job.
+     * 
+     * @return A string description of the job.
+     */
+    virtual string getDescription() const;
 
 
 
@@ -110,42 +144,39 @@ public:
      *
      * @return - level of the player
     */
-    int getLevel() const {
-        return this->level;
-    }
+    int getLevel() const;
 
     /**
      * Gets the of force the player has
      *
      * @return - force points of the player
     */
-    virtual int getForce() const {
-        return this->force;
-    }
+    virtual int getForce() const;
 
     /**
      * Gets the amount of health points the player currently has
      *
      * @return - health points of the player
     */
-    virtual int getHealthPoints() const{
-        return this->currentHealth;
-    }
+    virtual int getHealthPoints() const;
 
     /**
      * Gets the amount of coins the player has
      *
      * @return - coins of the player
     */
-    virtual int getCoins() const {
-        return this->coins;
-    }
+    virtual int getCoins() const;
 
-    virtual void levelUp(){
-        ++(this->level);
-        this->level = MIN(this->level, MAXLEVEL);
-    }
+    /**
+     * @brief Levels up the job.
+     */
+    virtual void levelUp();
 
+    /**
+     * @brief Gets the specific job type.
+     * 
+     * @return A string representing the job type.
+     */
     virtual string getJobType() = 0;
 };
 
