@@ -12,13 +12,6 @@
 using std::string;
 #include "Job.h"
 
-constexpr int MaxRetries = 5;
-
-
-
-
-
-
     Job::~Job() = default;
 
     Job::Job() : level(1), force(5), currentHealth(100), MAX_HEALTH(100), coins(10) {}
