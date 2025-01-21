@@ -3,6 +3,7 @@
 #include "EventFactory.h"
 //#include "Monster.h"
 Pack::Pack(vector<string>& monstersString ,int& packSize): Monster(0,0,0){
+    long unsigned int tempsize = packSize;
     //std::cout << packSize << "1inpack ctor" << std::endl;
     std::vector<std::shared_ptr<Event>> tempMonsters;
 //std::cout << packSize << "inpack ctoggggggr" << std::endl;
@@ -32,7 +33,9 @@ Pack::Pack(vector<string>& monstersString ,int& packSize): Monster(0,0,0){
             
     //     }
     // }
-    
+    if(tempsize > monsters.size()){
+        throw std::runtime_error("Invalid Events File");
+    }
     packSize = monsters.size();
     //std::cout << packSize << "inpack ctor2" << std::endl;
     // for(auto monster : monstersString){

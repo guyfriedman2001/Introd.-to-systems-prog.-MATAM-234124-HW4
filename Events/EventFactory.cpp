@@ -29,14 +29,18 @@
                     throw std::runtime_error("Invalid Events File");
                 }
                 vector<std::string> packString(start, eventLineVector.end());
-                //std::cout << packSize << "ineventf " << std::endl;
-                for(int i = 0 ; i < packSize + 2; i++){
-                    eventLineVector[index + i] = "skip!";
-                }
+                //std::cout << packSize << " ineventf " << std::endl;
+                // for(int i = 0 ; i < packSize + 2; i++){
+                //     eventLineVector[index + i] = "skip!";
+                // }
                 events->push_back(std::shared_ptr<Event>(new Pack(packString, packSize)));
-                for(int i = 0 ; i < packSize + 2; i++){
-                    eventLineVector[index + i] = "skip!";
+                //std::cout << packSize << " after inevxentf " << std::endl;
+                for(auto  i = eventLineVector.begin() + index; (i < (eventLineVector.begin() + index + packSize+2))&& (i < eventLineVector.end()); i++){
+                    *i = "skip!";
                 }
+                //index += packSize;
+                //index += packSize;
+                
                 
                 //std::cout << packSize << "invveventf " << std::endl;
             }
