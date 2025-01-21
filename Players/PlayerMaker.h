@@ -30,7 +30,7 @@ public:
      * @return A pointer to the newly created Player object.
      */
     static Player* makePlayer(const string& name, const string& character, const string& job);
-    static Player* makePlayer(vector<std::string> characterVector);
+    static Player* makePlayer(vector<std::string>& characterVector);
 };
 
 

@@ -13,5 +13,5 @@ Character* CharacterMaker::makeCharacter(string character) {
         else if (character == "Responsible") {
             return new Responsible();
         }
-        return nullptr;
+        throw std::runtime_error("Invalid Players File");
     }

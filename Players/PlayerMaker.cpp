@@ -16,7 +16,7 @@
          
     // }
 
-    Player* PlayerMaker::makePlayer(vector<std::string> characterVector)
+    Player* PlayerMaker::makePlayer(vector<std::string>& characterVector)
     {
         bool check = true;
         for(const char letter : characterVector[0]){
@@ -24,13 +24,16 @@
                 check = false;
             }
         }
-        if(characterVector.size() != 3 || (characterVector[0].length() > 15) || !check){
+        if((characterVector.size() != 3) || (characterVector[0].length() > 15) || !check || (characterVector[0].length() < 3)){
              throw std::runtime_error("Invalid Players File");
         }
         Job* newjob = JobMaker::makeJob(characterVector[1]);
-        Character* newcharacter = CharacterMaker::makeCharacter(characterVector[2]);
-        if(newjob == nullptr || newcharacter==nullptr){
-            throw std::runtime_error("Invalid Players File");
+        try{
+            Character* newcharacter = CharacterMaker::makeCharacter(characterVector[2]);
+            return new Player(characterVector[0], newcharacter, newjob);
         }
-        return new Player(characterVector[0], newcharacter, newjob);
+        catch( std::runtime_error& e){
+            delete newjob;
+            throw e;
+        }
     } 

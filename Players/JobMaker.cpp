@@ -24,7 +24,7 @@ using std::string;
 
         //if there is no match to any job type
         //assert(!debugBool);
-        return nullptr;
+        throw std::runtime_error("Invalid Players File");
 
 
     }
