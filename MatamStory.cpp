@@ -10,9 +10,10 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
 
     /*===== TODO: Open and read events file =====*/
 
-    vector<std::string> eventLineVector;
+    
     bool emptyCheck = true;
     try{
+            vector<std::string> eventLineVector;
             std::string word;
             while (eventsStream >> word) { 
             eventLineVector.push_back(word);
@@ -20,9 +21,7 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
             }
             //EventFactory tempEvent = EventFactory(lineToVector(line));
             //this->events.push_back(tempEvent.create()); 
-
-            //not finished!!!!!!!!!!!!!!
-            this->events.push_back(std::shared_ptr<Event>(EventFactory::eventFactory(lineToVector(line)))); 
+            EventFactory::create(eventLineVector, &events); 
         }
     catch(std::runtime_error& e){
         throw e;
@@ -41,16 +40,28 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     /*===== TODO: Open and Read players file =====*/
 
     /*============================================*/
+    //std::string line;
     emptyCheck = true;
     try{
-        while(std::getline(playersStream, line)){
+            vector<std::string> eventLineVector;
+            std::string word;
+            while (playersStream >> word) { 
+            eventLineVector.push_back(word);
             emptyCheck = false;
-            this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(lineToVector(line)))); 
+            }
+        //while(std::getline(playersStream, line)){
+            //emptyCheck = false;
+            for(auto player = eventLineVector.begin() ; player < eventLineVector.end(); player+=3){
+                auto start = player;
+                auto end = start + 3;
+                vector<std::string> playerstring(start, end);
+                this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(playerstring))); 
+            }
+            //this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(lineToVector(line)))); 
             //this->players.push_back(PlayerMaker::makePlayer(lineToVector(line))); 
 
             //this->players.push_back(PlayerMaker::makePlayer(linee[0], linee[2], linee[1])); 
         }
-    }
     catch(std::runtime_error& e){
         throw e;
     }
