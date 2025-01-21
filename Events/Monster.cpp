@@ -7,7 +7,7 @@ std::string Monster::startEvent(Player& player){
     if(CombatPower < player.getCombatPower()){ 
         player.recieveCoins(Loot);
         player.levelUp();
-        if(!(player.getJobType().compare("Strong"))){
+        if(player.getJobType() == "Strong"){
             player.takeDamage(10);
         }
         return getEncounterWonMessage(player, Loot);
@@ -19,13 +19,13 @@ std::string Monster::startEvent(Player& player){
     }
 }
 void Monster::setCombatPower(int addCombatPower){
-    this->CombatPower += addCombatPower;
+    this->CombatPower = addCombatPower;
 }
 void Monster::setLoot(int addLoot){
-    this->Loot += addLoot;
+    this->Loot = addLoot;
 }
 void Monster::setDamage(int addDamage){
-    this->Damage += addDamage;
+    this->Damage = addDamage;
 }
 
 int Monster::getCombatPower() const{

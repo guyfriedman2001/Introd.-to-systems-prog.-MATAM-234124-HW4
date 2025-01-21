@@ -8,24 +8,25 @@ PotionsMerchant::PotionsMerchant() : coins(5){}
 string PotionsMerchant::startEvent(Player& player){
     int potions = 0;
     if(!(player.isFullHealth())){
-        if(!player.getCharacterName().compare("Responsible")){
-            try{
+        if(player.getCharacterName() == "Responsible"){
                 while(!(player.isFullHealth())) {////TODO getMaxHealthPoints() func in player (protected?)
-                    makeDeal(player);
-                    potions++;
+                    try{
+                        makeDeal(player);
+                        potions++;
+                    }
+                    catch(std::runtime_error& e){
+                    return getPotionsPurchaseMessage(player, potions);
+                    }
                 }
             }
-            catch(std::runtime_error* e){
-                    return getPotionsPurchaseMessage(player, potions);
-            }
-        }
-        if(!player.getCharacterName().compare("RiskTaking")){
+            
+        if(player.getCharacterName() =="RiskTaking"){
             if(player.getHealthPoints() < 50){
                 try{
                     makeDeal(player);
                     potions++;
                 }
-                catch(std::runtime_error* e){
+                catch(std::runtime_error& e){
                     return getPotionsPurchaseMessage(player, potions);
                 }
             }

@@ -12,10 +12,10 @@ class Monster : public Encounter{
     int Loot;
     int Damage;
     protected:
+    public:
     void setCombatPower(int addCombatPower);
     void setLoot(int addLoot);
     void setDamage(int addDamage);
-    public:
     Monster(int CombatPower, int Loot, int Damage);
     virtual string startEvent(Player& player) override = 0;
     Monster() = default; //?
