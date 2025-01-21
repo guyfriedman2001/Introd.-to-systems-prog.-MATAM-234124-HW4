@@ -37,7 +37,7 @@ string PotionsMerchant::startEvent(Player& player){
 
 void PotionsMerchant::makeDeal(Player& player){
     try{
-        player.payCoins(5); 
+        player.payCoins(coins); 
         player.heal(10);
     }
     catch(std::runtime_error* e){
