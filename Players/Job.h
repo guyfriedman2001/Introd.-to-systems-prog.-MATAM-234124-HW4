@@ -107,7 +107,7 @@ public:
      * 
      * @return true if health is at its maximum, false otherwise.
      */
-    virtual inline bool isFullHealth() const;
+    virtual bool isFullHealth() const;
 
     /**
      * @brief Checks if the job can afford a specified purchase.
@@ -115,7 +115,7 @@ public:
      * @param price The price to check.
      * @return true if the job can afford to pay the price, false otherwise.
      */
-    virtual inline bool canPurchase(int price) const;
+    virtual bool canPurchase(int price) const;
 
     /**
      * @brief Gets the class name of the job.

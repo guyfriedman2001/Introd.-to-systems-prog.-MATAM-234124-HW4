@@ -62,11 +62,11 @@ constexpr int MaxRetries = 5;
         return this->getLevel() + this->getForce();
     }
 
-    inline bool Job::isFullHealth() const {
+    bool Job::isFullHealth() const {
         return currentHealth == MAX_HEALTH;
     }
 
-    inline bool Job::canPurchase(int price) const {
+    bool Job::canPurchase(int price) const {
         return this->coins >= price;
     }
 
