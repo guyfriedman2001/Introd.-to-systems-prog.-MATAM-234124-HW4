@@ -9,8 +9,6 @@
 #include <string>
 #include "../Utilities.h"
 #include <memory>
-//#include "Encounter.h"
-//#include "SpecialEvent.h"
 #include <iostream>
 #include <vector>
 using std::string;
@@ -25,9 +23,7 @@ class EventFactory{
     private:
     //vector<std::string> eventLineVector;
     public:
-    //EventFactory(vector<std::string> eventLineVector);
-    //static Event* eventFactory(vector<std::string> eventLineVector);
-    static void create(vector<std::string>& eventLineVector, vector<std::shared_ptr<Event>>* events);
+    static std::shared_ptr<Event> create(vector<string>::iterator& event);
 
 };
 
