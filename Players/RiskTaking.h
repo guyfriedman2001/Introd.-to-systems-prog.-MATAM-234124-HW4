@@ -20,7 +20,6 @@ class RiskTaking : public Character {
      * 
      * @param player The player associated with this character.
      */
-    //RiskTaking(Player* player);
 
     /**
      * @brief Destructor for the RiskTaking class.
@@ -35,12 +34,10 @@ class RiskTaking : public Character {
     virtual string getClassName() override;
 
     /**
-     * @brief Handles trading with a merchant by paying for healing if the player can afford it and is not at full health.
+     * @brief Retrieves a description of the RiskTaking character.
      * 
-     * @param price The cost of the healing action.
-     * @param healingPower The amount of health restored per healing action.
+     * @return A string containing the description of the character.
      */
-    //virtual void tradeMerchant(int price, int healingPower) override;
     virtual string getDescription() const override;
 
 };

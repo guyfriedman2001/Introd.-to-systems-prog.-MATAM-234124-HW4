@@ -118,15 +118,12 @@ public:
      */
     virtual string getClassName() const;
 
-        
     /**
      * @brief Gets a description of the job.
      * 
      * @return A string description of the job.
      */
     virtual string getDescription() const;
-
-
 
     /**
      * Gets the current level of the player

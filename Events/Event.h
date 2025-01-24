@@ -37,7 +37,15 @@ public:
      * @return Outcome of the event as a string.
      */
     virtual string startEvent(Player& player) = 0;
+
+    /**
+     * @brief Default constructor.
+     */
     Event() = default;
+
+    /**
+     * @brief Virtual destructor.
+     */
     virtual ~Event() = default;
 };
 #endif //EVENT_H

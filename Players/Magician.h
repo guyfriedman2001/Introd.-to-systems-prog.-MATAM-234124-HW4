@@ -16,6 +16,12 @@ public:
      * @brief Default constructor for the Magician class.
      */
     Magician() : Magical() {}
+
+    /**
+     * @brief Retrieves a description of the Magician job.
+     *
+     * @return A string describing the Magician.
+     */
     virtual string getDescription() const override;
 
 };

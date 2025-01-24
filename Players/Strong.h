@@ -18,6 +18,12 @@ public:
      * @brief Default constructor for the Strong job class.
      */
     Strong() : Job() {}
+
+    /**
+     * @brief Retrieves the job type of the Strong class.
+     * 
+     * @return A string representing the type of the job.
+     */
     string getJobType() override;
 };
 

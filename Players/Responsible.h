@@ -15,14 +15,11 @@ public:
      */
     Responsible() = default;
 
-
     /**
      * @brief Constructs a Responsible character associated with a specific player.
      * 
      * @param player The player associated with this character.
      */
-    //Responsible(Player* player);
-
 
     /**
      * @brief Destructor for the Responsible class.
