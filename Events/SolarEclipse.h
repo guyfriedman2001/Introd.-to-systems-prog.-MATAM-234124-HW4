@@ -1,5 +1,3 @@
-//#pragma once
-//class SpecialEvent;
 #include "SpecialEvent.h"
 #ifndef SOLARECLIPSE_H
 #define SOLARECLIPSE_H
@@ -11,4 +9,4 @@ class SolarEclipse :public SpecialEvent{
     string getDescription() const override;
     SolarEclipse();
 };
-#endif //#include SOLARECLIPSE_H
+#endif //SOLARECLIPSE_H

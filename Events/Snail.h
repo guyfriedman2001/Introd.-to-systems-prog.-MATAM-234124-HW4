@@ -1,6 +1,3 @@
-//#pragma once
-
-//class Monster;
 #include "Monster.h"
 #ifndef SNAIL_H
 #define SNAIL_H

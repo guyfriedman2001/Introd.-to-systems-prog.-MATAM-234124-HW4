@@ -1,5 +1,3 @@
-//#pragma once
-//class Monster;
 #include "Monster.h"
 #ifndef BALROG_H
 #define BALROG_H

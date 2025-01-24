@@ -1,5 +1,3 @@
-//#pragma once
-//class Event;
 #include "Event.h"
 #ifndef SPECIALEVENT_H
 #define SPECIALEVENT_H

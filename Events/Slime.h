@@ -1,6 +1,3 @@
-//#pragma once
-
-//class Monster;
 #include "Monster.h"
 #ifndef SLIME_H
 #define SLIME_H

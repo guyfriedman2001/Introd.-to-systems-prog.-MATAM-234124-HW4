@@ -1,7 +1,4 @@
-//#pragma once
 #include "PotionsMerchant.h"
-//#include "../Utilities.h"
-//#include "SpecialEvent.h"
 
 PotionsMerchant::PotionsMerchant() : coins(5){}
 
@@ -9,7 +6,7 @@ string PotionsMerchant::startEvent(Player& player){
     int potions = 0;
     if(!(player.isFullHealth())){
         if(player.getCharacterName() == "Responsible"){
-                while(!(player.isFullHealth())) {////TODO getMaxHealthPoints() func in player (protected?)
+                while(!(player.isFullHealth())) {
                     try{
                         makeDeal(player);
                         potions++;

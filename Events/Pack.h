@@ -1,9 +1,4 @@
-//#pragma once
-
-//class Monster;
 #include "Monster.h"
-#include <vector>
-#include <memory>
 
 #ifndef PACK_H
 #define PACK_H

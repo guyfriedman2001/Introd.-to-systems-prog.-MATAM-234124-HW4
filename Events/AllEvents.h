@@ -1,6 +1,3 @@
-#include "EventFactory.h"
-#include "string.h"
-#include "Event.h"
 #include "Snail.h"
 #include "Slime.h"
 #include "Balrog.h"

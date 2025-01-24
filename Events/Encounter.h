@@ -1,9 +1,3 @@
-//#pragma once
-// #include <iostream>
-// #include "../Players/Player.h"
-// #include <string>
-// #include <vector>
-//class Event;
 #include "Event.h"
 #ifndef ENCOUNTER_H
 #define ENCOUNTER_H

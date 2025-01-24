@@ -1,27 +1,18 @@
 #include "Pack.h"
-#include "EventFactory.h"
 
 Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0){
     
     try{
-        long unsigned int tempsize = 0;
         monstersString++;
-        tempsize = std::stoi(monstersString[0]);
+        int tempsize = std::stoi(monstersString[0]);
         if(tempsize < 2){
             throw std::runtime_error("Invalid Events File");
         }
         std::vector<std::shared_ptr<Event>> tempMonsters;
-        monstersString++;
 
-        for(long unsigned int i = 0; i< tempsize; i++){
-            tempMonsters.push_back(EventFactory::create(monstersString));
+        for(int i = 0; i< tempsize; i++){
             monstersString++;
-
-        }
-        monstersString-- ;
-        
-        if(tempsize > tempMonsters.size()){
-            throw std::runtime_error("Invalid Events File");
+            tempMonsters.push_back(EventFactory::create(monstersString));
         }
         
         for(auto monster = tempMonsters.begin() ; monster < (tempMonsters.begin() + tempsize) ; monster++){

@@ -1,6 +1,4 @@
-//#pragma once
 #include "Monster.h"
-//#include "../Utilities.h"
 
 Monster::Monster(int CombatPower, int Loot, int Damage): CombatPower(CombatPower), Loot(Loot), Damage(Damage){}
 std::string Monster::startEvent(Player& player){

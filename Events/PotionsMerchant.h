@@ -1,6 +1,3 @@
-//#pragma once
-
-//class SpecialEvent;
 #include "SpecialEvent.h"
 #ifndef POTIONSMERCHANT_H
 #define POTIONSMERCHANT_H
