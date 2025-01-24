@@ -1,13 +1,6 @@
-
-//#pragma once
-
 #include <string>
 using std::string;
-// #include "AllCharacters.h"
-// #include "AllJobs.h"
-// #include "../Events/Monster.h"
-// #include "JobMaker.h"
-// #include "CharacterMaker.h"
+
 #include "Job.h"
 #include "Character.h"
 #include "PlayerMaker.h"

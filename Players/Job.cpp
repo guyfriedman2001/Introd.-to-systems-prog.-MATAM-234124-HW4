@@ -1,23 +1,11 @@
-//
-// Created by Guy Friedman on 16/01/2025.
-//
-
 #define MAX(a,b) (a>b)?a:b
 #define MIN(a,b) (a<b)?a:b
 
 #define MAXLEVEL (10)
-//#include "../Events/AllEvents.h"
 
 #include <iostream>
 using std::string;
 #include "Job.h"
-
-
-
-
-
-
-
 
     Job::~Job() = default;
 

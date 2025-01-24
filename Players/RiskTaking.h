@@ -1,10 +1,4 @@
-//
-// Created by Guy Friedman on 16/01/2025.
-//
-
-
 #include "Character.h"
-//#include "Player.h"
 using std::string;
 
 #ifndef RISKTAKING_H

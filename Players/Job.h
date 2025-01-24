@@ -1,9 +1,3 @@
-//
-// Created by Guy Friedman on 16/01/2025.
-//
-
-//#include "../Events/AllEvents.h"
-
 #include <iostream>
 using std::string;
 #ifndef JOB_H

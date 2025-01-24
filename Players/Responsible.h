@@ -1,7 +1,4 @@
-
-//#include "Character.h"
 #include "Character.h"
-//#include "Player.h"
 using std::string;
 #ifndef RESPONSIBLE_H
 #define RESPONSIBLE_H
