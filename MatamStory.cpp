@@ -12,7 +12,7 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
         for(auto event = eventLineVector.begin() ; event < eventLineVector.end(); event++){
             events.push_back(EventFactory::create(event));
         } 
-        if(this->events.size() < 2){
+        if(this->events.size() < MIN_PLAYERS_AND_EVENTS){
             throw std::runtime_error("Invalid Events File");
         } 
     }
@@ -22,12 +22,12 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
     /*==========================================*/
     try{
         vector<std::string> playerLineVector = fileToVector(playersStream);
-        for(auto player = playerLineVector.begin() ; player < playerLineVector.end(); player+=3){
-            auto end = player + 3;
+        for(auto player = playerLineVector.begin() ; player < playerLineVector.end(); player += PLAYER_LINE_SIZE){
+            auto end = player + PLAYER_LINE_SIZE;
             vector<std::string> playerstring(player, end);
             this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(playerstring))); 
         }
-        if((this->players.size() > 6) || (this->players.size() < 2)){
+        if((this->players.size() > MAX_PLAYERS) || (this->players.size() < MIN_PLAYERS_AND_EVENTS)){
             throw std::runtime_error("Invalid Players File");
         }
     }
@@ -110,7 +110,7 @@ void MatamStory::createLeaderBoard(){
 bool MatamStory::isGameOver() {
     bool allKOd = true;
     for(auto player : players){
-        if(player->getLevel() == 10){
+        if(player->getLevel() == WINNER_LEVEL){
             this->iswinner = true;
         }
         if(!(player->isKOd())){

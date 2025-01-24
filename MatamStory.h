@@ -18,6 +18,10 @@ private:
     vector<shared_ptr<Player>> players;
     bool iswinner;
     shared_ptr<Player> winner;
+    static const int MAX_PLAYERS = 6;
+    static const int MIN_PLAYERS_AND_EVENTS = 2;
+    static const int WINNER_LEVEL = 10;
+    static const int PLAYER_LINE_SIZE = 3;
 
     /**
      * Playes a single turn for a player
