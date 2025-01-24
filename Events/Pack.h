@@ -5,13 +5,14 @@
 class Pack : public Monster{
     private:
     std::vector<std::shared_ptr<Monster>> monsters;
-    //vector<Pack*> packs;
+    int packSize;
     public:
     Pack(vector<string>::iterator& monstersString);
     string startEvent(Player& player) override;
     string getName() const override;
     string getDescription()const override;
+    int getSize() override;
     void setNewCombatPower() override;
-    ~Pack();
+    ~Pack() = default;
 };
 #endif //PACK_H

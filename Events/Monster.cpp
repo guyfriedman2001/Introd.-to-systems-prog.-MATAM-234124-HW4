@@ -41,7 +41,6 @@ string Monster::getDescription() const{
 }
 
 void Monster::setNewCombatPower(){}
-
-Monster::~Monster(){
-    Encounter::~Encounter();
+int Monster::getSize(){
+    return 1;
 }

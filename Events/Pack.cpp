@@ -1,11 +1,13 @@
 #include "Pack.h"
 
-Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0){
+Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0), packSize(0){
     
     try{
         monstersString++;
-        int tempsize = std::stoi(monstersString[0]);
-        if(tempsize < 2){
+        size_t position;
+
+        int tempsize = std::stoi(monstersString[0], &position);
+        if(tempsize < 2 || position != monstersString[0].length()){
             throw std::runtime_error("Invalid Events File");
         }
         std::vector<std::shared_ptr<Event>> tempMonsters;
@@ -25,10 +27,9 @@ Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0){
             } 
         }
     }
-    catch(...){
+    catch(std::exception& e){
         throw std::runtime_error("Invalid Events File");
     }
-    
     int totalCombatPower = 0;
     int totalLoot = 0;
     int totalDamage = 0;
@@ -37,10 +38,15 @@ Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0){
         totalCombatPower += monster->getCombatPower();
         totalLoot += monster->getLoot();
         totalDamage += monster->getDamage();
+        this->packSize += monster->getSize();
     }
     setCombatPower(totalCombatPower);
     setLoot(totalLoot);
     setDamage(totalDamage);
+}
+
+int Pack::getSize(){
+    return this->packSize;
 }
 
 string Pack::startEvent(Player& player){
@@ -70,7 +76,6 @@ string Pack::getName() const{
 }
 
 string Pack::getDescription() const{
-    return(getName() + " of " + std::to_string(monsters.size()) + " members"+ Monster::getDescription());
+    return(getName() + " of " + std::to_string(this->packSize) + " members"+ Monster::getDescription());
 }
 
-Pack::~Pack(){}

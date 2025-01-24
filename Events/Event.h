@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <functional>
+#include <stdexcept>
 #include <memory>
 #include <map>
 #include "../Players/Player.h"

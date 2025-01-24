@@ -19,7 +19,8 @@ class Monster : public Encounter{
     int getDamage()const;
     virtual string getName() const = 0;
     virtual string getDescription() const override;
-    virtual ~Monster();
+    virtual int getSize();
+    virtual ~Monster() = default;
 
     virtual void setNewCombatPower();
 };
