@@ -12,7 +12,7 @@ class Pack : public Monster{
     std::vector<std::shared_ptr<Monster>> monsters;
     //vector<Pack*> packs;
     public:
-    Pack(vector<string>& monstersString, int& packSize);
+    Pack(vector<string>::iterator& monstersString);
     string startEvent(Player& player) override;
     string getName() const override;
     string getDescription()const override;
