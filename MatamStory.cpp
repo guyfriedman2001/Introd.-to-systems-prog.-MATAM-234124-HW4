@@ -7,122 +7,54 @@
 
 
 MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) {
-
-    /*===== TODO: Open and read events file =====*/
-
-    
-    bool emptyCheck = true;
     try{
-            vector<std::string> eventLineVector;
-            std::string word;
-            while (eventsStream >> word) { 
-            eventLineVector.push_back(word);
-            emptyCheck = false;
-            }
-            //EventFactory tempEvent = EventFactory(lineToVector(line));
-            //this->events.push_back(tempEvent.create()); 
-            EventFactory::create(eventLineVector, &events); 
-        }
+        vector<std::string> eventLineVector = fileToVector(eventsStream);
+        for(auto event = eventLineVector.begin() ; event < eventLineVector.end(); event++){
+            events.push_back(EventFactory::create(event));
+        } 
+        if(this->events.size() < 2){
+            throw std::runtime_error("Invalid Events File");
+        } 
+    }
     catch(std::runtime_error& e){
         throw e;
     }
-    if(emptyCheck || this->events.size() < 2){
-        throw std::runtime_error("Invalid Events File");
-    }
-
-    // for(auto event :events){
-    //     std::cout << event->getDescription() << std::endl;
-    // }
-
     /*==========================================*/
-
-
-    /*===== TODO: Open and Read players file =====*/
-
-    /*============================================*/
-    //std::string line;
-    emptyCheck = true;
     try{
-            vector<std::string> eventLineVector;
-            std::string word;
-            while (playersStream >> word) { 
-            eventLineVector.push_back(word);
-            emptyCheck = false;
-            }
-        //while(std::getline(playersStream, line)){
-            //emptyCheck = false;
-            for(auto player = eventLineVector.begin() ; player < eventLineVector.end(); player+=3){
-                auto start = player;
-                auto end = start + 3;
-                vector<std::string> playerstring(start, end);
-                this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(playerstring))); 
-            }
-            //this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(lineToVector(line)))); 
-            //this->players.push_back(PlayerMaker::makePlayer(lineToVector(line))); 
-
-            //this->players.push_back(PlayerMaker::makePlayer(linee[0], linee[2], linee[1])); 
+        vector<std::string> playerLineVector = fileToVector(playersStream);
+        for(auto player = playerLineVector.begin() ; player < playerLineVector.end(); player+=3){
+            auto end = player + 3;
+            vector<std::string> playerstring(player, end);
+            this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(playerstring))); 
         }
+        if((this->players.size() > 6) || (this->players.size() < 2)){
+            throw std::runtime_error("Invalid Players File");
+        }
+    }
     catch(std::runtime_error& e){
         throw e;
     }
-    if(emptyCheck || (this->players.size() > 6) || (this->players.size() < 2) ){
-        throw std::runtime_error("Invalid Players File");
-    }
-
-    // for(auto player :players){
-    //     std::cout << player->getDescription() << std::endl;
-    // }
+    /*============================================*/
 
     this->m_turnIndex = 1;
     this->iswinner = false;
     this->winner = nullptr;
 }
 
-vector<std::string> MatamStory::lineToVector(std::string line){
-    vector<std::string> eventLineVector;
-    std::istringstream lineStream(line);
-    std::string letter;
-        while (lineStream >> letter) { 
-            eventLineVector.push_back(letter);
-        }
-    return eventLineVector;
-    //std::string word;
-    // for(char letter : line){
-    //     //char letter = line[i];
-        
-    //     if((letter ==' ')){
-    //         if(!word.empty()){
-    //             eventLineVector.push_back(word);
-    //             word.clear();
-    //         }
-    //     }
-    //     else{
-    //         std::cout << "the letter -" << letter << "-"<< std::endl;
-    //         word += letter;
-    //     }
-    // }
-    // if(!word.empty()){
-    //     eventLineVector.push_back(word);
-    // }
-
-    // return eventLineVector;
+vector<std::string> MatamStory::fileToVector(std::istream& file){
+    vector<std::string> fileVector;
+    std::string word;
+    while (file >> word) { 
+        fileVector.push_back(word);
+    }
+    return fileVector;
 }
 
 void MatamStory::playTurn(Player& player) {
-
-    /**
-     * Steps to implement (there may be more, depending on your design):
-     * 1. Get the next event from the events list V
-     * 2. Print the turn details with "printTurnDetails" V
-     * 3. Play the event V
-     * 4. Print the turn outcome with "printTurnOutcome" V
-    */
    printTurnDetails(m_turnIndex, player, *events[0]);
    printTurnOutcome(events[0]->startEvent(player));
    events.push_back(std::move(events[0]));
    events.erase(events.begin());
-   
-   
 
     m_turnIndex++;
 }
@@ -131,21 +63,17 @@ void MatamStory::playRound() {
 
     printRoundStart();
 
-    /*===== TODO: Play a turn for each player =====*/
-    
     for(auto player : players){
         if(!player->isKOd()){
             playTurn(*player);
         }
     }
-
     /*=============================================*/
 
     printRoundEnd();
 
     printLeaderBoardMessage();
 
-    /*===== TODO: Print leaderboard entry for each player using "printLeaderBoardEntry" =====*/
     createLeaderBoard();
     /*=======================================================================================*/
 
@@ -166,6 +94,7 @@ bool MatamStory::compare(shared_ptr<Player> player1,shared_ptr<Player> player2){
     }
     return false;
 }
+
 void MatamStory::createLeaderBoard(){
     vector<shared_ptr<Player>> tempPlayers(players.begin(), players.end());
     int index = 1;
@@ -176,11 +105,9 @@ void MatamStory::createLeaderBoard(){
         index++;
     }
     this->winner = tempPlayers[0];
-
 }
 
 bool MatamStory::isGameOver() {
-    /*===== TODO: Implement the game over condition =====*/
     bool allKOd = true;
     for(auto player : players){
         if(player->getLevel() == 10){
@@ -199,7 +126,6 @@ bool MatamStory::isGameOver() {
 
 void MatamStory::play() {
     printStartMessage();
-    /*===== TODO: Print start message entry for each player using "printStartPlayerEntry" V =====*/
     int index = 1;
     for(auto player : players){
         printStartPlayerEntry(index, *player);
@@ -213,7 +139,7 @@ void MatamStory::play() {
     }
 
     printGameOver();
-    /*===== TODO: Print either a "winner" message or "no winner" message =====*/
+
     if(iswinner){
         printWinner(*winner);
         return;

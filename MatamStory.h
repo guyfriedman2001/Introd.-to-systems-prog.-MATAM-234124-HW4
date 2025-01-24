@@ -41,7 +41,7 @@ private:
      * @return - true if the game is over, false otherwise
     */
     bool isGameOver();
-    vector<std::string> lineToVector(std::string line);
+    vector<std::string> fileToVector(std::istream& file);
     void createLeaderBoard();
     static bool compare(shared_ptr<Player> player1, shared_ptr<Player> player2);
 
