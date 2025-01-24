@@ -25,6 +25,9 @@ MatamStory::MatamStory(std::istream& eventsStream, std::istream& playersStream) 
         for(auto player = playerLineVector.begin() ; player < playerLineVector.end(); player += PLAYER_LINE_SIZE){
             auto end = player + PLAYER_LINE_SIZE;
             vector<std::string> playerstring(player, end);
+            if(playerstring.size() != PLAYER_LINE_SIZE){
+                throw std::runtime_error("Invalid Players File");
+            }
             this->players.push_back(std::shared_ptr<Player>(PlayerMaker::makePlayer(playerstring))); 
         }
         if((this->players.size() > MAX_PLAYERS) || (this->players.size() < MIN_PLAYERS_AND_EVENTS)){

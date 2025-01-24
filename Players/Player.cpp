@@ -1,9 +1,4 @@
-//
-// Created by Guy Friedman on 16/01/2025.
-//
-
 #include "Player.h"
-
 
 Player::Player(const string& name, Character* character, Job* job){
     this->name = string(name);
@@ -13,18 +8,12 @@ Player::Player(const string& name, Character* character, Job* job){
 
 void Player::setCharacter(Character* character){
     this->character = character;
-    //character->setPlayer(this);
 }
 
 void Player::setJob(Job *job)
 {
     this->job = job;
 }
-
-// void Player::setJob(Job* job){
-//     this->job = job;
-//     job->setPlayer(this);
-// }
 
     Player::~Player(){
         delete this->character;
@@ -117,10 +106,6 @@ void Player::getBuffed(int ammount){
 void Player::getNerfed(int ammount){
     this->job->getNerfed(ammount);
 }
-
-// void Player::fight(Monster* monster){
-//     this->job->fight(monster);
-// }
 
 string Player::getJobName(){
     return this->job->getClassName();

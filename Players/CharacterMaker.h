@@ -1,12 +1,4 @@
-//
-// Created by Guy Friedman on 16/01/2025.
-//
-
-
-// #include "AllCharacters.h"
-#include "Responsible.h"
-#include "RiskTaking.h"
-// #include <string>
+#include "AllCharacters.h"
 using std::string;
 
 #ifndef CHARACTERMAKER_H
