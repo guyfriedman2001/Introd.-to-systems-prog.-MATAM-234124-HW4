@@ -1,6 +1,6 @@
 #include "PotionsMerchant.h"
 
-PotionsMerchant::PotionsMerchant() : coins(5){}
+PotionsMerchant::PotionsMerchant(){}
 
 string PotionsMerchant::startEvent(Player& player){
     int potions = 0;
@@ -18,7 +18,7 @@ string PotionsMerchant::startEvent(Player& player){
             }
             
         if(player.getCharacterName() =="RiskTaking"){
-            if(player.getHealthPoints() < 50){
+            if(player.getHealthPoints() < MAX_HP_FOR_RISKTAKEING){
                 try{
                     makeDeal(player);
                     potions++;
@@ -34,8 +34,8 @@ string PotionsMerchant::startEvent(Player& player){
 
 void PotionsMerchant::makeDeal(Player& player){
     try{
-        player.payCoins(coins); 
-        player.heal(10);
+        player.payCoins(COINS); 
+        player.heal(HEAL_POINTS);
     }
     catch(std::runtime_error* e){
         throw(e);

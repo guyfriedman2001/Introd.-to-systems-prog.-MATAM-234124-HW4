@@ -1,20 +1,20 @@
 #include "SolarEclipse.h"
 
-SolarEclipse::SolarEclipse() : effect(1){}
+SolarEclipse::SolarEclipse(){}
 
 string SolarEclipse::startEvent(Player& player){
-    int tempEffect = effect;
+    int tempEffect = EFFECT;
     if(!player.getJobType().compare("Magical")){
-        player.getBuffed(effect);
+        player.getBuffed(EFFECT);
     }
     else{
         int tempPlayerForce =  player.getForce();
-        player.getNerfed(effect);
+        player.getNerfed(EFFECT);
         if(player.getForce() != tempPlayerForce){
-            tempEffect *= -1;
+            tempEffect = BAD_EFFECT;
         }
         else{
-            tempEffect = 0;
+            tempEffect = NO_EFFECT;
         }
     }
     return getSolarEclipseMessage(player, tempEffect);

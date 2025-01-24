@@ -7,7 +7,7 @@ Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0), packSize(0
         size_t position;
 
         int tempsize = std::stoi(monstersString[0], &position);
-        if(tempsize < 2 || position != monstersString[0].length()){
+        if(tempsize < MINIMUM_PACK_SIZE || position != monstersString[0].length()){
             throw std::runtime_error("Invalid Events File");
         }
         std::vector<std::shared_ptr<Event>> tempMonsters;
@@ -60,7 +60,7 @@ void Pack::setNewCombatPower(){
     int totalCombatPower = 0;
     for(auto monster : monsters){
         if(monster->getName() == "Balrog"){ 
-            monster->setCombatPower(monster->getCombatPower() + 2); 
+            monster->setCombatPower(monster->getCombatPower() + BALROG_POWER_UP); 
         }
         else if(monster->getName() == "Pack"){
             monster->setNewCombatPower();

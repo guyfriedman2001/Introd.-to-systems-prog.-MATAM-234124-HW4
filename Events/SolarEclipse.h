@@ -3,7 +3,9 @@
 #define SOLARECLIPSE_H
 class SolarEclipse :public SpecialEvent{
     private:
-    int effect;
+    static const int EFFECT = 1;
+    static const int NO_EFFECT = 0;
+    static const int BAD_EFFECT = -1;
     public:
     string startEvent(Player& player) override;
     string getDescription() const override;
