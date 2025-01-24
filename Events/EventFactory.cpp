@@ -2,31 +2,23 @@
 #include "EventFactory.h"
 #include "Event.h"
 
+std::map<std::string, std::function<std::shared_ptr<Event>(vector<string>::iterator& event)>> EventFactory::createMap(){
+    return {
+    {"Pack",[](vector<string>::iterator& event){ return std::shared_ptr<Event>(new Pack(event));}},
+    {"SolarEclipse", [](vector<string>::iterator& event){ return std::shared_ptr<Event>(new SolarEclipse());}},
+    {"PotionsMerchant",[](vector<string>::iterator& event){return std::shared_ptr<Event>(new PotionsMerchant());}},
+    {"Snail",[](vector<string>::iterator& event){return std::shared_ptr<Event>(new Snail());}},
+    {"Slime",[](vector<string>::iterator& event){  return std::shared_ptr<Event>(new Slime());}},
+    {"Balrog",[](vector<string>::iterator& event){return std::shared_ptr<Event>(new Balrog());}}
+    };
+}
+
+std::map<std::string,std::function<std::shared_ptr<Event>(vector<string>::iterator& event)>> EventFactory::eventsMap = EventFactory::createMap();
+
 std::shared_ptr<Event> EventFactory::create(vector<string>::iterator& event){
-    try{
-            if(*event == "Pack"){
-                return std::shared_ptr<Event>(new Pack(event));
-            }
-            else if(*event == "SolarEclipse"){
-                return std::shared_ptr<Event>(new SolarEclipse());
-            }
-            else if(*event == "PotionsMerchant"){
-                return std::shared_ptr<Event>(new PotionsMerchant());
-            }
-            else if(*event == "Snail"){
-               return std::shared_ptr<Event>(new Snail());
-            }
-            else if(*event == "Slime"){
-                return std::shared_ptr<Event>(new Slime());
-            }
-            else if(*event == "Balrog"){
-                return std::shared_ptr<Event>(new Balrog());
-            }
-            else{
-                throw std::runtime_error("Invalid Events File");
-            }
-        }
-    catch(std::runtime_error& e){
-        throw(e);
+    auto eventIterator = eventsMap.find(*event);
+    if( eventIterator == eventsMap.end()){
+         throw std::runtime_error("Invalid Events File");
     }
+    return eventIterator->second(event);
 }
