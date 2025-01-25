@@ -6,6 +6,10 @@
  * @brief Represents the Balrog monster, a subclass of Monster.
  */
 class Balrog : public Monster{
+private:
+    static const int BALROG_COMBAT_POWER = 15;
+    static const int BALROG_LOOT = 100;
+    static const int BALROG_DAMAGE = 9001;
 public:
 
     /**

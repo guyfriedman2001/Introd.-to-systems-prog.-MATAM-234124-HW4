@@ -8,6 +8,10 @@
  * A basic monster with simple attributes and behavior.
  */
 class Slime : public Monster{
+    private:
+    static const int SLIME_COMBAT_POWER = 12;
+    static const int SLIME_LOOT = 5;
+    static const int SLIME_DAMAGE = 25;
 public:
 
     /**

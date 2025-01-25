@@ -1,6 +1,6 @@
 #include "Snail.h"
 
-Snail::Snail(): Monster(5,2,10){}
+Snail::Snail(): Monster(SNAIL_COMBAT_POWER,SNAIL_LOOT,SNAIL_DAMAGE){}
 
 string Snail::startEvent(Player& player){
     return Monster::startEvent(player);

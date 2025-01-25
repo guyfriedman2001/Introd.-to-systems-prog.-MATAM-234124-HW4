@@ -1,6 +1,6 @@
 #include "Balrog.h"
 
-Balrog::Balrog(): Monster(15, 100, 9001){}
+Balrog::Balrog(): Monster(BALROG_COMBAT_POWER, BALROG_LOOT, BALROG_DAMAGE){}
 string Balrog::startEvent(Player& player){
     string event = Monster::startEvent(player);;
     setCombatPower(this->getCombatPower() + BALROG_POWER_UP);

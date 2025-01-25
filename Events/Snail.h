@@ -8,6 +8,10 @@
  * A slow-moving monster with unique characteristics.
  */
 class Snail : public Monster{
+    private:
+    static const int SNAIL_COMBAT_POWER = 5;
+    static const int SNAIL_LOOT = 2;
+    static const int SNAIL_DAMAGE = 10;
 public:
 
     /**
