@@ -1,5 +1,7 @@
 #include <iostream>
 using std::string;
+#include "../Utilities.h"
+
 #ifndef JOB_H
 #define JOB_H
 
@@ -164,6 +166,16 @@ public:
      * @return A string representing the job type.
      */
     virtual string getJobType() = 0;
+
+    
+
+    /**
+     * @brief Gets the effect of a solar eclipse on the job.
+     * 
+     * @param effect The effect of the solar eclipse.
+     * @return The effect of the solar eclipse on the job.
+     */
+    virtual int SolarEclipseEffect(int effect);
 };
 
 

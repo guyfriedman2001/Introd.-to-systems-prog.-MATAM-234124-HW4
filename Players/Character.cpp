@@ -11,3 +11,8 @@
 string Character::getDescription() const{
     return "Character::getDescription()";
 }
+
+void Character::makeDeal(Player& player, int price, int HP){
+    player.payCoins(price); 
+    player.heal(HP);
+}

@@ -20,7 +20,17 @@ public:
      * @brief Default constructor for the Magical class.
      */
     Magical() : Job() {};
+
+
     string getJobType() override;
+
+    /**
+     * @brief Gets the effect of a solar eclipse on Magical job.
+     * 
+     * @param effect The effect of the solar eclipse.
+     * @return The effect of the solar eclipse on the job.
+     */
+    int SolarEclipseEffect(int effect) override;
 };
 
 

@@ -86,8 +86,18 @@ using std::string;
         this->level = MIN(1 + this->level, MAXLEVEL);
     }
 
-
-
+    int Job::SolarEclipseEffect(int effect){
+        int tempPlayerForce = getForce();
+        getNerfed(effect);
+        if(getForce() != tempPlayerForce){
+            effect *= -1;
+        }
+        else{
+            effect = 0;
+        }
+        return effect;
+    }
+    
 
 
 

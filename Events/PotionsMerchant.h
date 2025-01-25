@@ -9,17 +9,8 @@
  */
 class PotionsMerchant : public SpecialEvent{
 private:
-
-    static const int MAX_HP_FOR_RISKTAKEING = 50; /**< Maximum HP threshold for risk-taking deals. */
     static const int HEAL_POINTS = 10; /**< Amount of HP restored in a healing deal. */
     static const int COINS = 5; /**< Amount of coins exchanged in a deal. */
-
-    /**
-     * @brief Executes a deal between the merchant and the player.
-     *
-     * @param player The player interacting with the merchant.
-     */
-    void makeDeal(Player& player);
 
 public:
 

@@ -7,6 +7,8 @@ using std::string;
  * @brief Represents the RiskTaking character class, inheriting from the Character base class.
  */
 class RiskTaking : public Character {
+    private:
+    static const int MAX_HP_FOR_RISKTAKEING = 50; /**< Maximum HP threshold for risk-taking deals. */
 
     public:
 
@@ -39,6 +41,15 @@ class RiskTaking : public Character {
      * @return A string containing the description of the character.
      */
     virtual string getDescription() const override;
+
+    /**
+     * @brief costimizes the tradeMerchant function for the RiskTaking character.
+     * 
+     * @param player The player associated with this character.
+     * @param price The cost of each healing action.
+     * @param HP The amount of health restored per healing action.
+     */
+    string buyPotions(Player& player, int price, int HP) override;
 
 };
 
