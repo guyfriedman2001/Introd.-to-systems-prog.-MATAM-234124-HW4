@@ -202,5 +202,8 @@ public:
     ~Player();
     string getJobType();
 
+    virtual void winFight(int loot);
+    virtual void loseFight(int Damage);
+
 };
 #endif //PLAYER_H

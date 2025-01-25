@@ -176,6 +176,8 @@ public:
      * @return The effect of the solar eclipse on the job.
      */
     virtual int SolarEclipseEffect(int effect);
+
+    virtual void winFight();
 };
 
 

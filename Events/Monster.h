@@ -50,8 +50,6 @@ public:
 
     static const int BALROG_POWER_UP = 2; /**< Power-up multiplier for specific monsters. */
 
-    static const int STRONG_DAMAGE = 10; /**< Threshold for strong damage. */
-
     public:
 
     /**

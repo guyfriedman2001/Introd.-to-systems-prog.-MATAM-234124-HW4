@@ -3,16 +3,12 @@
 Monster::Monster(int CombatPower, int Loot, int Damage): CombatPower(CombatPower), Loot(Loot), Damage(Damage){}
 std::string Monster::startEvent(Player& player){
     if(CombatPower < player.getCombatPower()){ 
-        player.recieveCoins(Loot);
-        player.levelUp();
-        if(player.getJobType() == "Strong"){
-            player.takeDamage(STRONG_DAMAGE);
-        }
+        player.winFight(Loot);
         return getEncounterWonMessage(player, Loot);
 
     }
     else{
-        player.takeDamage(Damage);
+        player.loseFight(Damage);
         return getEncounterLostMessage(player, Damage);
     }
 }

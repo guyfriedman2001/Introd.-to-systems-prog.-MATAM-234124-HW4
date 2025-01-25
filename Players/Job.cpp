@@ -98,6 +98,7 @@ using std::string;
         return effect;
     }
     
+    void Job::winFight(){}
 
 
 

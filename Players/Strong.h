@@ -7,6 +7,8 @@
  * @brief Represents the Strong job class type, inheriting from the Job base class.
  */
 class Strong : public Job{
+    private:
+     static const int STRONG_DAMAGE = 10; /**< Threshold for strong damage. */
 public:
 
     /**
@@ -25,6 +27,7 @@ public:
      * @return A string representing the type of the job.
      */
     string getJobType() override;
+    void winFight() override;
 };
 
 

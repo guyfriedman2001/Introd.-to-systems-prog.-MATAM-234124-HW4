@@ -123,3 +123,12 @@ void Player::levelUp(){
 string Player::getJobType(){
     return this->job->getJobType();
 }
+
+void Player::winFight(int loot){
+    this->recieveCoins(loot);
+    this->levelUp();
+    this->job->winFight();
+}
+ void Player::loseFight(int Damage){
+    this->takeDamage(Damage);
+ }
