@@ -10,17 +10,12 @@ Pack::Pack(vector<string>::iterator& monstersString): Monster(0,0,0), packSize(0
         if(tempsize < MINIMUM_PACK_SIZE || position != monstersString[0].length()){
             throw std::runtime_error("Invalid Events File");
         }
-        std::vector<std::shared_ptr<Event>> tempMonsters;
-
         for(int i = 0; i< tempsize; i++){
             monstersString++;
-            tempMonsters.push_back(EventFactory::create(monstersString));
-        }
-        
-        for(auto monster = tempMonsters.begin() ; monster < (tempMonsters.begin() + tempsize) ; monster++){
-            auto monsterptr = std::dynamic_pointer_cast<Monster>(*monster);
+            auto event = EventFactory::create(monstersString);
+            Monster* monsterptr = dynamic_cast<Monster*>(event.get());
             if(monsterptr != nullptr){
-                this->monsters.push_back(monsterptr);
+                this->monsters.push_back(std::shared_ptr<Monster>(event, monsterptr));
             }
             else{
                 throw std::runtime_error("Invalid Events File");

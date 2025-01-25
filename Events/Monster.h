@@ -55,13 +55,6 @@ public:
     public:
 
     /**
-     * @brief Sets the combat power of the monster.
-     *
-     * @param addCombatPower The value to adjust the combat power.
-     */
-    void setCombatPower(int addCombatPower);
-
-    /**
      * @brief Executes the encounter event with a player.
      *
      * @param player The player interacting with the monster.
