@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../Utilities.h"
 using std::string;
+
 class Player;
 
 #ifndef CHARACTER_H
