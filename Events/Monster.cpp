@@ -5,7 +5,6 @@ std::string Monster::startEvent(Player& player){
     if(CombatPower < player.getCombatPower()){ 
         player.winFight(Loot);
         return getEncounterWonMessage(player, Loot);
-
     }
     else{
         player.loseFight(Damage);
