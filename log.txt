@@ -1,3 +1,53 @@
+*   commit b2fd53e98426c5ae4a6f94b28558f9f37343f9c3
+|\  Merge: d927116 9fcf8e2
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 26 23:28:41 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit 9fcf8e21d4785be7666ccf3c5541a20bba988367
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 26 22:53:21 2025 +0200
+| | 
+| |     Delete Players/.DS_Store
+| | 
+| |  Players/.DS_Store | Bin 6148 -> 0 bytes
+| |  1 file changed, 0 insertions(+), 0 deletions(-)
+| | 
+* | commit d9271161064ae542e58d6e63e178473fc60fc917
+|/  Author: Ori Elkabetz <orielk2@gmail.com>
+|   Date:   Sun Jan 26 23:28:31 2025 +0200
+|   
+|       adding end check in player file
+|   
+|    MatamStory.cpp | 3 ++-
+|    1 file changed, 2 insertions(+), 1 deletion(-)
+|   
+*   commit 2c2ef03db63c1c534a43f04950fd538632e84b40
+|\  Merge: 65d1a63 fa14ded
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 26 22:50:17 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit fa14ded5bc29925875e93f74518b463efd5f88c9
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 26 22:48:29 2025 +0200
+| | 
+| |     Delete .DS_Store
+| | 
+| |  .DS_Store | Bin 8196 -> 0 bytes
+| |  1 file changed, 0 insertions(+), 0 deletions(-)
+| | 
+* | commit 65d1a635ce7592846d820438acbf0051971aa901
+|/  Author: Ori Elkabetz <orielk2@gmail.com>
+|   Date:   Sun Jan 26 22:50:07 2025 +0200
+|   
+|       creating log.txt
+|   
+|    log.txt | 2162 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|    1 file changed, 2162 insertions(+)
+| 
 * commit 9d507e94b0ca6d2abdd7f0f63c0d0f7fa6981dc6
 | Author: Ori Elkabetz <orielk2@gmail.com>
 | Date:   Sun Jan 26 22:47:30 2025 +0200
