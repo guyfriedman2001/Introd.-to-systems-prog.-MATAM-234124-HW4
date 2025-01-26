@@ -1,0 +1,2162 @@
+* commit 9d507e94b0ca6d2abdd7f0f63c0d0f7fa6981dc6
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sun Jan 26 22:47:30 2025 +0200
+| 
+|     adding dry and removing files
+| 
+|  .idea/.gitignore                                  |    8 -
+|  .idea/HW4MATAM.iml                                |    2 -
+|  .idea/editor.xml                                  |  580 ---------
+|  .idea/misc.xml                                    |    7 -
+|  .idea/modules.xml                                 |    8 -
+|  .idea/vcs.xml                                     |    8 -
+|  .vscode/launch.json                               |   39 -
+|  .vscode/settings.json                             |   78 --
+|  .vscode/tasks.json                                |   40 -
+|  MatamStory                                        |  Bin 300456 -> 0 bytes
+|  MatamStory.exe                                    |  Bin 2973518 -> 0 bytes
+|  MatamStoryTest                                    |  Bin 1592984 -> 0 bytes
+|  README.md                                         |    7 -
+|  Utilities.cpp                                     |  117 --
+|  Utilities.h                                       |  146 ---
+|  cmake-build-debug/.cmake/api/v1/query/cache-v2    |    0
+|  .../.cmake/api/v1/query/cmakeFiles-v1             |    0
+|  .../.cmake/api/v1/query/codemodel-v2              |    0
+|  .../.cmake/api/v1/query/toolchains-v1             |    0
+|  .../v1/reply/cache-v2-e0edb31a95aad995a7a2.json   | 1163 -------------------
+|  .../reply/cmakeFiles-v1-dabeafc2242fbdb10161.json |  161 ---
+|  .../reply/codemodel-v2-8480ec891690f6546fff.json  |   60 -
+|  .../directory-.-Debug-f5ebdc15457944623624.json   |   14 -
+|  .../v1/reply/index-2025-01-16T16-21-48-0384.json  |  108 --
+|  ...arget-HW4MATAM-Debug-9e16feee152519af30b8.json |  293 -----
+|  .../reply/toolchains-v1-bb57840159693364638b.json |   93 --
+|  cmake-build-debug/CMakeCache.txt                  |  363 ------
+|  .../CMakeFiles/3.29.6/CMakeCCompiler.cmake        |   80 --
+|  .../CMakeFiles/3.29.6/CMakeCXXCompiler.cmake      |   92 --
+|  .../3.29.6/CMakeDetermineCompilerABI_C.bin        |  Bin 4424 -> 0 bytes
+|  .../3.29.6/CMakeDetermineCompilerABI_CXX.bin      |  Bin 4408 -> 0 bytes
+|  .../CMakeFiles/3.29.6/CMakeSystem.cmake           |   15 -
+|  .../3.29.6/CompilerIdC/CMakeCCompilerId.c         |  895 --------------
+|  .../3.29.6/CompilerIdC/CMakeCCompilerId.o         |  Bin 1528 -> 0 bytes
+|  .../3.29.6/CompilerIdCXX/CMakeCXXCompilerId.cpp   |  878 --------------
+|  .../3.29.6/CompilerIdCXX/CMakeCXXCompilerId.o     |  Bin 1536 -> 0 bytes
+|  .../CMakeFiles/CMakeConfigureLog.yaml             |  433 -------
+|  .../CMakeFiles/TargetDirectories.txt              |    3 -
+|  cmake-build-debug/CMakeFiles/clion-Debug-log.txt  |    5 -
+|  .../CMakeFiles/clion-environment.txt              |    4 -
+|  cmake-build-debug/CMakeFiles/cmake.check_cache    |    1 -
+|  cmake-build-debug/CMakeFiles/rules.ninja          |   64 -
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |    3 -
+|  cmake-build-debug/build.ninja                     |  199 ----
+|  cmake-build-debug/cmake_install.cmake             |   49 -
+|  dry.pdf                                           |  Bin 0 -> 828289 bytes
+|  main.cpp                                          |   40 -
+|  tests/test1.events                                |    5 -
+|  tests/test1.expected                              |   96 --
+|  tests/test1.players                               |    3 -
+|  tests/test2.events                                |    4 -
+|  tests/test2.expected                              |    1 -
+|  tests/test2.players                               |    3 -
+|  tests/test3.events                                |    5 -
+|  tests/test3.expected                              |    1 -
+|  tests/test3.players                               |    2 -
+|  56 files changed, 6176 deletions(-)
+| 
+* commit 9ba77d60215be5ed380688f5b4ecf7f2efb31e1e
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sun Jan 26 22:37:47 2025 +0200
+| 
+|     removing delete
+| 
+|  maybeDelete/MatamPlayer.h      | 101 ---------------------------------------
+|  maybeDelete/MatamPlayerMaker.h |  12 -----
+|  maybeDelete/PlayerAdapter.h    |  54 ---------------------
+|  3 files changed, 167 deletions(-)
+|   
+*   commit f6ac6e130f8206b42648fb77b1dabb7ad27debcc
+|\  Merge: 4349352 a5e7356
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 26 22:36:03 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit a5e735614f4e7477195ee1c6b288d9291feb54b4
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sun Jan 19 15:50:57 2025 +0200
+| | 
+| |     Update Character.h
+| | 
+| |  Players/Character.h | 2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+| | 
+* | commit 4349352e0283136fac11053615cb13d94fff1ef1
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 26 22:29:42 2025 +0200
+| | 
+| |     trying to merge
+| | 
+| |  .gitmodules           |   6 ------
+| |  .idea/vcs.xml         |   2 ++
+| |  .vscode/launch.json   |  39 +++++++++++++++++++++++++++++++++++++++
+| |  .vscode/settings.json |  21 +++++++++++++++++++--
+| |  .vscode/tasks.json    |  41 ++++++++++++++++++++++++++---------------
+| |  Events/Monster.cpp    |   1 -
+| |  MatamGenericTester    |   1 -
+| |  MatamStory            | Bin 0 -> 300456 bytes
+| |  MatamStory.exe        | Bin 0 -> 2973518 bytes
+| |  MatamStoryTest        | Bin 0 -> 1592984 bytes
+| |  TechnionMatam         |   1 -
+| |  11 files changed, 86 insertions(+), 26 deletions(-)
+| | 
+* | commit 9c299b68164be57b6813872252610118a5345f5a
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 25 21:36:03 2025 +0200
+| | 
+| |     fixing monster start event
+| | 
+| |  Events/Balrog.cpp  | 2 +-
+| |  Events/Monster.cpp | 8 ++------
+| |  Events/Monster.h   | 2 --
+| |  Players/Job.cpp    | 1 +
+| |  Players/Job.h      | 2 ++
+| |  Players/Player.cpp | 9 +++++++++
+| |  Players/Player.h   | 3 +++
+| |  Players/Strong.cpp | 4 ++++
+| |  Players/Strong.h   | 3 +++
+| |  9 files changed, 25 insertions(+), 9 deletions(-)
+| | 
+* | commit ec494e999c9002865a9c325ad59cc3a757da2115
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 25 15:59:34 2025 +0200
+| | 
+| |     fixing special event to stategy DP
+| | 
+| |  Events/PotionsMerchant.cpp | 39 +--------------------------------------
+| |  Events/PotionsMerchant.h   |  9 ---------
+| |  Events/SolarEclipse.cpp    | 15 +--------------
+| |  Players/Character.cpp      |  7 ++++++-
+| |  Players/Character.h        | 21 +++++++++++++++++++++
+| |  Players/Job.cpp            | 14 ++++++++++++--
+| |  Players/Job.h              | 12 ++++++++++++
+| |  Players/Magical.cpp        |  4 ++++
+| |  Players/Magical.h          | 10 ++++++++++
+| |  Players/Responsible.cpp    |  9 +++++++++
+| |  Players/Responsible.h      |  9 +++++++++
+| |  Players/RiskTaking.cpp     | 11 +++++++++--
+| |  Players/RiskTaking.h       | 11 +++++++++++
+| |  13 files changed, 105 insertions(+), 66 deletions(-)
+| | 
+* | commit 5314a7e63a0d339a97894f240e2d119f1b0bcf4b
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 25 13:50:37 2025 +0200
+| | 
+| |     adding const to monsters
+| | 
+| |  Events/Balrog.cpp | 2 +-
+| |  Events/Balrog.h   | 4 ++++
+| |  Events/Slime.cpp  | 4 ----
+| |  Events/Slime.h    | 4 ++++
+| |  Events/Snail.cpp  | 2 +-
+| |  Events/Snail.h    | 4 ++++
+| |  6 files changed, 14 insertions(+), 6 deletions(-)
+| | 
+* | commit 3a73c3ee74e849fae57325b020d8f7957723fcc9
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 25 13:07:14 2025 +0200
+| | 
+| |     removing duplication and dynamic_pointer_cast
+| | 
+| |  Events/Monster.h |  7 -------
+| |  Events/Pack.cpp  | 11 +++--------
+| |  2 files changed, 3 insertions(+), 15 deletions(-)
+| | 
+* | commit d4e1c430f974b3fa6bf9c7126fce44d80564a416
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Fri Jan 24 22:08:02 2025 +0200
+| | 
+| |     Update AllCharacters.h
+| | 
+| |  Players/AllCharacters.h | 1 +
+| |  1 file changed, 1 insertion(+)
+| | 
+* | commit 18fadc9a3984f2e776218ec680086c6f533717ef
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Fri Jan 24 21:25:06 2025 +0200
+| | 
+| |     move code from cpp to .h
+| | 
+| |  Players/Warrior.cpp |  9 +++++++++
+| |  Players/Warrior.h   | 15 ++++++++-------
+| |  2 files changed, 17 insertions(+), 7 deletions(-)
+| | 
+* | commit 35368f670a9e3030dbe8958f299217f7821f18cc
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Fri Jan 24 21:24:52 2025 +0200
+| | 
+| |     add documentation
+| | 
+| |  Events/Event.h           |  8 ++++
+| |  Events/Monster.h         | 95 ++++++++++++++++++++++++++++++++++++++++++--
+| |  Events/Pack.h            | 61 +++++++++++++++++++++++++---
+| |  Events/PotionsMerchant.h | 41 ++++++++++++++++---
+| |  Events/Slime.h           | 32 ++++++++++++++-
+| |  Events/Snail.h           | 31 ++++++++++++++-
+| |  Events/SolarEclipse.h    | 36 ++++++++++++++---
+| |  Events/SpecialEvent.h    | 25 +++++++++++-
+| |  Players/Character.h      | 26 ++++++++++++
+| |  Players/CharacterMaker.h | 13 ++++++
+| |  Players/Fast.h           | 21 +++++++++-
+| |  Players/Job.h            |  3 --
+| |  Players/JobMaker.h       | 11 +++++
+| |  Players/Magician.h       |  6 +++
+| |  Players/PlayerMaker.h    | 29 +++++++++-----
+| |  Players/Responsible.h    |  3 --
+| |  Players/RiskTaking.h     |  7 +---
+| |  Players/Strong.h         |  6 +++
+| |  18 files changed, 409 insertions(+), 45 deletions(-)
+| |   
+* |   commit a801defdddc0d32eaa39885aef28c666f0236578
+|\ \  Merge: 705aaec 3d78d1a
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Fri Jan 24 20:15:55 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | |   
+| * |   commit 3d78d1a8c32bd3aa81e535407e46bdc09be09d8e
+| |\ \  Merge: 36a4c03 0f45f53
+| | | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | | Date:   Fri Jan 24 19:55:16 2025 +0200
+| | | | 
+| | | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | | 
+| * | | commit 36a4c03a4404aabaa319a99ae2a0c4e456c70375
+| | | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | | Date:   Fri Jan 24 19:55:07 2025 +0200
+| | | | 
+| | | |     removing comments
+| | | | 
+| | | |  MatamStory.cpp             |  3 +++
+| | | |  Players/AllCharacters.h    |  2 --
+| | | |  Players/AllJobs.h          |  5 -----
+| | | |  Players/Archer.cpp         |  4 ----
+| | | |  Players/Archer.h           |  3 ---
+| | | |  Players/Character.cpp      | 11 +----------
+| | | |  Players/Character.h        | 13 -------------
+| | | |  Players/CharacterMaker.cpp |  4 ----
+| | | |  Players/CharacterMaker.h   | 10 +---------
+| | | |  Players/Fast.cpp           |  4 ----
+| | | |  Players/Fast.h             |  3 ---
+| | | |  Players/Job.cpp            | 12 ------------
+| | | |  Players/Job.h              |  6 ------
+| | | |  Players/JobMaker.cpp       | 14 +-------------
+| | | |  Players/JobMaker.h         |  5 -----
+| | | |  Players/Magical.cpp        |  4 ----
+| | | |  Players/Magical.h          |  3 ---
+| | | |  Players/Magician.cpp       |  4 ----
+| | | |  Players/Magician.h         |  5 -----
+| | | |  Players/Player.cpp         | 15 ---------------
+| | | |  Players/Player.h           |  9 +--------
+| | | |  Players/PlayerMaker.cpp    | 16 +---------------
+| | | |  Players/PlayerMaker.h      | 29 ++++++++++++-----------------
+| | | |  Players/Responsible.cpp    | 11 -----------
+| | | |  Players/Responsible.h      |  3 ---
+| | | |  Players/RiskTaking.cpp     | 19 -------------------
+| | | |  Players/RiskTaking.h       |  6 ------
+| | | |  Players/Strong.cpp         |  4 ----
+| | | |  Players/Strong.h           |  3 ---
+| | | |  Players/Warrior.cpp        |  4 ----
+| | | |  Players/Warrior.h          |  3 ---
+| | | |  31 files changed, 20 insertions(+), 217 deletions(-)
+| | | | 
+* | | | commit 705aaec33107b05f4762c6bbfa2f412bb973a210
+| |/ /  Author: guy friedman <guy.friedman2001@gmail.com>
+|/| |   Date:   Fri Jan 24 20:15:43 2025 +0200
+| | |   
+| | |       Update Slime.cpp
+| | |   
+| | |    Events/Slime.cpp | 6 +++++-
+| | |    1 file changed, 5 insertions(+), 1 deletion(-)
+| | | 
+* | | commit 0f45f53b36e1737d8e58dfdf6c718ee5e0cc7cd1
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Fri Jan 24 19:05:51 2025 +0200
+| | | 
+| | |     Update Monster.h
+| | | 
+| | |  Events/Monster.h | 8 --------
+| | |  1 file changed, 8 deletions(-)
+| | | 
+* | | commit 0deb2ad05f067b2a1a25fe6fcb23cc4ae9d7595d
+|\| | Merge: 97b3931 1af5fe0
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Fri Jan 24 19:04:54 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit 1af5fe0d7d74a44c6926b56ff21833be0a36c032
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Fri Jan 24 18:58:55 2025 +0200
+| | | 
+| | |     removing magic numbers in matamstory
+| | | 
+| | |  MatamStory.cpp | 10 +++++-----
+| | |  MatamStory.h   |  4 ++++
+| | |  2 files changed, 9 insertions(+), 5 deletions(-)
+| | | 
+* | | commit 97b39313050da5b1c73b1fbc4d90474b34c26903
+|\| | Merge: 5adc8b6 cb4eca2
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Fri Jan 24 19:04:40 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit cb4eca27eaa8d8182737c6dd00a2d0fc46d02379
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Fri Jan 24 18:52:31 2025 +0200
+| | | 
+| | |     handling magic numbers
+| | | 
+| | |  Events/Balrog.cpp  | 2 +-
+| | |  Events/Monster.cpp | 2 +-
+| | |  Events/Monster.h   | 6 ++++--
+| | |  Events/Pack.cpp    | 4 ++--
+| | |  Events/Pack.h      | 4 +++-
+| | |  Events/Slime.cpp   | 1 +
+| | |  Events/Snail.cpp   | 3 +++
+| | |  7 files changed, 15 insertions(+), 7 deletions(-)
+| | | 
+| * | commit 4a34ec066c2c8ebbabd2ebd8231074f94a4af6c2
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Fri Jan 24 18:17:03 2025 +0200
+| | | 
+| | |     removing magic numbers from SE
+| | | 
+| | |  Events/SolarEclipse.cpp | 12 ++++++------
+| | |  Events/SolarEclipse.h   |  4 +++-
+| | |  2 files changed, 9 insertions(+), 7 deletions(-)
+| | | 
+| * | commit 0c1aa00e0fc997e53446b5fe6dd212c316528405
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Fri Jan 24 18:13:49 2025 +0200
+| | | 
+| | |     removing magic numbers from PM
+| | | 
+| | |  Events/PotionsMerchant.cpp | 8 ++++----
+| | |  Events/PotionsMerchant.h   | 4 +++-
+| | |  2 files changed, 7 insertions(+), 5 deletions(-)
+| | | 
+* | | commit 5adc8b618f8fd48fed8bca10ae46ae5ac081c7b2
+|/ /  Author: guy friedman <guy.friedman2001@gmail.com>
+| |   Date:   Fri Jan 24 18:53:48 2025 +0200
+| |   
+| |       add documentation
+| |   
+| |    Events/Balrog.h       | 29 ++++++++++++++++++++++++++++-
+| |    Events/Encounter.h    | 32 +++++++++++++++++++++++++++++++-
+| |    Events/Event.h        | 24 ++++++++++++++++++++----
+| |    Events/EventFactory.h | 27 +++++++++++++++++++++++++--
+| |    Events/Monster.h      | 21 +++++++++++++++------
+| |    Players/Archer.h      | 19 +++++++++++++++++++
+| |    6 files changed, 138 insertions(+), 14 deletions(-)
+| | 
+* | commit edac020b3e98ba20b9900e31508e410da69c3480
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 24 17:59:17 2025 +0200
+| | 
+| |     fixing pack size after update from piazza
+| | 
+| |  Events/Event.h     |  1 +
+| |  Events/Monster.cpp |  5 ++---
+| |  Events/Monster.h   |  3 ++-
+| |  Events/Pack.cpp    | 19 ++++++++++++-------
+| |  Events/Pack.h      |  5 +++--
+| |  5 files changed, 20 insertions(+), 13 deletions(-)
+| | 
+* | commit 73585a0bbf19f6cc33333007904d571cb3d9341e
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 24 16:35:01 2025 +0200
+| | 
+| |     changing eventfactory to map
+| | 
+| |  Events/EventFactory.cpp | 42 +++++++++++++++++-------------------------
+| |  Events/EventFactory.h   | 22 +++++-----------------
+| |  2 files changed, 22 insertions(+), 42 deletions(-)
+| | 
+* | commit 00439da975df33dd7f974d41acb15c2c74b61675
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 24 16:34:31 2025 +0200
+| | 
+| |     removing comments and duplicated includes
+| | 
+| |  Events/AllEvents.h         |  3 ---
+| |  Events/Balrog.cpp          |  2 --
+| |  Events/Balrog.h            |  2 --
+| |  Events/Encounter.h         |  6 ------
+| |  Events/Event.cpp           | 18 +-----------------
+| |  Events/Event.h             | 17 +++--------------
+| |  Events/Monster.cpp         |  2 --
+| |  Events/Monster.h           |  5 -----
+| |  Events/Pack.cpp            | 15 +++------------
+| |  Events/Pack.h              |  5 -----
+| |  Events/PotionsMerchant.cpp |  5 +----
+| |  Events/PotionsMerchant.h   |  3 ---
+| |  Events/Slime.cpp           |  5 -----
+| |  Events/Slime.h             |  3 ---
+| |  Events/Snail.cpp           |  5 -----
+| |  Events/Snail.h             |  3 ---
+| |  Events/SolarEclipse.cpp    |  5 -----
+| |  Events/SolarEclipse.h      |  4 +---
+| |  Events/SpecialEvent.h      |  2 --
+| |  19 files changed, 9 insertions(+), 101 deletions(-)
+| | 
+* | commit f0df789ae17a929ff4e46343f55d191d259cc4b4
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 24 13:36:26 2025 +0200
+| | 
+| |     removing comments and sending iter
+| | 
+| |  Events/Pack.cpp | 123 +++++++++++++++-------------------------------------
+| |  Events/Pack.h   |   2 +-
+| |  2 files changed, 35 insertions(+), 90 deletions(-)
+| | 
+* | commit d710326eaba1d6bf4a8b2e01495a63d69e78e6c7
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 24 13:35:48 2025 +0200
+| | 
+| |     removing a lot of comments and fixing pack(semding iter insead of vector
+| | 
+| |  Events/EventFactory.cpp | 192 ++++----------------------------------------
+| |  Events/EventFactory.h   |   6 +-
+| |  2 files changed, 18 insertions(+), 180 deletions(-)
+| | 
+* | commit 6e1fb59a7e62099302968900ab9542ff5164500c
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 24 13:34:08 2025 +0200
+| | 
+| |     removing comments and duplicalte code
+| | 
+| |  MatamStory.cpp | 128 +++++++++++------------------------------------------
+| |  MatamStory.h   |   2 +-
+| |  2 files changed, 28 insertions(+), 102 deletions(-)
+| |   
+* |   commit 63b2b8fc7e64a647a439445a1c72d9c6e84d6bb4
+|\ \  Merge: abf30d3 2bbf07f
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Tue Jan 21 23:19:59 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit 2bbf07f9c1257e3cbbd7be732a4f2a3ffc2df783
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Tue Jan 21 21:45:09 2025 +0200
+| | | 
+| | |     Update Job.cpp
+| | | 
+| | |  Players/Job.cpp | 2 +-
+| | |  1 file changed, 1 insertion(+), 1 deletion(-)
+| | |   
+| * |   commit c3cef3c2f543b47b0629dfc6a4cebebca710e921
+| |\ \  Merge: b31a8f2 10a7408
+| | | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | | Date:   Tue Jan 21 21:45:04 2025 +0200
+| | | | 
+| | | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | | 
+| * | | commit b31a8f2aff818d86259371f249e2bb35c371bec9
+| | | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | | Date:   Tue Jan 21 21:38:31 2025 +0200
+| | | | 
+| | | |     remove unknown constexpr
+| | | | 
+| | | |  Players/Job.cpp | 2 +-
+| | | |  1 file changed, 1 insertion(+), 1 deletion(-)
+| | | | 
+* | | | commit abf30d356ff6822ec49394ffc359e2eabb996c8d
+| |/ /  Author: Ori Elkabetz <orielk2@gmail.com>
+|/| |   Date:   Tue Jan 21 23:19:50 2025 +0200
+| | |   
+| | |       not working yet - but better
+| | |   
+| | |    Events/EventFactory.cpp | 16 ++++++++++------
+| | |    Events/Pack.cpp         |  5 ++++-
+| | |    2 files changed, 14 insertions(+), 7 deletions(-)
+| | | 
+* | | commit 10a74080d22e6273482660fbf310fc116194c60a
+|/ /  Author: Ori Elkabetz <orielk2@gmail.com>
+| |   Date:   Tue Jan 21 21:38:19 2025 +0200
+| |   
+| |       fixing coins
+| |   
+| |    Events/PotionsMerchant.cpp | 2 +-
+| |    Players/Job.cpp            | 7 -------
+| |    2 files changed, 1 insertion(+), 8 deletions(-)
+| |   
+* |   commit d33d1b0796710134da9c2db78b3fab9d726a159a
+|\ \  Merge: 1298f56 65e8448
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Tue Jan 21 21:28:55 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit 65e8448cc62b0b2e4b99f8583d08ac8b7a3dff4f
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Tue Jan 21 21:25:46 2025 +0200
+| | | 
+| | |     job fix
+| | | 
+| | |  Players/Job.cpp | 4 ++--
+| | |  Players/Job.h   | 4 ++--
+| | |  2 files changed, 4 insertions(+), 4 deletions(-)
+| | | 
+| * | commit 2c3323716d87b18f1fbf3526c7f1beddef3b8cff
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Tue Jan 21 14:17:13 2025 +0200
+| | | 
+| | |     fix some bugs
+| | | 
+| | |  Players/Job.cpp | 55 +++++++++++++++++++++++----------------------------
+| | |  Players/Job.h   |  5 -----
+| | |  2 files changed, 25 insertions(+), 35 deletions(-)
+| | | 
+| * | commit d2e36122fa9645131ca836d65dcd238c5b9dc6e8
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Tue Jan 21 14:09:50 2025 +0200
+| | | 
+| | |     move implementation from .h to .cpp, add documentation
+| | | 
+| | |  Players/Job.cpp | 106 +++++++++++++++++++++++++
+| | |  Players/Job.h   | 211 +++++++++++++++++++++++++++++---------------------
+| | |  2 files changed, 227 insertions(+), 90 deletions(-)
+| | | 
+* | | commit 1298f562cbe5a7b2d3be451a6dd3ea8bc6355b87
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Tue Jan 21 21:28:48 2025 +0200
+| | | 
+| | |     trying to get packs (not good)
+| | | 
+| | |  Events/EventFactory.cpp | 151 ++++++++++++++++++++++++++++++++++--------
+| | |  Events/EventFactory.h   |   6 +-
+| | |  Events/Pack.cpp         |  72 +++++++++++++++-----
+| | |  Events/Pack.h           |   3 +-
+| | |  4 files changed, 185 insertions(+), 47 deletions(-)
+| | | 
+* | | commit fbacf375f18c947a891fab8c79fee29bca78bafe
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Tue Jan 21 21:28:18 2025 +0200
+| | | 
+| | |     handling exeption in makers
+| | | 
+| | |  Players/Character.h        |  1 +
+| | |  Players/CharacterMaker.cpp |  2 +-
+| | |  Players/JobMaker.cpp       |  2 +-
+| | |  Players/PlayerMaker.cpp    | 15 +++++++++------
+| | |  Players/PlayerMaker.h      |  2 +-
+| | |  5 files changed, 13 insertions(+), 9 deletions(-)
+| | | 
+* | | commit 088290ce8f2ce10e208cb2a88be1fe8ae0b1c4f6
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Tue Jan 21 21:27:45 2025 +0200
+| | | 
+| | |     changing setters of monster
+| | | 
+| | |  Events/Balrog.cpp          |  2 +-
+| | |  Events/Monster.cpp         |  8 ++++----
+| | |  Events/Monster.h           |  2 +-
+| | |  Events/PotionsMerchant.cpp | 21 +++++++++++----------
+| | |  4 files changed, 17 insertions(+), 16 deletions(-)
+| | | 
+* | | commit 88d3cd5569eab19cdbe54ce19ab4e1eea2a0e021
+|/ /  Author: Ori Elkabetz <orielk2@gmail.com>
+| |   Date:   Tue Jan 21 21:26:17 2025 +0200
+| |   
+| |       trying to fix reding files
+| |   
+| |    MatamStory.cpp | 25 ++++++++++++++++++-------
+| |    1 file changed, 18 insertions(+), 7 deletions(-)
+| | 
+* | commit 01da8c459c7567161a226e3e554e0f766d4e79bf
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Tue Jan 21 13:21:18 2025 +0200
+| | 
+| |     removing unsigned int to int
+| | 
+| |  .gitmodules              |  6 +++++
+| |  .vscode/settings.json    | 61 ++++++++++++++++++++++++++++++++++++++++++++
+| |  Events/Balrog.cpp        |  5 ++--
+| |  Events/Event.h           |  1 +
+| |  Events/EventFactory.cpp  | 41 ++++++++++++++++++++++++-----
+| |  Events/EventFactory.h    |  8 +++---
+| |  Events/Monster.cpp       | 17 +++++++-----
+| |  Events/Monster.h         | 22 ++++++++--------
+| |  Events/Pack.cpp          | 58 +++++++++++++++++++++++++++--------------
+| |  Events/Pack.h            |  6 +++--
+| |  Events/PotionsMerchant.h |  2 +-
+| |  Events/SolarEclipse.h    |  2 +-
+| |  MatamGenericTester       |  1 +
+| |  MatamStory.cpp           | 52 ++++++++++++++++++++++---------------
+| |  MatamStory.h             | 11 +++++---
+| |  Players/Character.cpp    |  8 +++---
+| |  Players/Character.h      |  9 ++++---
+| |  Players/Job.h            | 32 +++++++++++------------
+| |  Players/Player.cpp       |  4 +--
+| |  Players/Player.h         |  2 +-
+| |  Players/PlayerMaker.cpp  | 27 ++++++++++++--------
+| |  Players/Responsible.cpp  | 16 ++++++------
+| |  Players/Responsible.h    |  4 +--
+| |  Players/RiskTaking.cpp   | 16 ++++++------
+| |  Players/RiskTaking.h     |  4 +--
+| |  Players/Warrior.h        |  2 +-
+| |  TechnionMatam            |  1 +
+| |  27 files changed, 285 insertions(+), 133 deletions(-)
+| | 
+* | commit 665cfa198d85d76aeffe5de5863a32e438eada89
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Mon Jan 20 18:34:20 2025 +0200
+| | 
+| |     trying to deal with end cases
+| | 
+| |  Events/EventFactory.cpp |  2 +-
+| |  Events/SolarEclipse.cpp |  8 +++++++-
+| |  MatamStory.cpp          | 35 +++++++++++++++++++++++++++--------
+| |  Players/PlayerMaker.cpp | 17 +++++++++++++++++
+| |  Players/PlayerMaker.h   |  3 +++
+| |  Players/Warrior.h       |  2 +-
+| |  6 files changed, 56 insertions(+), 11 deletions(-)
+| | 
+* | commit 0b195575bb7fe93842adb3f78a7b0bbaa012fe43
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 23:57:30 2025 +0200
+| | 
+| |     removing comments
+| | 
+| |  MatamStory.cpp | 106 ++++++++++-------------------------------------------
+| |  MatamStory.h   |   1 -
+| |  2 files changed, 19 insertions(+), 88 deletions(-)
+| | 
+* | commit e541a4aea54541e2c6c776a1c05a3c22ef897c15
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 23:54:46 2025 +0200
+| | 
+| |     adding getDescription + getJobType
+| | 
+| |  Events/Monster.cpp         |  3 +++
+| |  Events/PotionsMerchant.cpp |  4 ++--
+| |  Events/Slime.cpp           |  2 +-
+| |  Events/SolarEclipse.cpp    |  2 +-
+| |  Players/Archer.cpp         |  4 ++++
+| |  Players/Archer.h           |  1 +
+| |  Players/Character.cpp      |  3 +++
+| |  Players/Character.h        |  2 +-
+| |  Players/Fast.cpp           |  4 ++++
+| |  Players/Fast.h             |  1 +
+| |  Players/Job.h              | 20 ++++++++++++++++----
+| |  Players/Magical.cpp        |  3 +++
+| |  Players/Magical.h          |  1 +
+| |  Players/Magician.cpp       |  3 +++
+| |  Players/Magician.h         |  2 ++
+| |  Players/Player.cpp         | 11 ++++++-----
+| |  Players/Player.h           |  2 +-
+| |  Players/Responsible.cpp    |  5 ++++-
+| |  Players/Responsible.h      |  1 +
+| |  Players/RiskTaking.cpp     |  4 ++++
+| |  Players/RiskTaking.h       |  2 +-
+| |  Players/Strong.cpp         |  3 +++
+| |  Players/Strong.h           |  1 +
+| |  Players/Warrior.cpp        |  3 +++
+| |  Players/Warrior.h          |  1 +
+| |  25 files changed, 71 insertions(+), 17 deletions(-)
+| |   
+* |   commit 02dbb2fce13cf411ed43a78d831f6134d66dee2e
+|\ \  Merge: 61aa559 8542772
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Sun Jan 19 22:49:12 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit 85427728c583157af31f029f0866aa0a34276622
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 22:09:35 2025 +0200
+| | | 
+| | |     i really really dont know wtf i did
+| | | 
+| | |  Players/AllJobs.h  | 8 ++++----
+| | |  Players/JobMaker.h | 1 +
+| | |  Players/Player.h   | 1 +
+| | |  3 files changed, 6 insertions(+), 4 deletions(-)
+| | | 
+| * | commit 6c8aa7f1488bf7b502769cd6c6c8d8e4f848dfa2
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 22:01:25 2025 +0200
+| | | 
+| | |     move to cbb
+| | | 
+| | |  Players/CharacterMaker.cpp |  9 +++++++++
+| | |  Players/CharacterMaker.h   | 10 +---------
+| | |  Players/Job.h              |  4 +++-
+| | |  Players/JobMaker.cpp       | 30 ++++++++++--------------------
+| | |  Players/JobMaker.h         | 21 +--------------------
+| | |  5 files changed, 24 insertions(+), 50 deletions(-)
+| | | 
+| * | commit 59bf98eae43758910baa521be0f280e43531b649
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 21:54:39 2025 +0200
+| | | 
+| | |     move to cpp
+| | | 
+| | |  Players/PlayerMaker.cpp | 5 +++++
+| | |  Players/PlayerMaker.h   | 6 +-----
+| | |  Players/RiskTaking.cpp  | 2 +-
+| | |  3 files changed, 7 insertions(+), 6 deletions(-)
+| | | 
+* | | commit 61aa5599bae89fe00e917343251b2de4aaf9bd9e
+|/ /  Author: Ori Elkabetz <orielk2@gmail.com>
+| |   Date:   Sun Jan 19 22:45:46 2025 +0200
+| |   
+| |       fixing includes in players
+| |   
+| |    Players/AllCharacters.h    |  4 ++--
+| |    Players/AllJobs.h          |  2 +-
+| |    Players/Archer.h           |  4 +---
+| |    Players/Character.h        |  6 ++++--
+| |    Players/CharacterMaker.cpp | 12 ++++++++++++
+| |    Players/CharacterMaker.h   | 24 ++++++++----------------
+| |    Players/Fast.h             |  4 ++--
+| |    Players/Job.h              | 16 ++++++----------
+| |    Players/JobMaker.cpp       | 33 +++++++++++++++++----------------
+| |    Players/JobMaker.h         | 33 ++++++++++-----------------------
+| |    Players/Magical.h          |  4 ++--
+| |    Players/Magician.h         |  4 ++--
+| |    Players/Player.cpp         |  9 +++++++--
+| |    Players/Player.h           | 30 +++++++++++++++++-------------
+| |    Players/PlayerMaker.cpp    |  7 +++++++
+| |    Players/PlayerMaker.h      | 18 +++++++++---------
+| |    Players/Responsible.cpp    | 23 ++++-------------------
+| |    Players/Responsible.h      | 12 ++++++------
+| |    Players/RiskTaking.cpp     | 13 ++-----------
+| |    Players/RiskTaking.h       | 12 ++++++------
+| |    Players/Strong.h           |  4 ++--
+| |    Players/Warrior.h          |  4 ++--
+| |    22 files changed, 129 insertions(+), 149 deletions(-)
+| | 
+* | commit 5c570bb6986e8a7c0d08e557ced2ed0f7dd34677
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sun Jan 19 21:43:14 2025 +0200
+| | 
+| |     move ifndef
+| | 
+| |  Players/Responsible.h | 5 +++--
+| |  Players/RiskTaking.h  | 5 +++--
+| |  2 files changed, 6 insertions(+), 4 deletions(-)
+| | 
+* | commit c1177105260c3f64e79f9553ce493ed403270c76
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sun Jan 19 21:41:51 2025 +0200
+| | 
+| |     try to fix
+| | 
+| |  Players/Character.h   | 2 +-
+| |  Players/Responsible.h | 9 ++++++---
+| |  2 files changed, 7 insertions(+), 4 deletions(-)
+| | 
+* | commit 109ea3bdeaefab73dd7d8ff71df1273c2b1e2dfe
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sun Jan 19 21:30:03 2025 +0200
+| | 
+| |     move from cpp to h
+| | 
+| |  Players/Responsible.cpp | 34 ++++++++++++++++++++++++++++++++++
+| |  Players/Responsible.h   | 21 +++++++--------------
+| |  Players/RiskTaking.cpp  | 32 ++++++++++++++++++++++++++++++++
+| |  Players/RiskTaking.h    | 18 +++++-------------
+| |  4 files changed, 78 insertions(+), 27 deletions(-)
+| |   
+* |   commit 20ed6f03d0b6cde8d4fc7dcfbe404031ed30ba0b
+|\ \  Merge: 2aa4a4a ab846ca
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 21:16:10 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | |   
+| * |   commit ab846caffeea67306b876104b2b50707db0396a1
+| |\ \  Merge: d543576 e6a1b39
+| | | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | | Date:   Sun Jan 19 21:07:56 2025 +0200
+| | | | 
+| | | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | | 
+| * | | commit d54357605da56daa9676cf76aa901bee666df6de
+| | | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | | Date:   Sun Jan 19 21:07:48 2025 +0200
+| | | | 
+| | | |     changing from * to not *
+| | | | 
+| | | |  Events/EventFactory.cpp |  7 ++--
+| | | |  Events/EventFactory.h   |  4 +--
+| | | |  Events/Pack.cpp         |  8 ++---
+| | | |  Events/Pack.h           |  2 +-
+| | | |  MatamStory.cpp          | 74 ++++++++++++++++++++++++-----------------
+| | | |  MatamStory.h            |  6 ++--
+| | | |  6 files changed, 57 insertions(+), 44 deletions(-)
+| | | | 
+* | | | commit 2aa4a4af9f1d8b854c05c9dc7ca65cc6c501654f
+| |/ /  Author: guy friedman <guy.friedman2001@gmail.com>
+|/| |   Date:   Sun Jan 19 21:15:59 2025 +0200
+| | |   
+| | |       fix include headers
+| | |   
+| | |    {maybeDelete => Players}/CharacterMaker.h | 0
+| | |    Players/Player.h                          | 8 ++++++--
+| | |    Players/PlayerMaker.h                     | 2 --
+| | |    3 files changed, 6 insertions(+), 4 deletions(-)
+| | | 
+* | | commit e6a1b393da0fb2fb0219cbee5b6979072e8be2f5
+|/ /  Author: guy friedman <guy.friedman2001@gmail.com>
+| |   Date:   Sun Jan 19 20:30:23 2025 +0200
+| |   
+| |       move adapters to seperate folder
+| |   
+| |    {Players => maybeDelete}/CharacterMaker.h   | 0
+| |    {Players => maybeDelete}/MatamPlayer.h      | 0
+| |    {Players => maybeDelete}/MatamPlayerMaker.h | 0
+| |    {Players => maybeDelete}/PlayerAdapter.h    | 0
+| |    4 files changed, 0 insertions(+), 0 deletions(-)
+| | 
+* | commit d9a068929fdb8b282dee9ae1efdf9a837bb75ec0
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 19:12:01 2025 +0200
+| | 
+| |     trying to fix mtmstory ctor
+| | 
+| |  MatamStory.cpp | 28 ++++++++++++++++++++++------
+| |  1 file changed, 22 insertions(+), 6 deletions(-)
+| | 
+* | commit 966087d69bf28d9d8f43ef0f31fb4705f4a43ed6
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 19:11:25 2025 +0200
+| | 
+| |     adding missing func calls + removing duplicated funcs
+| | 
+| |  Players/Player.cpp | 87 ++++++++++++++------------------------------------
+| |  Players/Player.h   |  9 ++++--
+| |  2 files changed, 31 insertions(+), 65 deletions(-)
+| | 
+* | commit 869df53f9f8aeea2f764eec8bed2d739a9dc4be4
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 19:09:31 2025 +0200
+| | 
+| |     removing typos
+| | 
+| |  Players/MatamPlayer.h | 4 ++--
+| |  1 file changed, 2 insertions(+), 2 deletions(-)
+| | 
+* | commit 49720d0c4c449fb4bb1de1d0392f43136e842d25
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 19:08:10 2025 +0200
+| | 
+| |     splitting character
+| | 
+| |  Players/Character.cpp | 15 ++++++++++++++-
+| |  Players/Character.h   | 15 ++++++---------
+| |  2 files changed, 20 insertions(+), 10 deletions(-)
+| | 
+* | commit ce25c73e1490cee346287e7e1e1161621810ee70
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 19:06:22 2025 +0200
+| | 
+| |     splitting jobMaker
+| | 
+| |  Players/JobMaker.cpp | 34 +++++++++++++++++-----------------
+| |  Players/JobMaker.h   | 23 +++++++++++++++++++++--
+| |  2 files changed, 38 insertions(+), 19 deletions(-)
+| | 
+* | commit e896359da40323351e12c60f4373e05126b170ea
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 19:04:56 2025 +0200
+| | 
+| |     changing Event factory
+| | 
+| |  Events/EventFactory.cpp | 41 ++++++++++++++++++++++++++++++++++-------
+| |  Events/Pack.cpp         |  2 +-
+| |  2 files changed, 35 insertions(+), 8 deletions(-)
+| |   
+* |   commit f461fca370d6f0b9247348bb1f870b111363af35
+|\ \  Merge: 820bbd5 16d77c9
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Sun Jan 19 17:10:44 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit 16d77c9779bfdb7af5f993331df610b127e509c4
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 16:56:30 2025 +0200
+| | | 
+| | |     remove virtual
+| | | 
+| | |  Players/Player.cpp | 10 +++++-----
+| | |  Players/Player.h   | 20 ++++++++++----------
+| | |  2 files changed, 15 insertions(+), 15 deletions(-)
+| | | 
+| * | commit 46e82bd7720c0b81231a44998399cb3e8ccc2a02
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 16:54:13 2025 +0200
+| | | 
+| | |     add forward declaration
+| | | 
+| | |  Players/Job.h | 2 ++
+| | |  1 file changed, 2 insertions(+)
+| | | 
+| * | commit 4ff00776ded382977345c88a3a40e3fa1d91a5c3
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 16:53:59 2025 +0200
+| | | 
+| | |     remove 'inline' from functions
+| | | 
+| | |  Players/Player.cpp | 10 +++++-----
+| | |  Players/Player.h   |  6 +++---
+| | |  2 files changed, 8 insertions(+), 8 deletions(-)
+| | | 
+* | | commit 820bbd5b386421053669ce2c3cedd3f4221cf136
+|/ /  Author: Ori Elkabetz <orielk2@gmail.com>
+| |   Date:   Sun Jan 19 17:10:39 2025 +0200
+| |   
+| |       fixing includes + fixing startevent
+| |   
+| |    Events/Balrog.cpp          |  2 +-
+| |    Events/Encounter.h         |  8 +++----
+| |    Events/Event.h             | 12 ++++++----
+| |    Events/EventFactory.cpp    |  2 +-
+| |    Events/EventFactory.h      |  5 ++++
+| |    Events/Monster.cpp         |  2 +-
+| |    Events/Monster.h           |  4 ++--
+| |    Events/Pack.cpp            | 50 ++++++++++++++++++++++++++--------------
+| |    Events/PotionsMerchant.cpp |  8 +++----
+| |    Events/Slime.cpp           |  8 +++----
+| |    Events/Snail.cpp           |  8 +++----
+| |    Events/SolarEclipse.cpp    |  2 +-
+| |    Events/SpecialEvent.h      |  3 ---
+| |    13 files changed, 68 insertions(+), 46 deletions(-)
+| |   
+* |   commit 88d9e6fd46f54b2418a578be56b77322a4935e1e
+|\ \  Merge: b1c06a1 b0a216c
+| | | Author: Ori Elkabetz <orielk2@gmail.com>
+| | | Date:   Sun Jan 19 16:14:40 2025 +0200
+| | | 
+| | |     Merge branch 'test-circular-inclusions' of https://github.com/Orielk15/HW4MATAM into test-circular-inclusions
+| | | 
+| * | commit b0a216c116e0b5a58d37757c4bb7c32211b99906
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 15:52:40 2025 +0200
+| | | 
+| | |     Update Character.h
+| | | 
+| | |  Players/Character.h | 4 ++--
+| | |  1 file changed, 2 insertions(+), 2 deletions(-)
+| | | 
+| * | commit f18e4e73c151752e56fcfe836e9eaae212de95d3
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 15:52:02 2025 +0200
+| | | 
+| | |     Update Character.h
+| | | 
+| | |  Players/Character.h | 2 +-
+| | |  1 file changed, 1 insertion(+), 1 deletion(-)
+| | | 
+| * | commit e9fd4328e805ee5d225e1c609a1a23122b5ad247
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 15:36:09 2025 +0200
+| | | 
+| | |     Update Player.cpp
+| | | 
+| | |  Players/Player.cpp | 7 ++++---
+| | |  1 file changed, 4 insertions(+), 3 deletions(-)
+| | | 
+| * | commit d71d11b30fa0862632cb4568a7ab0a2afe4544eb
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 15:15:08 2025 +0200
+| | | 
+| | |     Update SpecialEvent.h
+| | | 
+| | |  Events/SpecialEvent.h | 8 ++++----
+| | |  1 file changed, 4 insertions(+), 4 deletions(-)
+| | | 
+| * | commit eb581af84fdc6a8bfefc9af06f093f3cdbca2458
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sun Jan 19 15:15:04 2025 +0200
+| | | 
+| | |     Update PotionsMerchant.h
+| | | 
+| | |  Events/PotionsMerchant.h | 2 +-
+| | |  1 file changed, 1 insertion(+), 1 deletion(-)
+| | | 
+* | | commit b1c06a1f4e5647c146da4adb42965f91dd46be8f
+|/ /  Author: Ori Elkabetz <orielk2@gmail.com>
+| |   Date:   Sun Jan 19 16:12:01 2025 +0200
+| |   
+| |       changing includes
+| |   
+| |    Events/Balrog.cpp          |  3 ++-
+| |    Events/Balrog.h            |  9 ++++++---
+| |    Events/Encounter.h         |  6 +++++-
+| |    Events/Event.cpp           |  8 ++++----
+| |    Events/Event.h             |  3 +--
+| |    Events/EventFactory.cpp    | 15 ++++++++-------
+| |    Events/EventFactory.h      | 12 ++++++++++--
+| |    Events/Monster.cpp         |  2 +-
+| |    Events/Monster.h           | 11 +++++++++--
+| |    Events/Pack.cpp            |  3 ++-
+| |    Events/Pack.h              | 10 +++++++---
+| |    Events/PotionsMerchant.cpp |  3 ++-
+| |    Events/PotionsMerchant.h   | 10 +++++++---
+| |    Events/Slime.cpp           |  7 +++++--
+| |    Events/Slime.h             | 10 +++++++---
+| |    Events/Snail.cpp           |  7 +++++--
+| |    Events/Snail.h             | 10 +++++++---
+| |    Events/SolarEclipse.cpp    |  4 +++-
+| |    Events/SolarEclipse.h      |  9 ++++++---
+| |    Events/SpecialEvent.cpp    |  2 +-
+| |    Events/SpecialEvent.h      |  7 +++++--
+| |    21 files changed, 103 insertions(+), 48 deletions(-)
+| | 
+* | commit 5739e5b237282e856a2a00bb73c0f60c0f73164a
+|/  Author: guy friedman <guy.friedman2001@gmail.com>
+|   Date:   Sun Jan 19 14:55:37 2025 +0200
+|   
+|       inclusions editing
+|   
+|    .vscode/tasks.json       | 29 +++++++++++++++++++++++++++++
+|    Events/Encounter.h       |  2 +-
+|    Events/Event.h           |  4 ++--
+|    Events/Monster.h         |  2 +-
+|    Events/PotionsMerchant.h |  2 +-
+|    Events/SolarEclipse.cpp  |  2 +-
+|    6 files changed, 35 insertions(+), 6 deletions(-)
+|   
+| * commit 47924de570193faa7cf9b89a5407606ea47b4acb
+|/| Merge: 86a407e 4a2d613
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sun Jan 19 15:00:34 2025 +0200
+| | 
+| |     On main: !!GitHub_Desktop<main>
+| | 
+| * commit 4a2d613e8c3af844c56104c8361e1d9b465bf9f4
+|/  Author: Ori Elkabetz <orielk2@gmail.com>
+|   Date:   Sun Jan 19 15:00:34 2025 +0200
+|   
+|       index on main: 86a407e Update Player.cpp
+|   
+|    .vscode/settings.json | 59 +++++++++++++++++++++++++++++++++++++++++++++++
+|    1 file changed, 59 insertions(+)
+| 
+* commit 86a407e3e057a21bfb7f0a995f288b757f07973c
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Sun Jan 19 14:50:45 2025 +0200
+| 
+|     Update Player.cpp
+| 
+|  Players/Player.cpp | 38 ++++++++++----------------------------
+|  1 file changed, 10 insertions(+), 28 deletions(-)
+| 
+* commit 25c142267edf1e86900eadcc927c46075d2e6e50
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Sun Jan 19 14:50:41 2025 +0200
+| 
+|     Delete CMakeLists.txt
+| 
+|  CMakeLists.txt | 24 ------------------------
+|  1 file changed, 24 deletions(-)
+| 
+* commit 7779b17d405f999531d83d554513a2c008601428
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 22:07:47 2025 +0200
+| 
+|     trying to fix headers
+| 
+|  Events/Encounter.h         | 13 ++++++++-----
+|  Events/Event.cpp           | 18 ++++++++++++++----
+|  Events/Event.h             | 24 +++++++++++++++---------
+|  Events/EventFactory.h      |  9 +++++----
+|  Events/Monster.cpp         |  1 +
+|  Events/Monster.h           |  2 +-
+|  Events/Pack.cpp            | 14 +++++++-------
+|  Events/Pack.h              |  2 +-
+|  Events/PotionsMerchant.cpp |  1 +
+|  Events/SolarEclipse.cpp    |  2 ++
+|  Events/SpecialEvent.cpp    |  3 ++-
+|  Events/SpecialEvent.h      |  6 +++++-
+|  12 files changed, 62 insertions(+), 33 deletions(-)
+| 
+* commit 2d4206242a201a49a63217a67ecfade309b6cf66
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 21:50:58 2025 +0200
+| 
+|     more typos
+| 
+|  Events/EventFactory.cpp | 15 ++++++++-------
+|  Events/SolarEclipse.h   |  2 +-
+|  2 files changed, 9 insertions(+), 8 deletions(-)
+| 
+* commit 84db790b117a8a9ea5fb6e68bac123fe5abb7ba7
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 21:48:31 2025 +0200
+| 
+|     fixing typos
+| 
+|  Events/Balrog.cpp    | 4 ++--
+|  Events/Encounter.cpp | 4 +---
+|  2 files changed, 3 insertions(+), 5 deletions(-)
+| 
+* commit f72e905ae569a26a37d5b1fd8b54898e71c9f81a
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 21:47:11 2025 +0200
+| 
+|     changing loops to iters
+| 
+|  MatamStory.cpp | 92 +++++++++++++++++++++++++++++++++++++-------------------
+|  MatamStory.h   |  4 +--
+|  2 files changed, 63 insertions(+), 33 deletions(-)
+|   
+*   commit 224d1579232acce4ae591a07bd0dc9344e182e00
+|\  Merge: cbf8f4a 6d5b4d5
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 18:08:12 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit 6d5b4d5cfff659fb5fb033c60a40231b78543569
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 18:06:49 2025 +0200
+| | 
+| |     Update Player.cpp
+| | 
+| |  Players/Player.cpp | 12 +++++++++---
+| |  1 file changed, 9 insertions(+), 3 deletions(-)
+| | 
+* | commit cbf8f4a3b3ec4d7b257c99acebc966a5d68bcb45
+|/  Author: Ori Elkabetz <orielk2@gmail.com>
+|   Date:   Sat Jan 18 17:57:04 2025 +0200
+|   
+|       fixing include + const + unsigned int
+|   
+|    Players/Job.h         | 22 +++++++++-------------
+|    Players/MatamPlayer.h |  2 +-
+|    2 files changed, 10 insertions(+), 14 deletions(-)
+|   
+*   commit 17c7b18f9c55536671856c415c70f5a7997c95f7
+|\  Merge: a9727cf d47aa4d
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:49:09 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit d47aa4d4ab30d47b1c054cab2cd12376aa74c300
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 17:46:39 2025 +0200
+| | 
+| |     fixing includes in events
+| | 
+| |  Events/AllEvents.h      |  9 +++++++++
+| |  Events/Encounter.cpp    |  1 -
+| |  Events/Event.cpp        |  1 +
+| |  Events/Event.h          |  9 +++++++--
+| |  Events/EventFactory.cpp |  7 +++++++
+| |  Events/EventFactory.h   | 12 +++++-------
+| |  Events/Pack.cpp         |  2 +-
+| |  Events/SpecialEvent.cpp |  1 +
+| |  Events/SpecialEvent.h   |  1 -
+| |  MatamStory.h            |  1 +
+| |  10 files changed, 32 insertions(+), 12 deletions(-)
+| | 
+* | commit a9727cf44a13ca2e705659fc5267e168265b5204
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:48:52 2025 +0200
+| | 
+| |      add documentation Warrior.h
+| | 
+| |  Players/Warrior.h | 15 ++++++++++++++-
+| |  1 file changed, 14 insertions(+), 1 deletion(-)
+| | 
+* | commit 2e7f037d94ffb85d210a4d40417a513ab9f99c0e
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:48:42 2025 +0200
+| | 
+| |      add documentation Strong.h
+| | 
+| |  Players/Strong.h | 12 +++++++++++-
+| |  1 file changed, 11 insertions(+), 1 deletion(-)
+| | 
+* | commit 9ecf087829a9a84607494c6b9e79520be997f618
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:48:32 2025 +0200
+| | 
+| |      add documentation RiskTaking.h
+| | 
+| |  Players/RiskTaking.h | 27 ++++++++++++++++++++++++++-
+| |  1 file changed, 26 insertions(+), 1 deletion(-)
+| | 
+* | commit f7179e3c52e1d54a0c31967d7adfe2c7ec04d941
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:48:17 2025 +0200
+| | 
+| |      add documentation Responsible.h
+| | 
+| |  Players/Responsible.h | 29 +++++++++++++++++++++++++++++
+| |  1 file changed, 29 insertions(+)
+| | 
+* | commit 64f3f2e38bb947462ca8ef4acd5a3b000cbf0b36
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:48:02 2025 +0200
+| | 
+| |      add documentation PlayerMaker.h
+| | 
+| |  Players/PlayerMaker.h | 14 ++++++++++++--
+| |  1 file changed, 12 insertions(+), 2 deletions(-)
+| | 
+* | commit 2bc4087e53c037ef0215a2f871bf0061a00f8fc7
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:47:46 2025 +0200
+| | 
+| |      add documentation PlayerAdapter.h
+| | 
+| |  Players/PlayerAdapter.h | 29 ++++++++++++++++++++++++++++-
+| |  1 file changed, 28 insertions(+), 1 deletion(-)
+| | 
+* | commit 34abbdd208eedc588fda0b9a31a15b4e277c2ebc
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:47:29 2025 +0200
+| | 
+| |     Update MatamPlayer.h
+| | 
+| |  Players/MatamPlayer.h | 30 ------------------------------
+| |  1 file changed, 30 deletions(-)
+| | 
+* | commit 042a0fdad97ede4710a3f1874e1436f6b16d93be
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:47:17 2025 +0200
+| | 
+| |      add documentation Magician.h
+| | 
+| |  Players/Magician.h | 12 +++++++++++-
+| |  1 file changed, 11 insertions(+), 1 deletion(-)
+| | 
+* | commit 1f935659ea0ca019c18bb6404f2cb40633a4d3a3
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 17:46:40 2025 +0200
+| | 
+| |     add documentation Magical.h
+| | 
+| |  Players/Magical.h | 14 +++++++++++++-
+| |  1 file changed, 13 insertions(+), 1 deletion(-)
+| | 
+* | commit 8a4ea8deab6ba051ea702156e116cf232385556c
+|/  Author: guy friedman <guy.friedman2001@gmail.com>
+|   Date:   Sat Jan 18 17:46:15 2025 +0200
+|   
+|       Update JobMaker.cpp
+|   
+|    Players/JobMaker.cpp | 2 +-
+|    1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 0893f872826ec69d89bff06db0544a5d265de27b
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 17:07:59 2025 +0200
+| 
+|     changing loops to iterators
+| 
+|  MatamStory.cpp | 69 ++++++++++++++++++++++++++++++++++++++++++++------------
+|  MatamStory.h   |  4 ++--
+|  2 files changed, 56 insertions(+), 17 deletions(-)
+| 
+* commit e0fe21dc32d5b0fa075fb5a89df507ad65b48663
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 15:22:47 2025 +0200
+| 
+|     fixing typos
+| 
+|  Players/CharacterMaker.h | 2 +-
+|  Players/PlayerMaker.h    | 6 +++---
+|  Players/RiskTaking.h     | 2 +-
+|  3 files changed, 5 insertions(+), 5 deletions(-)
+| 
+* commit e88b3c8fe018c8356d8ae06e4438b24751630904
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 15:04:10 2025 +0200
+| 
+|     adding d'tors to events
+| 
+|  Events/Encounter.cpp | 5 +++++
+|  Events/Encounter.h   | 2 ++
+|  Events/Event.h       | 1 +
+|  Events/Monster.cpp   | 3 +++
+|  Events/Monster.h     | 1 +
+|  Events/Pack.cpp      | 5 +++++
+|  Events/Pack.h        | 1 +
+|  7 files changed, 18 insertions(+)
+| 
+* commit f1ba4db4d2025353ca7dfba0604bd18824daf4b8
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Sat Jan 18 14:33:13 2025 +0200
+| 
+|     fixing levelup in monster
+| 
+|  Events/Monster.cpp | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|   
+*   commit acf103ae84417fa3c4e16c3919890ada39a521b4
+|\  Merge: 5672e4d 7bf336b
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 14:31:51 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| |   
+| *   commit 7bf336ba8acb7ef41a52977bf48ad0ddd47fb3b1
+| |\  Merge: 91c0abe 304fe19
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 14:31:02 2025 +0200
+| | | 
+| | |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | | 
+| * | commit 91c0abe3bed931d74d12a730a22577292f1f5a52
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 14:29:41 2025 +0200
+| | | 
+| | |     add level up function
+| | | 
+| | |  Players/Player.cpp | 5 +++++
+| | |  Players/Player.h   | 2 ++
+| | |  2 files changed, 7 insertions(+)
+| | | 
+| * | commit aadd9bf39223b1bc2dc0cd199cf683130d44b077
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 14:29:28 2025 +0200
+| | | 
+| | |     add level up function
+| | | 
+| | |  Players/Job.h | 7 ++++++-
+| | |  1 file changed, 6 insertions(+), 1 deletion(-)
+| | | 
+| * | commit c2112a6dd5a661a3af312d1cb33835b07266bb38
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 14:29:10 2025 +0200
+| | | 
+| | |     Update CharacterMaker.h
+| | | 
+| | |  Players/CharacterMaker.h | 8 +++++---
+| | |  1 file changed, 5 insertions(+), 3 deletions(-)
+| | | 
+| * | commit 5add1404324310a3a49c519bce3e03763db9b5f0
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 14:29:06 2025 +0200
+| | | 
+| | |     Create AllCharacters.h
+| | | 
+| | |  Players/AllCharacters.h | 4 ++++
+| | |  1 file changed, 4 insertions(+)
+| | | 
+* | | commit 5672e4d96057fa17ff5b4a3941f5c448147321ae
+| |/  Author: Ori Elkabetz <orielk2@gmail.com>
+|/|   Date:   Sat Jan 18 14:31:44 2025 +0200
+| |   
+| |       ~Event()
+| |   
+| |    Events/Event.cpp | 5 ++++-
+| |    1 file changed, 4 insertions(+), 1 deletion(-)
+| | 
+* | commit 304fe19bb0756bd8642ebd2ff0110da805d91750
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 14:28:15 2025 +0200
+| | 
+| |     removing unused includes + creating ~event()
+| | 
+| |  Events/Balrog.h       | 2 +-
+| |  Events/Event.h        | 5 ++---
+| |  Events/EventFactory.h | 2 +-
+| |  Events/Pack.h         | 8 +++-----
+| |  4 files changed, 7 insertions(+), 10 deletions(-)
+| | 
+* | commit 3190226eb30698155948b19596538c85e0ae7e1a
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:57:49 2025 +0200
+| | 
+| |     fixing func name according to player class
+| | 
+| |  Events/PotionsMerchant.cpp | 4 ++--
+| |  1 file changed, 2 insertions(+), 2 deletions(-)
+| | 
+* | commit be84dd6c346ef2d6b0059d671168c5e1e973784e
+|\| Merge: 2579148 b5dafb9
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:53:20 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit b5dafb9bdcd5af294f5c9c52177e3da94656874d
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Sat Jan 18 13:51:55 2025 +0200
+| | 
+| |     move adapters to Player file
+| | 
+| |  {Adapters => Players}/MatamPlayer.h   | 0
+| |  {Adapters => Players}/PlayerAdapter.h | 0
+| |  2 files changed, 0 insertions(+), 0 deletions(-)
+| | 
+* | commit 257914812110b42c40b249df8716c9911aea91e9
+|\| Merge: a329df2 0bb0f91
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:51:33 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| |   
+| *   commit 0bb0f9164298fd41a173ee6fb4855e7a69f1615f
+| |\  Merge: 22e71ee 3143786
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 13:49:45 2025 +0200
+| | | 
+| | |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | | 
+| * | commit 22e71ee2b9143d3b463baad46703db9cf24a5237
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 13:48:54 2025 +0200
+| | | 
+| | |     Create Responsible.h
+| | | 
+| | |  Charachters/Responsible.h | 25 +++++++++++++++++++++++++
+| | |  1 file changed, 25 insertions(+)
+| | | 
+| * | commit 3d984a997d96b24c36da35c693b29226ebe78bc2
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 13:48:48 2025 +0200
+| | | 
+| | |     Update Character.h
+| | | 
+| | |  Charachters/Character.h | 9 ++++++++-
+| | |  1 file changed, 8 insertions(+), 1 deletion(-)
+| | | 
+| * | commit 4bb5fcad72f6184422d049982fc2a7c61bdaaeee
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 13:48:44 2025 +0200
+| | | 
+| | |     Update RiskTaking.h
+| | | 
+| | |  Charachters/RiskTaking.h | 21 +++++++++++++++++++++
+| | |  1 file changed, 21 insertions(+)
+| | | 
+| * | commit bd4034638327faa53e1c33f0f70ad16834206d55
+| | | Author: guy friedman <guy.friedman2001@gmail.com>
+| | | Date:   Sat Jan 18 13:48:34 2025 +0200
+| | | 
+| | |     add getCharachterName to Player
+| | | 
+| | |  Players/Player.cpp | 5 +++++
+| | |  Players/Player.h   | 9 ++++++++-
+| | |  2 files changed, 13 insertions(+), 1 deletion(-)
+| | | 
+* | | commit a329df24059b710b9cb395fcf9c8f858ae1aee8f
+| |/  Author: Ori Elkabetz <orielk2@gmail.com>
+|/|   Date:   Sat Jan 18 13:51:12 2025 +0200
+| |   
+| |       adding std::string
+| |   
+| |    Events/Event.h   | 1 +
+| |    Events/Monster.h | 4 ++--
+| |    Events/Snail.h   | 4 ++--
+| |    Players/Job.h    | 2 +-
+| |    4 files changed, 6 insertions(+), 5 deletions(-)
+| | 
+* | commit 31437869c420804ef72d88ef9c4fa6a632d9b59c
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:43:20 2025 +0200
+| | 
+| |     fixing include path
+| | 
+| |  Events/Event.h             | 2 +-
+| |  Events/PotionsMerchant.cpp | 4 ++--
+| |  Players/Player.h           | 2 +-
+| |  3 files changed, 4 insertions(+), 4 deletions(-)
+| | 
+* | commit df6e3659e63e34ad2d056aee8b8a06387f3d3abf
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:36:59 2025 +0200
+| | 
+| |     moving all files to player (sorry guy)
+| | 
+| |  Events/SpecialEvent.cpp                                       | 0
+| |  {Jobs => Players}/AllJobs.h                                   | 0
+| |  {Jobs => Players}/Archer.cpp                                  | 0
+| |  {Jobs => Players}/Archer.h                                    | 0
+| |  Charachters/Charachter.cpp => Players/Character.cpp           | 0
+| |  {Charachters => Players}/Character.h                          | 0
+| |  Charachters/CharachterMaker.cpp => Players/CharacterMaker.cpp | 2 +-
+| |  {Charachters => Players}/CharacterMaker.h                     | 8 ++++----
+| |  {Jobs => Players}/Fast.cpp                                    | 0
+| |  {Jobs => Players}/Fast.h                                      | 0
+| |  {Jobs => Players}/Job.cpp                                     | 0
+| |  {Jobs => Players}/Job.h                                       | 0
+| |  {Jobs => Players}/JobMaker.cpp                                | 0
+| |  {Jobs => Players}/JobMaker.h                                  | 0
+| |  {Jobs => Players}/Magical.cpp                                 | 0
+| |  {Jobs => Players}/Magical.h                                   | 0
+| |  {Jobs => Players}/Magician.cpp                                | 0
+| |  {Jobs => Players}/Magician.h                                  | 0
+| |  Players/Player.cpp                                            | 2 +-
+| |  Players/PlayerMaker.h                                         | 2 +-
+| |  {Charachters => Players}/RiskTaking.cpp                       | 0
+| |  {Charachters => Players}/RiskTaking.h                         | 0
+| |  {Jobs => Players}/Strong.cpp                                  | 0
+| |  {Jobs => Players}/Strong.h                                    | 0
+| |  {Jobs => Players}/Warrior.cpp                                 | 0
+| |  {Jobs => Players}/Warrior.h                                   | 0
+| |  26 files changed, 7 insertions(+), 7 deletions(-)
+| | 
+* | commit ed4c75cfbd4552f1202dcff4390e5ec2cb689fc8
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:25:14 2025 +0200
+| | 
+| |     creating isWinner + updating play() gameOver
+| | 
+| |  MatamStory.cpp | 12 ++++++++++--
+| |  MatamStory.h   |  4 +++-
+| |  2 files changed, 13 insertions(+), 3 deletions(-)
+| | 
+* | commit 91f8c8d1f8abf10d1f2bedb75d7b7d53978217df
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 13:15:11 2025 +0200
+| | 
+| |     creating leadeBoard funcs
+| | 
+| |  MatamStory.cpp | 29 +++++++++++++++++++++++++++--
+| |  MatamStory.h   |  4 ++++
+| |  2 files changed, 31 insertions(+), 2 deletions(-)
+| | 
+* | commit d650449a8da8c81f3ab74bcef8859dd8daf23697
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 12:39:19 2025 +0200
+| | 
+| |     creating isGameOver
+| | 
+| |  MatamStory.cpp | 18 +++++++++++++++---
+| |  1 file changed, 15 insertions(+), 3 deletions(-)
+| | 
+* | commit a8c45a4497c8c15f5b0e1b285c2dc540707cd529
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 12:27:57 2025 +0200
+| | 
+| |     adding playTurn + print start message in matamstory
+| | 
+| |  MatamStory.cpp | 17 ++++++++++++-----
+| |  MatamStory.h   |  1 +
+| |  2 files changed, 13 insertions(+), 5 deletions(-)
+| | 
+* | commit 110e23ebe651ae1982c4159fdb2f97a92e50f9a8
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 12:23:49 2025 +0200
+| | 
+| |     changing startEvent in all events to string insead of void to fit prints
+| | 
+| |  Events/Encounter.cpp       |  0
+| |  Events/Encounter.h         |  3 ++-
+| |  Events/Event.h             |  5 +++--
+| |  Events/Monster.cpp         |  4 +++-
+| |  Events/Monster.h           |  2 +-
+| |  Events/Pack.cpp            |  2 +-
+| |  Events/Pack.h              |  2 +-
+| |  Events/PotionsMerchant.cpp | 39 +++++++++++++++++++++------------------
+| |  Events/PotionsMerchant.h   |  2 +-
+| |  Events/Slime.cpp           |  2 +-
+| |  Events/Slime.h             |  2 +-
+| |  Events/Snail.cpp           |  2 +-
+| |  Events/Snail.h             |  2 +-
+| |  Events/SolarEclipse.cpp    |  5 ++++-
+| |  Events/SolarEclipse.h      |  2 +-
+| |  Events/SpecialEvent.h      |  2 +-
+| |  16 files changed, 43 insertions(+), 33 deletions(-)
+| | 
+* | commit 55d83e3d629b50968dc6c561635c589edff1d336
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Sat Jan 18 11:59:07 2025 +0200
+| | 
+| |     changing player* to player& in events + adding const to string functions
+| | 
+| |  Events/Balrog.cpp          |  6 +++---
+| |  Events/Balrog.h            |  6 +++---
+| |  Events/Monster.cpp         | 10 +++++-----
+| |  Events/Monster.h           |  4 ++--
+| |  Events/Pack.cpp            |  6 +++---
+| |  Events/Pack.h              |  6 +++---
+| |  Events/PotionsMerchant.cpp | 18 +++++++++---------
+| |  Events/PotionsMerchant.h   |  4 ++--
+| |  Events/Slime.cpp           |  6 +++---
+| |  Events/Slime.h             |  6 +++---
+| |  Events/Snail.cpp           |  6 +++---
+| |  Events/Snail.h             |  6 +++---
+| |  Events/SolarEclipse.cpp    |  8 ++++----
+| |  Events/SolarEclipse.h      |  2 +-
+| |  Events/SpecialEvent.h      |  2 +-
+| |  15 files changed, 48 insertions(+), 48 deletions(-)
+| | 
+* | commit f0c3abf2a23969bde15f7b0f58a25744a4f0ff8f
+|/  Author: Ori Elkabetz <orielk2@gmail.com>
+|   Date:   Sat Jan 18 11:29:51 2025 +0200
+|   
+|       adding getDescription to special events
+|   
+|    Events/Event.cpp           |  6 +-----
+|    Events/PotionsMerchant.cpp | 13 +++++++++----
+|    Events/PotionsMerchant.h   |  1 +
+|    Events/SolarEclipse.cpp    | 10 +++++++---
+|    Events/SolarEclipse.h      |  1 +
+|    Events/SpecialEvent.h      |  1 +
+|    6 files changed, 20 insertions(+), 12 deletions(-)
+| 
+* commit a4b8e797a3a26cec8840778d4061afd2d5539437
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 22:23:54 2025 +0200
+| 
+|     Update MatamPlayer.h
+| 
+|  Adapters/MatamPlayer.h | 6 ++++++
+|  1 file changed, 6 insertions(+)
+| 
+* commit e4fca0945201bf0576ed3b1cfecdc0d80ee49d15
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 22:11:39 2025 +0200
+| 
+|     move player function to cpp file
+| 
+|  Players/Player.cpp | 149 ++++++++++++++++++++-------------------------------
+|  1 file changed, 59 insertions(+), 90 deletions(-)
+| 
+* commit 784e922f72f9f47e6eba2133348c52d15344e667
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 22:11:14 2025 +0200
+| 
+|     add Player documentation
+| 
+|  Players/Player.h | 206 +++++++++++++++++++++++++++++++++--------------------
+|  1 file changed, 127 insertions(+), 79 deletions(-)
+| 
+* commit ce88d4653a1f168a7eb2f3a533625e4cf92f777e
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 21:45:29 2025 +0200
+| 
+|     move functions from .h to .cpp
+| 
+|  Adapters/MatamPlayer.h       |  4 +-
+|  Adapters/PlayerAdapter.h     |  4 ++
+|  Charachters/Character.h      | 10 ++++-
+|  Charachters/CharacterMaker.h |  2 +-
+|  Jobs/Job.h                   | 15 ++++---
+|  Jobs/JobMaker.cpp            |  2 +-
+|  Jobs/JobMaker.h              |  2 +-
+|  Players/MatamPlayerMaker.h   | 12 ++++++
+|  Players/Player.cpp           | 96 +++++++++++++++++++++++++++++++++++++++++-
+|  Players/Player.h             | 20 ++++++++-
+|  Players/PlayerMaker.h        |  6 ++-
+|  11 files changed, 157 insertions(+), 16 deletions(-)
+| 
+* commit cf823389c83cd5c8b8fb97fc1afba718aca92842
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 19:54:45 2025 +0200
+| 
+|     add bool funcs to MatamPlayer
+| 
+|  Adapters/MatamPlayer.h | 8 ++++++++
+|  Jobs/Job.h             | 2 +-
+|  Jobs/Warrior.h         | 6 ++++++
+|  Players/Player.h       | 8 ++++++++
+|  4 files changed, 23 insertions(+), 1 deletion(-)
+| 
+* commit f0a43e74ba48b77d9b448037edd77d9b0ed63ef3
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 19:36:00 2025 +0200
+| 
+|     fix warrior constructor
+| 
+|  Jobs/Job.h     | 2 +-
+|  Jobs/Warrior.h | 4 +++-
+|  2 files changed, 4 insertions(+), 2 deletions(-)
+| 
+* commit e66366a6ae02d656ef806ee6f1d29ba82cb05dc9
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 19:33:54 2025 +0200
+| 
+|     add default constructor and virtual destructor
+| 
+|  Jobs/Archer.h   | 6 +++++-
+|  Jobs/Fast.h     | 4 +++-
+|  Jobs/Job.h      | 2 +-
+|  Jobs/Magical.h  | 4 +++-
+|  Jobs/Magician.h | 4 +++-
+|  Jobs/Strong.h   | 5 ++---
+|  Jobs/Warrior.h  | 7 ++++++-
+|  7 files changed, 23 insertions(+), 9 deletions(-)
+| 
+* commit 81d57e457f370c44b541bd431f9cc1b9bc827337
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 18:30:57 2025 +0200
+| 
+|     add combat power override in job<-strong
+| 
+|  Adapters/MatamPlayer.h | 63 +++++++++++++++++++++++++++++++++++++++++++++++-
+|  Jobs/Job.h             |  4 +++
+|  Jobs/Strong.h          |  5 +++-
+|  Players/Player.h       |  9 +++++++
+|  4 files changed, 79 insertions(+), 2 deletions(-)
+| 
+* commit 14ecdbbe5e9281b3ac87037b305f97d3654f5168
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 17:23:35 2025 +0200
+| 
+|     add instructions for MatamPlayer
+| 
+|  Adapters/MatamPlayer.h | 24 +++++++-----------------
+|  1 file changed, 7 insertions(+), 17 deletions(-)
+| 
+* commit b73c1abca52ef08e253dffa8c800e10b47c6f333
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 17:17:20 2025 +0200
+| 
+|     touch up MatamPlayer
+| 
+|  Adapters/MatamPlayer.h   | 36 +++++++++++++++++-------------------
+|  Adapters/PlayerAdapter.h |  1 -
+|  Players/Player.h         | 24 ++++++++++++++++++++++++
+|  Players/PlayerMaker.h    |  1 +
+|  4 files changed, 42 insertions(+), 20 deletions(-)
+|   
+*   commit d9f2e16797a6388208d329d0062cfa670f11bec0
+|\  Merge: ddec7f2 0e4b099
+| | Author: guy friedman <guy.friedman2001@gmail.com>
+| | Date:   Fri Jan 17 16:51:55 2025 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/Orielk15/HW4MATAM
+| | 
+| * commit 0e4b09982f33c367fb6181294b508504a690d7c5
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 17 16:37:56 2025 +0200
+| | 
+| |     removing comments
+| | 
+| |  Events/Monster.cpp | 3 ++-
+| |  MatamStory.cpp     | 2 +-
+| |  2 files changed, 3 insertions(+), 2 deletions(-)
+| | 
+| * commit efa92e7d26eb1c7a5d62f3a345549ab8126df715
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 17 16:20:44 2025 +0200
+| | 
+| |     setting CP for packs in pack
+| | 
+| |  Events/Pack.cpp | 38 ++++++++++++++++++++++++++++++++++----
+| |  Events/Pack.h   |  7 ++++++-
+| |  2 files changed, 40 insertions(+), 5 deletions(-)
+| | 
+| * commit b4df369f9449ca35821393be24cde7f25857d1fd
+| | Author: Ori Elkabetz <orielk2@gmail.com>
+| | Date:   Fri Jan 17 16:02:37 2025 +0200
+| | 
+| |     fixing getName and GetDescription
+| | 
+| |  Events/Balrog.cpp  | 5 ++++-
+| |  Events/Balrog.h    | 3 ++-
+| |  Events/Monster.cpp | 5 +----
+| |  Events/Monster.h   | 2 +-
+| |  Events/Slime.cpp   | 5 ++++-
+| |  Events/Slime.h     | 3 ++-
+| |  Events/Snail.cpp   | 6 +++++-
+| |  Events/Snail.h     | 3 ++-
+| |  8 files changed, 21 insertions(+), 11 deletions(-)
+| | 
+* | commit ddec7f2ffa1ddc9e653a4e8ad9379859faedaa57
+|/  Author: guy friedman <guy.friedman2001@gmail.com>
+|   Date:   Fri Jan 17 16:51:51 2025 +0200
+|   
+|       fix adapter and MatamPlayer adapter
+|   
+|    .DS_Store                                        | Bin 8196 -> 8196 bytes
+|    .../MatamPlayer.h                                |  35 +++++++++++--------
+|    Adapters/PlayerAdapter.h                         |  24 +++++++++++++
+|    Players/Player.cpp                               |   8 +++++
+|    Players/Player.h                                 |   3 +-
+|    Players/PlayerMaker.h                            |   2 +-
+|    6 files changed, 55 insertions(+), 17 deletions(-)
+| 
+* commit fe43095cf572123f9e7ad3edcce89c1dbc495114
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 15:52:57 2025 +0200
+| 
+|     add adapter, move classes to folders
+| 
+|  .DS_Store                                         |  Bin 0 -> 8196 bytes
+|  .idea/.gitignore                                  |    8 +
+|  .idea/HW4MATAM.iml                                |    2 +
+|  .idea/editor.xml                                  |  580 +++++++++
+|  .idea/misc.xml                                    |    7 +
+|  .idea/modules.xml                                 |    8 +
+|  .idea/vcs.xml                                     |    6 +
+|  CMakeLists.txt                                    |   24 +
+|  Charachter.cpp                                    |   10 -
+|  Player.cpp => Charachters/Charachter.cpp          |    3 +-
+|  .../CharachterMaker.cpp                           |    0
+|  Charachters/Character.h                           |   15 +
+|  CharacterMaker.h => Charachters/CharacterMaker.h  |    8 +-
+|  RiskTaking.cpp => Charachters/RiskTaking.cpp      |    0
+|  RiskTaking.h => Charachters/RiskTaking.h          |    3 +-
+|  Character.h                                       |   10 -
+|  Job.h                                             |   45 -
+|  JobMaker.cpp                                      |   17 -
+|  JobMaker.h                                        |    8 -
+|  AllJobs.h => Jobs/AllJobs.h                       |    0
+|  Archer.cpp => Jobs/Archer.cpp                     |    0
+|  Archer.h => Jobs/Archer.h                         |    0
+|  Fast.cpp => Jobs/Fast.cpp                         |    0
+|  Fast.h => Jobs/Fast.h                             |    0
+|  Job.cpp => Jobs/Job.cpp                           |    0
+|  Jobs/Job.h                                        |  132 +++
+|  Jobs/JobMaker.cpp                                 |   29 +
+|  Jobs/JobMaker.h                                   |   13 +
+|  Magical.cpp => Jobs/Magical.cpp                   |    0
+|  Magical.h => Jobs/Magical.h                       |    0
+|  Magician.cpp => Jobs/Magician.cpp                 |    1 +
+|  Magician.h => Jobs/Magician.h                     |    0
+|  Strong.cpp => Jobs/Strong.cpp                     |    0
+|  Strong.h => Jobs/Strong.h                         |    0
+|  Warrior.cpp => Jobs/Warrior.cpp                   |    0
+|  Warrior.h => Jobs/Warrior.h                       |    0
+|  Player.h                                          |   42 -
+|  PlayerMaker.h                                     |   16 -
+|  Players/.DS_Store                                 |  Bin 0 -> 6148 bytes
+|  Players/Player.cpp                                |  105 ++
+|  Players/Player.h                                  |   33 +
+|  PlayerMaker.cpp => Players/PlayerMaker.cpp        |    0
+|  Players/PlayerMaker.h                             |   22 +
+|  Players/PlayerMatamStoryAdapter.h                 |   61 +
+|  cmake-build-debug/.cmake/api/v1/query/cache-v2    |    0
+|  .../.cmake/api/v1/query/cmakeFiles-v1             |    0
+|  .../.cmake/api/v1/query/codemodel-v2              |    0
+|  .../.cmake/api/v1/query/toolchains-v1             |    0
+|  .../v1/reply/cache-v2-e0edb31a95aad995a7a2.json   | 1163 +++++++++++++++++++
+|  .../reply/cmakeFiles-v1-dabeafc2242fbdb10161.json |  161 +++
+|  .../reply/codemodel-v2-8480ec891690f6546fff.json  |   60 +
+|  .../directory-.-Debug-f5ebdc15457944623624.json   |   14 +
+|  .../v1/reply/index-2025-01-16T16-21-48-0384.json  |  108 ++
+|  ...arget-HW4MATAM-Debug-9e16feee152519af30b8.json |  293 +++++
+|  .../reply/toolchains-v1-bb57840159693364638b.json |   93 ++
+|  cmake-build-debug/CMakeCache.txt                  |  363 ++++++
+|  .../CMakeFiles/3.29.6/CMakeCCompiler.cmake        |   80 ++
+|  .../CMakeFiles/3.29.6/CMakeCXXCompiler.cmake      |   92 ++
+|  .../3.29.6/CMakeDetermineCompilerABI_C.bin        |  Bin 0 -> 4424 bytes
+|  .../3.29.6/CMakeDetermineCompilerABI_CXX.bin      |  Bin 0 -> 4408 bytes
+|  .../CMakeFiles/3.29.6/CMakeSystem.cmake           |   15 +
+|  .../3.29.6/CompilerIdC/CMakeCCompilerId.c         |  895 ++++++++++++++
+|  .../3.29.6/CompilerIdC/CMakeCCompilerId.o         |  Bin 0 -> 1528 bytes
+|  .../3.29.6/CompilerIdCXX/CMakeCXXCompilerId.cpp   |  878 ++++++++++++++
+|  .../3.29.6/CompilerIdCXX/CMakeCXXCompilerId.o     |  Bin 0 -> 1536 bytes
+|  .../CMakeFiles/CMakeConfigureLog.yaml             |  433 +++++++
+|  .../CMakeFiles/TargetDirectories.txt              |    3 +
+|  cmake-build-debug/CMakeFiles/clion-Debug-log.txt  |    5 +
+|  .../CMakeFiles/clion-environment.txt              |    4 +
+|  cmake-build-debug/CMakeFiles/cmake.check_cache    |    1 +
+|  cmake-build-debug/CMakeFiles/rules.ninja          |   64 +
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |    3 +
+|  cmake-build-debug/build.ninja                     |  199 ++++
+|  cmake-build-debug/cmake_install.cmake             |   49 +
+|  74 files changed, 6032 insertions(+), 152 deletions(-)
+| 
+* commit 8ab8fb5c770d344f444b2d6b8b20e4972b3e4275
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Fri Jan 17 14:47:18 2025 +0200
+| 
+|     changing funcs names
+| 
+|  Events/Monster.cpp | 7 ++++---
+|  1 file changed, 4 insertions(+), 3 deletions(-)
+| 
+* commit 8a5655133eff1fcdb1b9a26e8827b4e9b7cb5e27
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Fri Jan 17 14:46:44 2025 +0200
+| 
+|     removing code duplication from potionmerchant
+| 
+|  Events/PotionsMerchant.cpp | 22 ++++++++++++++++------
+|  Events/PotionsMerchant.h   |  1 +
+|  2 files changed, 17 insertions(+), 6 deletions(-)
+| 
+* commit c8562a24703d94dcec9fdf2d6dbc3405df75fcff
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Fri Jan 17 11:29:38 2025 +0200
+| 
+|     move classes to designated folders
+| 
+|  AllJobs.h           | 17 +++++++++++++++++
+|  CharachterMaker.cpp |  5 +++++
+|  CharacterMaker.h    | 21 +++++++++++++++++++++
+|  JobMaker.cpp        | 17 +++++++++++++++++
+|  JobMaker.h          |  8 ++++++++
+|  PlayerMaker.cpp     |  5 +++++
+|  PlayerMaker.h       | 16 ++++++++++++++++
+|  RiskTaking.cpp      |  5 +++++
+|  RiskTaking.h        | 16 ++++++++++++++++
+|  9 files changed, 110 insertions(+)
+| 
+* commit e6306cb3a8c58479cca0255250bd124f2540445b
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 23:00:38 2025 +0200
+| 
+|     adding const to getters and creating getName func for GetDescription
+| 
+|  Events/Balrog.cpp  |  3 +++
+|  Events/Balrog.h    |  1 +
+|  Events/Event.h     |  3 ++-
+|  Events/Monster.cpp | 13 ++++++++++---
+|  Events/Monster.h   |  8 +++++---
+|  Events/Pack.cpp    |  5 +++++
+|  Events/Pack.h      |  1 +
+|  Events/Slime.cpp   |  3 +++
+|  Events/Slime.h     |  1 +
+|  Events/Snail.cpp   |  3 +++
+|  Events/Snail.h     |  1 +
+|  11 files changed, 35 insertions(+), 7 deletions(-)
+| 
+* commit d930935bf59aeaa35684e089c0b283d34d32896a
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 19:52:14 2025 +0200
+| 
+|     fixing func name
+| 
+|  Events/PotionsMerchant.cpp | 5 +++--
+|  1 file changed, 3 insertions(+), 2 deletions(-)
+| 
+* commit 28272e8b2219117daca4c0b6a7a8406d0c8cb3c6
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:23:51 2025 +0200
+| 
+|     starting reding files func + help func lineToVector
+| 
+|  MatamStory.cpp | 28 ++++++++++++++++++++++++++++
+|  1 file changed, 28 insertions(+)
+| 
+* commit bf992de288a986da8f1b101c28c7b9dc573803fc
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:23:18 2025 +0200
+| 
+|     creating new private fields + help func lineToVector()
+| 
+|  MatamStory.h | 2 ++
+|  1 file changed, 2 insertions(+)
+| 
+* commit 7587281aed573f5e5823effc97bbfe25614e7bb9
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:22:10 2025 +0200
+| 
+|     creating PotionMerchant.cpp
+| 
+|  Events/PotionsMerchant.cpp | 29 +++++++++++++++++++++++++++++
+|  1 file changed, 29 insertions(+)
+| 
+* commit b014b6ba0be382f0586abbb669595beef496f755
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:21:58 2025 +0200
+| 
+|     creating PotionMerchant.h
+| 
+|  Events/PotionsMerchant.h | 10 ++++++++++
+|  1 file changed, 10 insertions(+)
+| 
+* commit bdef9f8045f0ed6e45207fadb6264e58221299ea
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:21:31 2025 +0200
+| 
+|     creating Pack.h + Pack.cpp
+| 
+|  Events/Pack.cpp | 22 ++++++++++++++++++++++
+|  Events/Pack.h   | 10 ++++++++++
+|  2 files changed, 32 insertions(+)
+| 
+* commit e9b0808856ef7662bc961d5e1d27e0ae0c97ca21
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:21:03 2025 +0200
+| 
+|     creating Barlog.h + Barlog.cpp
+| 
+|  Events/Balrog.cpp | 8 ++++++++
+|  Events/Balrog.h   | 8 ++++++++
+|  2 files changed, 16 insertions(+)
+| 
+* commit a458a83c0730cad3e5919f6d41e5209a60a83abb
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:20:26 2025 +0200
+| 
+|     creating Slime.h + Slime.cpp
+| 
+|  Events/Slime.cpp | 7 +++++++
+|  Events/Slime.h   | 8 ++++++++
+|  2 files changed, 15 insertions(+)
+| 
+* commit 60208870f4dd637177cebce79d0efccfda7f56a8
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:19:58 2025 +0200
+| 
+|     creating Snail.h + Snail.cpp
+| 
+|  Events/Snail.cpp | 7 +++++++
+|  Events/Snail.h   | 8 ++++++++
+|  2 files changed, 15 insertions(+)
+| 
+* commit 505ced1b7559bbd06f82b5f1bbca2baf259dcba5
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:19:25 2025 +0200
+| 
+|     creating Monster.cpp
+| 
+|  Events/Monster.cpp | 31 +++++++++++++++++++++++++++++++
+|  1 file changed, 31 insertions(+)
+| 
+* commit 11fb9a99db800ca720a8d6d09c768ae08c2f09e7
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:19:05 2025 +0200
+| 
+|     creating Monster.h
+| 
+|  Events/Monster.h | 19 +++++++++++++++++++
+|  1 file changed, 19 insertions(+)
+| 
+* commit bd6ed2254369df1100efbc60042efe484c0a86e4
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:18:25 2025 +0200
+| 
+|     creating Encounter.h
+| 
+|  Events/Encounter.h | 7 +++++++
+|  1 file changed, 7 insertions(+)
+| 
+* commit 300965416e9e74df1f8f05101b6ec6a71aef0a76
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:17:57 2025 +0200
+| 
+|     creating SolarEclipse.cpp
+| 
+|  Events/SolarEclipse.cpp | 13 +++++++++++++
+|  1 file changed, 13 insertions(+)
+| 
+* commit 58d3155d66fca1635f354232ce57144f96d0efc5
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:17:31 2025 +0200
+| 
+|     creating SolarEclipse.h
+| 
+|  Events/SolarEclipse.h | 10 ++++++++++
+|  1 file changed, 10 insertions(+)
+| 
+* commit 39e937bbd1da302630d19f79ede48028546bd28d
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:17:06 2025 +0200
+| 
+|     creating SpecialEvent.h
+| 
+|  Events/SpecialEvent.h | 8 ++++++++
+|  1 file changed, 8 insertions(+)
+| 
+* commit 41ae7d85a171ab055c4fdabfdf3e1270e40972cd
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:14:09 2025 +0200
+| 
+|     creating EventFactory.cpp
+| 
+|  Events/EventFactory.cpp | 25 +++++++++++++++++++++++++
+|  1 file changed, 25 insertions(+)
+| 
+* commit f052fb96147bf941e2d545c8af2a666978340b4e
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:13:37 2025 +0200
+| 
+|     creating EventFactory.h
+| 
+|  Events/EventFactory.h | 18 ++++++++++++++++++
+|  1 file changed, 18 insertions(+)
+| 
+* commit e1cb86252f1bfbddbd16e9b72fa5c744c754588b
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:11:12 2025 +0200
+| 
+|     creating Event.cpp
+| 
+|  Events/Event.cpp | 8 ++++++++
+|  1 file changed, 8 insertions(+)
+| 
+* commit cde2c6a5b10decf4fcebd2a395ac1e5dbddc3356
+| Author: Ori Elkabetz <orielk2@gmail.com>
+| Date:   Thu Jan 16 18:09:42 2025 +0200
+| 
+|     creating Event.h
+| 
+|  Events/Event.h | 7 ++++++-
+|  1 file changed, 6 insertions(+), 1 deletion(-)
+| 
+* commit 151fe7e34f163ddc1926348778fc5a1dc9f760a3
+| Author: guy friedman <guy.friedman2001@gmail.com>
+| Date:   Thu Jan 16 14:04:33 2025 +0200
+| 
+|     add general inheritance layout
+| 
+|  Archer.cpp     |  5 +++++
+|  Archer.h       | 16 ++++++++++++++++
+|  Charachter.cpp | 10 ++++++++++
+|  Character.h    | 10 ++++++++++
+|  Fast.cpp       |  5 +++++
+|  Fast.h         | 16 ++++++++++++++++
+|  Job.cpp        |  5 +++++
+|  Job.h          | 45 +++++++++++++++++++++++++++++++++++++++++++++
+|  Magical.cpp    |  5 +++++
+|  Magical.h      | 16 ++++++++++++++++
+|  Magician.cpp   |  5 +++++
+|  Magician.h     | 16 ++++++++++++++++
+|  Player.cpp     |  5 +++++
+|  Player.h       | 42 ++++++++++++++++++++++++++++++++++++++++++
+|  Strong.cpp     |  5 +++++
+|  Strong.h       | 16 ++++++++++++++++
+|  Warrior.cpp    |  5 +++++
+|  Warrior.h      | 16 ++++++++++++++++
+|  18 files changed, 243 insertions(+)
+| 
+* commit 36e0a570a1ae4093ddf45c2cac7bd6665f8ac175
+| Author: Yinon Goldshtein <yinongold@gmail.com>
+| Date:   Wed Jan 8 19:52:22 2025 +0200
+| 
+|     updated course number in README
+| 
+|  README.md | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 11db499619ae45b95224312022c5e0459653edcd
+| Author: Egbaria Mohammad-Baraa <102754795+EgbariaMohammad@users.noreply.github.com>
+| Date:   Wed Jan 8 19:48:30 2025 +0200
+| 
+|     Update README.md
+| 
+|  README.md | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 89b5f6299cabd5cfeb30a0873786055da6280436
+  Author: Yinon Goldshtein <yinongold@gmail.com>
+  Date:   Tue Jan 7 01:02:53 2025 +0200
+  
+      initial commit
+  
+   Events/Event.h       |  14 +++++
+   MatamStory.cpp       |  74 +++++++++++++++++++++++++
+   MatamStory.h         |  55 +++++++++++++++++++
+   Players/Player.h     |  51 +++++++++++++++++
+   README.md            |   7 +++
+   Utilities.cpp        | 117 +++++++++++++++++++++++++++++++++++++++
+   Utilities.h          | 146 +++++++++++++++++++++++++++++++++++++++++++++++++
+   main.cpp             |  40 ++++++++++++++
+   tests/test1.events   |   5 ++
+   tests/test1.expected |  96 ++++++++++++++++++++++++++++++++
+   tests/test1.players  |   3 +
+   tests/test2.events   |   4 ++
+   tests/test2.expected |   1 +
+   tests/test2.players  |   3 +
+   tests/test3.events   |   5 ++
+   tests/test3.expected |   1 +
+   tests/test3.players  |   2 +
+   17 files changed, 624 insertions(+)
